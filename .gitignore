@@ -1,0 +1,50 @@
+@"
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Virtual environments
+.venv/
+.venv-openems/
+venv/
+env/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# openEMS generated files
+simulations/openems/results/*
+simulations/openems/model/*.xml
+simulations/openems/model/*.h5
+simulations/openems/model/*.vtk
+simulations/openems/model/*.vtr
+simulations/openems/model/*.m
+simulations/openems/model/*.txt
+
+# Temporary / generated EM data
+results/em/*
+*.h5
+*.vtk
+*.vtr
+
+# MATLAB
+*.asv
+
+# Logs
+*.log
+
+# Build / package artifacts
+build/
+dist/
+*.egg-info/
+
+# Large local vendor installations
+openEMS_x64_*/
+"@ | Set-Content .gitignore

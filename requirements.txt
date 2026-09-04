@@ -1,0 +1,8 @@
+numpy
+scipy
+matplotlib
+pandas
+scikit-rf
+h5py
+meshio
+pytest
