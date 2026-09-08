@@ -1,0 +1,62 @@
+7th-Order Chebyshev Stepped-Impedance Filter — Full-Wave V1
+============================================================
+
+Specification
+-------------
+Z0                  : 50.000000 ohm
+Passband edge       : 9.000000 GHz
+Ripple              : 0.100000 dB
+Stopband start      : 20.000000 GHz
+Required @20 GHz    : 60.000000 dB
+Order               : 7
+
+Substrate
+---------
+epsilon_r           : 3.380000
+height              : 1.524000 mm
+
+Physical placement
+------------------
+Main MSL region     : -20.000000 -> 20.000000 mm
+Stepped filter      : -7.391900 -> 7.391900 mm
+Stepped length      : 14.783800 mm
+50-ohm lead each    : 12.608100 mm
+
+Initial dimensions
+------------------
+50-ohm feed width   : 3.557700 mm
+High-Z width        : 0.547900 mm
+Low-Z width         : 12.324700 mm
+
+Section lengths [mm]
+--------------------
+1.679800, 1.758200, 2.981800, 1.944200, 2.981800, 1.758200, 1.679800
+
+Section widths [mm]
+-------------------
+0.547900, 12.324700, 0.547900, 12.324700, 0.547900, 12.324700, 0.547900
+
+Results
+-------
+S11 @ 5 GHz         : 1.659156 dB
+S21 @ 5 GHz         : -5.063430 dB
+Zin @ 5 GHz         : -15.650849 +74.484075j ohm
+
+S21 @ 9 GHz         : -7.869704 dB
+S21 @ 20 GHz        : -48.748831 dB
+Attenuation @20 GHz : 48.748831 dB
+
+Worst S21, 1-9 GHz  : -50.895822 dB
+Max S21, 20-30 GHz  : -8.806763 dB
+Min S21, 20-30 GHz  : -66.162222 dB
+
+Power min, 1-9 GHz  : 0.695152
+Power max, 1-9 GHz  : 144.529117
+
+V1 checks
+---------
+Passband sanity     : FAIL
+20-GHz attenuation  : FAIL
+
+This V1 is an initial full-wave EM baseline.
+It is not yet the final fabricated geometry.
