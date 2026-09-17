@@ -1,9 +1,9 @@
 """
-HERD / CliQ10-inspired leaky-coax low-pass filter — openEMS V1
+Wideband LP Filter leaky-coax low-pass filter — openEMS V1
 
 Goal
 ----
-Reproduce the published HERD topology of Rehammar & Gasparinetti:
+Reproduce the published Wideband LP Filter topology of Rehammar & Gasparinetti:
 a 50-ohm air-filled coaxial transmission line surrounded by rectangular
 hollow-waveguide leakage apertures.
 
@@ -27,7 +27,7 @@ apertures on the outer coax body, with two consecutive circumferential
 rings. The published prototype uses four sections.
 
 This V1 is a geometry-reproduction / physics-validation run, not yet a
-fabrication model of proprietary CliQ10 internals. The CliQ10 datasheet
+fabrication model of proprietary Wideband LP Filter internals. The Wideband LP Filter datasheet
 does not disclose its internal geometry.
 
 IMPORTANT IMPLEMENTATION DETAIL
@@ -49,15 +49,15 @@ azimuths 0, 90, 180, 270 degrees.
 The coax axis is x.
 
 Run:
-    python herd_cliq10_openems_v1.py
+    python Wideband LP Filter_Wideband LP Filter_openems_v1.py
 
 Outputs:
-    results/em/herd_cliq10_openems_v1/
+    results/em/Wideband LP Filter_Wideband LP Filter_openems_v1/
         metrics.json
         geometry.json
-        herd_cliq10_openems_v1.csv
+        Wideband LP Filter_Wideband LP Filter_openems_v1.csv
         geometry.txt
-    results/plots/herd_cliq10_openems_v1.png
+    results/plots/Wideband LP Filter_Wideband LP Filter_openems_v1.png
 """
 
 from __future__ import annotations
@@ -67,6 +67,7 @@ import json
 import math
 import os
 import shutil
+import threading
 import time
 from pathlib import Path
 
@@ -108,23 +109,15 @@ from openEMS import openEMS
 # ============================================================================
 
 PROJECT_ROOT = Path(__file__).resolve().parent
+RUN_ID = os.environ.get("WB_RUN_ID", "lumped_port_characterization_v1")
 
 SIM_PATH = (
-    PROJECT_ROOT
-    / "simulations"
-    / "openems"
-    / "results"
-    / "herd_cliq10_openems_v1"
+    PROJECT_ROOT / "simulations" / "openems" / "results" / RUN_ID
 )
-
 RESULTS_PATH = (
-    PROJECT_ROOT
-    / "results"
-    / "em"
-    / "herd_cliq10_openems_v1"
+    PROJECT_ROOT / "results" / "em" / RUN_ID
 )
-
-PLOT_PATH = PROJECT_ROOT / "results" / "plots"
+PLOT_PATH = RESULTS_PATH / "plots"
 
 if SIM_PATH.exists():
     shutil.rmtree(SIM_PATH)
@@ -142,75 +135,49 @@ UNIT = 1e-3
 
 Z0 = 50.0
 
-# Published prototype.
-A = 4.00                 # aperture radial width, mm
-B = 5.00                 # aperture axial height, mm
-D = 4.90                 # aperture depth, mm
+# Known-good baseline; optimizer perturbs locally around this design.
+A = float(os.environ.get("WB_A", "4.00"))
+B = float(os.environ.get("WB_B", "5.00"))
+D = float(os.environ.get("WB_D", "4.90"))
 
-RI = 1.60                # coax inner-conductor radius, mm
-RO = 3.70                # coax outer-conductor inner radius, mm
-
-# For the finite metal shell, use a small physical wall thickness.
-# This is not part of the published RF dimensions; it only gives the
-# numerical model a finite outer wall.
-RO_OUT = 4.20            # mm
-
+RI = 1.60
+RO = 3.70
+RO_OUT = 4.20
 EPS_PTFE = 2.2
 
-N_SECTIONS = 4
+N_SECTIONS = int(os.environ.get("WB_NSECTIONS", "4"))
 APERTURES_PER_SECTION = 8
-
-# Two rings x four azimuths.
 AZIMUTHS_DEG = [0.0, 90.0, 180.0, 270.0]
 
-# Published figure describes two consecutive circles per section.
-# Use 5 mm axial separation as the initial V1 reproduction value.
-RING_SPACING = 5.0       # mm
+RING_SPACING = float(os.environ.get("WB_RING", "5.00"))
+SECTION_PITCH = float(os.environ.get("WB_PITCH", "12.00"))
 
-# Axial pitch between successive leakage sections.
-# Chosen so neighboring sections remain distinct while keeping the
-# structure compact. This is a V1 geometric interpretation and will be
-# explicitly reported as such.
-SECTION_PITCH = 12.0     # mm
-
-# Center-to-center x positions of section rings.
 SECTION_CENTERS = [
-    -1.5 * SECTION_PITCH,
-    -0.5 * SECTION_PITCH,
-    +0.5 * SECTION_PITCH,
-    +1.5 * SECTION_PITCH,
+    (i - (N_SECTIONS - 1) / 2.0) * SECTION_PITCH
+    for i in range(N_SECTIONS)
 ]
 
-# Each section has two rings separated along x.
-# The full structure therefore spans:
 FILTER_X0 = SECTION_CENTERS[0] - RING_SPACING / 2.0
 FILTER_X1 = SECTION_CENTERS[-1] + RING_SPACING / 2.0
 
-# Feed lines on both ends.
-FEED = 12.0
-LINE_X0 = FILTER_X0 - FEED
-LINE_X1 = FILTER_X1 + FEED
+LINE_X0 = -10.0
+LINE_X1 = +10.0
 
-# Apertures extend radially outward from the coax shell by D.
 APERTURE_R_IN = RO - 0.05
 APERTURE_R_OUT = RO + D + 0.05
 
-# Simulation air margin.
 XY_MARGIN = 2.0
 Z_MARGIN = 2.0
 
-# Frequency.
 F_START = 1.0e9
-F_STOP = 100.0e9
-N_FREQ = 501
+F_STOP = 20.0e9
+N_FREQ = 401
 
-# Excitation: broad enough to cover 1-100 GHz.
 F0 = 50.0e9
 FC_GAUSS = 50.0e9
 
-NR_TS = 15000
+NR_TS = 30000
 END_CRITERIA = 3e-4
-
 GRID = 0.25
 
 BOUNDARY = ["PML_8"] * 6
@@ -227,7 +194,7 @@ def grid_snap(v):
 # -------------------------------------------------------------------------
 # FAST SCREENING MESH
 # -------------------------------------------------------------------------
-# The physical HERD dimensions are intentionally NOT forced onto the
+# The physical Wideband LP Filter dimensions are intentionally NOT forced onto the
 # Cartesian mesh grid. openEMS/CSXCAD can represent geometry independently
 # of the nominal mesh pitch. The old assertion incorrectly prevented the
 # 0.25 mm screening mesh from using the published 1.60/3.70/4.90 mm geometry.
@@ -255,7 +222,7 @@ assert RO_OUT > RO
 
 print()
 print("=" * 100)
-print("HERD / CliQ10-INSPIRED LEAKY COAX — OPENEMS V1")
+print("Wideband LP Filter LEAKY COAX — OPENEMS V1")
 print("=" * 100)
 print("Published target parameters / V1 grid realization:")
 print(f"  aperture a             = {A:.2f} mm")
@@ -273,8 +240,8 @@ print(f"  section pitch          = {SECTION_PITCH:.2f} mm")
 print(f"  filter x               = {FILTER_X0:.2f} ... {FILTER_X1:.2f} mm")
 print(f"  total RF length        = {LINE_X1-LINE_X0:.2f} mm")
 print()
-print("This is a HERD topology reproduction, not a claim to reproduce")
-print("the proprietary internal geometry of the commercial CliQ10.")
+print("This is a Wideband LP Filter topology reproduction, not a claim to reproduce")
+print("the proprietary internal geometry of the commercial Wideband LP Filter.")
 
 
 # ============================================================================
@@ -480,21 +447,9 @@ def add_aperture(section_index, ring_index, x_center, theta_deg):
     }
 
 
+# BARE COAX: no filter apertures
 aperture_records = []
 
-for si, xc in enumerate(SECTION_CENTERS):
-    ring_x = [
-        xc - RING_SPACING / 2.0,
-        xc + RING_SPACING / 2.0,
-    ]
-
-    for ri_ring, xr in enumerate(ring_x):
-        for theta in AZIMUTHS_DEG:
-            aperture_records.append(
-                add_aperture(si, ri_ring, xr, theta)
-            )
-
-assert len(aperture_records) == N_SECTIONS * APERTURES_PER_SECTION
 
 
 # ============================================================================
@@ -511,8 +466,8 @@ assert len(aperture_records) == N_SECTIONS * APERTURES_PER_SECTION
 # GRID
 # ============================================================================
 
-X_MIN = LINE_X0 - 3.0
-X_MAX = LINE_X1 + 3.0
+X_MIN = LINE_X0 - 2.0
+X_MAX = LINE_X1 + 2.0
 
 Y_EXT = RO_OUT + D + XY_MARGIN
 Z_EXT = RO_OUT + D + XY_MARGIN
@@ -577,7 +532,7 @@ print(
     f"{estimated_cells:,}"
 )
 
-if estimated_cells > 5_000_000:
+if estimated_cells > 6_000_000:
     raise RuntimeError(
         f"FAST V1 mesh is unexpectedly large ({estimated_cells:,} cells). "
         "Check GRID and simulation extents before launching openEMS."
@@ -595,8 +550,8 @@ if estimated_cells > 5_000_000:
 # Port excitation is therefore a differential voltage between the center
 # conductor and the outer conductor.
 
-PORT_X1 = LINE_X0 + 4.0
-PORT_X2 = LINE_X1 - 4.0
+PORT_X1 = LINE_X0
+PORT_X2 = LINE_X1
 
 port1 = FDTD.AddLumpedPort(
     1,
@@ -625,7 +580,7 @@ port2 = FDTD.AddLumpedPort(
 # WRITE GEOMETRY
 # ============================================================================
 
-xml_path = SIM_PATH / "herd_cliq10_openems_v1.xml"
+xml_path = SIM_PATH / "Wideband LP Filter_Wideband LP Filter_openems_v1.xml"
 
 print()
 print("WRITING CSXCAD XML")
@@ -643,7 +598,7 @@ print(f"XML size                 : {xml_path.stat().st_size / 1024.0:.1f} kB")
 geometry = {
     "reference": {
         "paper": "Rehammar & Gasparinetti, arXiv:2205.03941 / IEEE T-MTT 71 (2023)",
-        "topology": "leaky coaxial waveguide / HERD",
+        "topology": "leaky coaxial waveguide / Wideband LP Filter",
     },
     "published_parameters": {
         "aperture_width_a_mm": A,
@@ -669,7 +624,7 @@ with (RESULTS_PATH / "geometry.json").open("w", encoding="utf-8") as fh:
     json.dump(geometry, fh, indent=2)
 
 with (RESULTS_PATH / "geometry.txt").open("w", encoding="utf-8") as fh:
-    fh.write("HERD / CliQ10-inspired geometry\n")
+    fh.write("Wideband LP Filter geometry\n")
     fh.write("=" * 80 + "\n")
     for k, v in geometry["published_parameters"].items():
         fh.write(f"{k}: {v}\n")
@@ -695,40 +650,72 @@ print(f"Max timesteps            : {NR_TS:,}")
 print()
 print("NOTE: FAST V1 SCREENING MODE")
 print("      0.25 mm mesh / 15k maximum timesteps / 1–100 GHz.")
-print("      Physical HERD geometry is unchanged.")
+print("      Physical Wideband LP Filter geometry is unchanged.")
 print("      This is topology validation, not final mesh convergence.")
 print()
 
 solver_t0 = time.perf_counter()
 
-FDTD.Run(
-    str(SIM_PATH),
-    cleanup=True,
-    verbose=3,
+solver_stop = threading.Event()
+
+def solver_heartbeat():
+    try:
+        import psutil
+        proc = psutil.Process(os.getpid())
+    except Exception:
+        proc = None
+
+    while not solver_stop.wait(15.0):
+        elapsed = time.perf_counter() - solver_t0
+        if proc is not None:
+            try:
+                rss = proc.memory_info().rss / (1024**3)
+                print(
+                    f"[OPENEMS ALIVE] elapsed={elapsed/60.0:6.2f} min | "
+                    f"PID={os.getpid()} | RSS={rss:5.2f} GB",
+                    flush=True,
+                )
+                continue
+            except Exception:
+                pass
+        print(
+            f"[OPENEMS ALIVE] elapsed={elapsed/60.0:6.2f} min | "
+            f"PID={os.getpid()}",
+            flush=True,
+        )
+
+heartbeat = threading.Thread(target=solver_heartbeat, daemon=True)
+heartbeat.start()
+
+print(
+    f"[OPENEMS START] PID={os.getpid()} | "
+    f"cells={estimated_cells:,} | max_steps={NR_TS:,}",
+    flush=True,
 )
 
+try:
+    FDTD.Run(
+        str(SIM_PATH),
+        cleanup=True,
+        verbose=3,
+    )
+finally:
+    solver_stop.set()
+    heartbeat.join(timeout=1.0)
+
 solver_elapsed = time.perf_counter() - solver_t0
-print()
-print(f"openEMS wall time        : {solver_elapsed/60.0:.2f} min")
-
-
+print(
+    f"[OPENEMS DONE] elapsed={solver_elapsed/60.0:.2f} min",
+    flush=True,
+)
 # ============================================================================
-# POSTPROCESS
+# POSTPROCESS — LUMPED PORT CHARACTERIZATION
 # ============================================================================
 
 freq = np.linspace(F_START, F_STOP, N_FREQ)
 
-port1.CalcPort(
-    str(SIM_PATH),
-    freq,
-    ref_impedance=Z0,
-)
-
-port2.CalcPort(
-    str(SIM_PATH),
-    freq,
-    ref_impedance=Z0,
-)
+port1.CalcPort(str(SIM_PATH), freq, ref_impedance=Z0)
+port2.CalcPort(str(SIM_PATH), freq, ref_impedance=Z0)
 
 eps = 1e-30
 
@@ -746,161 +733,116 @@ S11_dB = 20.0 * np.log10(np.maximum(np.abs(S11), eps))
 S21_dB = 20.0 * np.log10(np.maximum(np.abs(S21), eps))
 
 Zin = uf_tot_1 / (if_tot_1 + eps)
-power = np.abs(S11)**2 + np.abs(S21)**2
 
+# Port-derived reflection coefficient from measured port impedance.
+Gamma_Z = (Zin - Z0) / (Zin + Z0)
+Gamma_Z_dB = 20.0 * np.log10(np.maximum(np.abs(Gamma_Z), eps))
+
+# Direct wave-based port power quantities.
+P_inc = np.abs(uf_inc_1)**2 / (2.0 * Z0)
+P_ref = np.abs(uf_ref_1)**2 / (2.0 * Z0)
+P_trn = np.abs(uf_ref_2)**2 / (2.0 * Z0)
+
+power_ratio = (
+    np.abs(S11)**2 +
+    np.abs(S21)**2
+)
 
 def idx(f):
     return int(np.argmin(np.abs(freq - f)))
 
-
-m_1_10 = (freq >= 1e9) & (freq <= 10e9)
-m_10_20 = (freq >= 10e9) & (freq <= 20e9)
-m_20_100 = (freq >= 20e9) & (freq <= 100e9)
-m_50_100 = (freq >= 50e9) & (freq <= 100e9)
-
-max_1_10 = float(np.max(S21_dB[m_1_10]))
-min_1_10 = float(np.min(S21_dB[m_1_10]))
-max_10_20 = float(np.max(S21_dB[m_10_20]))
-max_20_100 = float(np.max(S21_dB[m_20_100]))
-max_50_100 = float(np.max(S21_dB[m_50_100]))
-
-fmax_20_100 = float(freq[m_20_100][np.argmax(S21_dB[m_20_100])])
-fmax_50_100 = float(freq[m_50_100][np.argmax(S21_dB[m_50_100])])
-
 print()
 print("=" * 100)
-print("RESULTS")
+print("LUMPED PORT CHARACTERIZATION")
 print("=" * 100)
 
-for f in [5, 8, 9, 10, 12, 15, 16, 17, 20, 40, 55, 70, 100]:
+for fGHz in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12, 15, 18, 20]:
+    i = idx(fGHz * 1e9)
     print(
-        f"S21 @ {f:5.1f} GHz        : "
-        f"{S21_dB[idx(f*1e9)]: .4f} dB"
+        f"{fGHz:5.1f} GHz | "
+        f"S11={S11_dB[i]:8.3f} dB | "
+        f"S21={S21_dB[i]:8.3f} dB | "
+        f"Zin={Zin[i].real:8.2f}"
+        f"{Zin[i].imag:+8.2f}j ohm | "
+        f"|Gamma_Z|={Gamma_Z_dB[i]:8.3f} dB"
     )
 
 print()
-print(f"1–10 GHz S21 min         : {min_1_10:.4f} dB")
-print(f"1–10 GHz S21 max         : {max_1_10:.4f} dB")
-print(f"10–20 GHz S21 max        : {max_10_20:.4f} dB")
-print(
-    f"20–100 GHz S21 max       : "
-    f"{max_20_100:.4f} dB @ {fmax_20_100/1e9:.3f} GHz"
-)
-print(
-    f"50–100 GHz S21 max       : "
-    f"{max_50_100:.4f} dB @ {fmax_50_100/1e9:.3f} GHz"
-)
-print(f"Power sum min/max        : {power.min():.6f}/{power.max():.6f}")
+print(f"Zin real range : {np.min(Zin.real):.3f} ... {np.max(Zin.real):.3f} ohm")
+print(f"Zin imag range : {np.min(Zin.imag):.3f} ... {np.max(Zin.imag):.3f} ohm")
+print(f"Power ratio min: {np.min(power_ratio):.6f}")
+print(f"Power ratio max: {np.max(power_ratio):.6f}")
+print()
 
+# Compare wave-derived S11 to impedance-derived Gamma.
+gamma_difference = np.abs(S11 - Gamma_Z)
+print(f"max |S11 - Gamma(Zin)| = {np.max(gamma_difference):.6e}")
 
-# ============================================================================
-# SAVE CSV
-# ============================================================================
-
-csv_path = RESULTS_PATH / "herd_cliq10_openems_v1.csv"
-
+# Save raw diagnostic CSV.
+csv_path = RESULTS_PATH / "lumped_port_characterization.csv"
 with csv_path.open("w", newline="", encoding="utf-8") as fh:
     writer = csv.writer(fh)
     writer.writerow([
         "frequency_Hz",
-        "S11_real",
-        "S11_imag",
-        "S21_real",
-        "S21_imag",
         "S11_dB",
         "S21_dB",
         "Zin_real_ohm",
         "Zin_imag_ohm",
-        "power_sum",
+        "Gamma_Z_dB",
+        "power_ratio",
+        "P_inc",
+        "P_ref",
+        "P_trn",
     ])
 
     for i in range(len(freq)):
         writer.writerow([
             float(freq[i]),
-            float(S11[i].real),
-            float(S11[i].imag),
-            float(S21[i].real),
-            float(S21[i].imag),
             float(S11_dB[i]),
             float(S21_dB[i]),
             float(Zin[i].real),
             float(Zin[i].imag),
-            float(power[i]),
+            float(Gamma_Z_dB[i]),
+            float(power_ratio[i]),
+            float(P_inc[i]),
+            float(P_ref[i]),
+            float(P_trn[i]),
         ])
 
-
-metrics = {
-    "a_mm": A,
-    "b_mm": B,
-    "d_mm": D,
-    "ri_mm": RI,
-    "ro_mm": RO,
-    "ptfe_epsilon_r": EPS_PTFE,
-    "n_sections": N_SECTIONS,
-    "n_apertures": len(aperture_records),
-    "ring_spacing_mm": RING_SPACING,
-    "section_pitch_mm": SECTION_PITCH,
-    "s21_5GHz_dB": float(S21_dB[idx(5e9)]),
-    "s21_8GHz_dB": float(S21_dB[idx(8e9)]),
-    "s21_9GHz_dB": float(S21_dB[idx(9e9)]),
-    "s21_10GHz_dB": float(S21_dB[idx(10e9)]),
-    "s21_12GHz_dB": float(S21_dB[idx(12e9)]),
-    "s21_15GHz_dB": float(S21_dB[idx(15e9)]),
-    "s21_16GHz_dB": float(S21_dB[idx(16e9)]),
-    "s21_17GHz_dB": float(S21_dB[idx(17e9)]),
-    "s21_20GHz_dB": float(S21_dB[idx(20e9)]),
-    "s21_40GHz_dB": float(S21_dB[idx(40e9)]),
-    "s21_55GHz_dB": float(S21_dB[idx(55e9)]),
-    "s21_70GHz_dB": float(S21_dB[idx(70e9)]),
-    "s21_100GHz_dB": float(S21_dB[idx(100e9)]),
-    "max_s21_20_100_dB": max_20_100,
-    "max_s21_20_100_frequency_Hz": fmax_20_100,
-    "max_s21_50_100_dB": max_50_100,
-    "max_s21_50_100_frequency_Hz": fmax_50_100,
-    "power_min": float(power.min()),
-    "power_max": float(power.max()),
-    "mesh_mm": GRID,
-    "max_timesteps": NR_TS,
-    "end_criteria": END_CRITERIA,
-    "n_frequency_points": N_FREQ,
-    "simulation_mode": "FAST_V1_SCREENING",
-}
-
-with (RESULTS_PATH / "metrics.json").open("w", encoding="utf-8") as fh:
-    json.dump(metrics, fh, indent=2)
-
-
-# ============================================================================
-# PLOT
-# ============================================================================
-
-plot_file = PLOT_PATH / "herd_cliq10_openems_v1.png"
-
-plt.figure(figsize=(12, 7))
-plt.plot(freq/1e9, S11_dB, label="S11")
-plt.plot(freq/1e9, S21_dB, label="S21")
-plt.axvline(10, linestyle="--", label="10 GHz")
-plt.axhline(-40, linestyle=":", label="-40 dB")
-plt.axhline(-55, linestyle=":", label="-55 dB")
-plt.xlim(1, 100)
-plt.ylim(-100, 5)
+# Plot impedance.
+plt.figure(figsize=(11, 6))
+plt.plot(freq / 1e9, Zin.real, label="Re{Zin}")
+plt.plot(freq / 1e9, Zin.imag, label="Im{Zin}")
+plt.axhline(Z0, linestyle="--", linewidth=1, label="50 ohm")
 plt.xlabel("Frequency (GHz)")
-plt.ylabel("Magnitude (dB)")
-plt.title("HERD / CliQ10-Inspired Leaky-Coax LPF — 1–100 GHz")
-plt.grid(True, alpha=0.3)
+plt.ylabel("Impedance (ohm)")
+plt.title("Lumped Port — Input Impedance")
+plt.grid(True)
 plt.legend()
 plt.tight_layout()
-plt.savefig(plot_file, dpi=160)
+plt.savefig(RESULTS_PATH / "lumped_port_Zin.png", dpi=180)
+plt.close()
+
+# Plot S parameters.
+plt.figure(figsize=(11, 6))
+plt.plot(freq / 1e9, S11_dB, label="S11")
+plt.plot(freq / 1e9, S21_dB, label="S21")
+plt.axhline(-3, linestyle=":", linewidth=1)
+plt.xlabel("Frequency (GHz)")
+plt.ylabel("Magnitude (dB)")
+plt.title("Lumped Port Characterization — 20 mm Bare Coax")
+plt.grid(True)
+plt.legend()
+plt.tight_layout()
+plt.savefig(RESULTS_PATH / "lumped_port_Sparams.png", dpi=180)
 plt.close()
 
 print()
 print("=" * 100)
-print("OUTPUTS")
+print("FILES")
 print("=" * 100)
-print(f"CSV                     : {csv_path}")
-print(f"Metrics                 : {RESULTS_PATH / 'metrics.json'}")
-print(f"Geometry                : {RESULTS_PATH / 'geometry.json'}")
-print(f"Geometry text           : {RESULTS_PATH / 'geometry.txt'}")
-print(f"Plot                    : {plot_file}")
-print()
-print("V1 COMPLETE")
+print(f"CSV: {csv_path}")
+print(f"Zin plot: {RESULTS_PATH / 'lumped_port_Zin.png'}")
+print(f"S-parameter plot: {RESULTS_PATH / 'lumped_port_Sparams.png'}")
+print("=" * 100)
+
