@@ -1,376 +1,769 @@
 from pathlib import Path
 import re
+
 import numpy as np
 import matplotlib.pyplot as plt
 
 
+# ============================================================
+# CONFIGURATION
+# ============================================================
+
 RUN_DIR = Path(
     r"C:\Users\Raghava.m\Desktop\cryogenic_filter_design"
-    r"\FINAL_OPENEMS_RIGOROUS\rf_characterization"
+    r"\FINAL_OPENEMS_RIGOROUS\rf_final_300k"
 )
 
-PORT1 = RUN_DIR / "port_ut_1"
-PORT2 = RUN_DIR / "port_ut_2"
+FILES = {
+    "u1": RUN_DIR / "port_ut_1",
+    "u2": RUN_DIR / "port_ut_2",
+    "i1": RUN_DIR / "port_it_1",
+    "i2": RUN_DIR / "port_it_2",
+}
 
 
 # ============================================================
-# PORT OUTPUT
+# OPENEMS SAMPLING INTERVALS
 # ============================================================
 
-def load_port(path):
-
-    text = path.read_text(errors="replace")
-
-    # Remove comment/header lines
-    text = "\n".join(
-        line for line in text.splitlines()
-        if not line.startswith("%")
-    )
-
-    # Remove column header
-    text = text.replace("t/s", "")
-    text = text.replace("voltag0", "")
-
-    return text
+DT_U = 1.31476236814e-12
+DT_I = 1.31543868623e-12
 
 
 # ============================================================
-# PARSER
-#
-# The openEMS file has concatenated fields such as:
-#
-#   -0.0002143833808081.31476236814e-12
-#
-# which means:
-#
-#   voltage = -0.000214383380808
-#   time    =  1.31476236814e-12
-#
-# The timestamps are uniquely recognizable because they have
-# the expected e-12 exponent.
+# REGEX
 # ============================================================
 
-def parse_port(path):
+# Ordinary scientific number
+SCIENTIFIC_RE = re.compile(
+    r"[-+]?(?:\d+\.\d*|\.\d+|\d+)(?:[eE][-+]?\d+)"
+)
 
-    text = load_port(path)
+# Ordinary decimal number
+DECIMAL_RE = re.compile(
+    r"[-+]?(?:\d+\.\d*|\.\d+|\d+)"
+)
 
-    # Match timestamps specifically.
+# Normal timestamp such as:
+#
+# 1.31476236814e-12
+# 11.18328613133e-11
+# 1.05180989451e-10
+#
+TIMESTAMP_NORMAL_RE = re.compile(
+    r"[-+]?\d+\.\d+(?:[eE])-\d{2}"
+)
+
+# Malformed timestamp such as:
+#
+# 1.311.31543868623e-12
+# 2.632.63020105437e-12
+#
+# Meaning:
+#
+# 1.31543868623e-12
+# 2.63020105437e-12
+#
+TIMESTAMP_MANGLED_RE = re.compile(
+    r"(?P<first>\d)\.(?P<junk>\d+)\.(?P<rest>\d+(?:[eE])-\d{2})"
+)
+
+
+# ============================================================
+# LOAD RAW OPENEMS FILE
+# ============================================================
+
+def load_raw(path):
+
+    with open(path, "r", errors="replace") as f:
+        text = f.read()
+
+    # Remove OpenEMS header lines.
+    lines = text.splitlines()
+
+    data_lines = []
+
+    for line in lines:
+
+        if line.startswith("%"):
+            continue
+
+        data_lines.append(line)
+
+    return "\n".join(data_lines)
+
+
+# ============================================================
+# FIND TIMESTAMPS
+# ============================================================
+
+def find_timestamps(text, current_file=False):
+
+    candidates = []
+
+    # --------------------------------------------------------
+    # CURRENT FILES
+    # --------------------------------------------------------
     #
-    # The port sampling interval is ~1.314762e-12 s, so all
-    # timestamps in this file are e-12.
-    timestamp_pattern = re.compile(
-        r"\d+\.\d+e-12"
+    # Current files contain malformed timestamps like:
+    #
+    # 1.311.31543868623e-12
+    #
+    # We process these FIRST.
+    # --------------------------------------------------------
+
+    if current_file:
+
+        mangled_spans = []
+
+        for m in TIMESTAMP_MANGLED_RE.finditer(text):
+
+            first = m.group("first")
+            rest = m.group("rest")
+
+            # Example:
+            #
+            # first = "1"
+            # rest  = "31543868623e-12"
+            #
+            # => 1.31543868623e-12
+
+            ts_text = first + "." + rest
+
+            try:
+                t = float(ts_text)
+            except ValueError:
+                continue
+
+            candidates.append({
+                "start": m.start(),
+                "end": m.end(),
+                "time": t,
+            })
+
+            mangled_spans.append(
+                (m.start(), m.end())
+            )
+
+        # ----------------------------------------------------
+        # Also find ordinary timestamps.
+        #
+        # Ignore ordinary matches which occur INSIDE a
+        # malformed timestamp.
+        # ----------------------------------------------------
+
+        for m in TIMESTAMP_NORMAL_RE.finditer(text):
+
+            inside_mangled = False
+
+            for s, e in mangled_spans:
+
+                if m.start() >= s and m.end() <= e:
+                    inside_mangled = True
+                    break
+
+            if inside_mangled:
+                continue
+
+            try:
+                t = float(m.group())
+            except ValueError:
+                continue
+
+            candidates.append({
+                "start": m.start(),
+                "end": m.end(),
+                "time": t,
+            })
+
+    # --------------------------------------------------------
+    # VOLTAGE FILES
+    # --------------------------------------------------------
+
+    else:
+
+        for m in TIMESTAMP_NORMAL_RE.finditer(text):
+
+            try:
+                t = float(m.group())
+            except ValueError:
+                continue
+
+            candidates.append({
+                "start": m.start(),
+                "end": m.end(),
+                "time": t,
+            })
+
+    # --------------------------------------------------------
+    # Sort chronologically
+    # --------------------------------------------------------
+
+    candidates.sort(
+        key=lambda x: x["time"]
     )
 
-    matches = list(
-        timestamp_pattern.finditer(text)
+    return candidates
+
+
+# ============================================================
+# SELECT PHYSICAL TIMESTAMP SEQUENCE
+# ============================================================
+
+def select_timestamp_sequence(
+    candidates,
+    expected_dt
+):
+
+    if not candidates:
+        return []
+
+    # --------------------------------------------------------
+    # We know approximately what the timestamp sequence must be:
+    #
+    # t[n+1] - t[n] ≈ expected_dt
+    #
+    # Start with the earliest physically plausible timestamp.
+    # --------------------------------------------------------
+
+    candidates = sorted(
+        candidates,
+        key=lambda x: x["time"]
+    )
+
+    selected = []
+
+    # First timestamp should be close to DT.
+    first = min(
+        candidates,
+        key=lambda x: abs(
+            x["time"] - expected_dt
+        )
+    )
+
+    selected.append(first)
+
+    current_time = first["time"]
+
+    used = {id(first)}
+
+    # --------------------------------------------------------
+    # Keep walking forward.
+    # --------------------------------------------------------
+
+    while True:
+
+        target = current_time + expected_dt
+
+        available = [
+            c
+            for c in candidates
+            if id(c) not in used
+            and c["time"] > current_time
+        ]
+
+        if not available:
+            break
+
+        best = min(
+            available,
+            key=lambda x: abs(
+                x["time"] - target
+            )
+        )
+
+        error = abs(
+            best["time"] - target
+        )
+
+        # 5% tolerance.
+        if error > expected_dt * 0.05:
+
+            # Look for an exact-ish candidate anyway.
+            close = [
+                c
+                for c in available
+                if abs(
+                    c["time"] - target
+                ) <= expected_dt * 0.10
+            ]
+
+            if not close:
+                break
+
+            best = min(
+                close,
+                key=lambda x: abs(
+                    x["time"] - target
+                )
+            )
+
+        selected.append(best)
+
+        used.add(id(best))
+
+        current_time = best["time"]
+
+    return selected
+
+
+# ============================================================
+# EXTRACT SIGNAL BETWEEN TWO TIMESTAMPS
+# ============================================================
+
+def extract_signal_between(
+    fragment,
+    current_file=False
+):
+
+    fragment = fragment.strip()
+
+    if not fragment:
+        return np.nan
+
+    # --------------------------------------------------------
+    # IMPORTANT:
+    #
+    # The signal is BEFORE the next timestamp.
+    #
+    # Examples:
+    #
+    # voltage:
+    #
+    # 0.00182337109436
+    #
+    # current:
+    #
+    # 1.11746478737e-2
+    #
+    # --------------------------------------------------------
+
+    # Remove tabs/newlines from the edges only.
+    fragment = fragment.strip()
+
+    # --------------------------------------------------------
+    # Split by tabs first.
+    # --------------------------------------------------------
+
+    fields = re.split(
+        r"[\t\r\n]+",
+        fragment
+    )
+
+    candidates = []
+
+    for field in fields:
+
+        field = field.strip()
+
+        if not field:
+            continue
+
+        # Exact scientific number
+        m = SCIENTIFIC_RE.fullmatch(field)
+
+        if m:
+
+            try:
+                candidates.append(
+                    float(m.group())
+                )
+            except ValueError:
+                pass
+
+            continue
+
+        # Exact decimal
+        m = DECIMAL_RE.fullmatch(field)
+
+        if m:
+
+            try:
+                candidates.append(
+                    float(m.group())
+                )
+            except ValueError:
+                pass
+
+    # --------------------------------------------------------
+    # If exactly one clean number exists, use it.
+    # --------------------------------------------------------
+
+    if len(candidates) == 1:
+
+        return candidates[0]
+
+    # --------------------------------------------------------
+    # The fields can be concatenated.
+    #
+    # Example:
+    #
+    # -0.0002143833808081
+    #
+    # We need the signal at the beginning of the fragment,
+    # NOT an arbitrary number later in the fragment.
+    # --------------------------------------------------------
+
+    # Try scientific notation at the beginning.
+    m = re.match(
+        r"^([-+]?(?:\d+\.\d*|\.\d+|\d+)"
+        r"(?:[eE][-+]?\d+)?)",
+        fragment
+    )
+
+    if m:
+
+        token = m.group(1)
+
+        try:
+            return float(token)
+        except ValueError:
+            pass
+
+    # --------------------------------------------------------
+    # Try ordinary decimal at the beginning.
+    # --------------------------------------------------------
+
+    m = re.match(
+        r"^([-+]?(?:\d+\.\d*|\.\d+|\d+))",
+        fragment
+    )
+
+    if m:
+
+        token = m.group(1)
+
+        try:
+            return float(token)
+        except ValueError:
+            pass
+
+    # --------------------------------------------------------
+    # Explicit zero.
+    # --------------------------------------------------------
+
+    if fragment == "0":
+        return 0.0
+
+    if fragment == "-0":
+        return -0.0
+
+    return np.nan
+
+
+# ============================================================
+# RECONSTRUCT ONE PORT
+# ============================================================
+
+def reconstruct(
+    path,
+    expected_dt
+):
+
+    print()
+    print("=" * 70)
+    print(path.name)
+    print("=" * 70)
+
+    text = load_raw(path)
+
+    current_file = (
+        "port_it" in path.name
+    )
+
+    # --------------------------------------------------------
+    # Find timestamp candidates.
+    # --------------------------------------------------------
+
+    candidates = find_timestamps(
+        text,
+        current_file=current_file
     )
 
     print(
-        path.name,
-        "timestamp-like fields:",
-        len(matches)
+        "timestamp candidates:",
+        len(candidates)
     )
 
-    if len(matches) < 50:
+    if len(candidates) < 10:
+
         raise RuntimeError(
-            f"Could not identify enough timestamps in {path}"
+            f"Too few timestamps found in {path.name}"
         )
+
+    # --------------------------------------------------------
+    # Select actual physical sequence.
+    # --------------------------------------------------------
+
+    timestamps = select_timestamp_sequence(
+        candidates,
+        expected_dt
+    )
+
+    print(
+        "selected timestamps:",
+        len(timestamps)
+    )
+
+    if len(timestamps) < 5:
+
+        raise RuntimeError(
+            f"Could not reconstruct timestamp sequence "
+            f"for {path.name}"
+        )
+
+    # --------------------------------------------------------
+    # Extract signal values.
+    # --------------------------------------------------------
 
     times = []
-    voltages = []
+    values = []
 
-    # The voltage immediately before each timestamp is the
-    # port voltage for that timestamp.
-    #
-    # Use the region between the previous timestamp and the
-    # current timestamp.
-    previous_end = 0
+    for n in range(
+        len(timestamps) - 1
+    ):
 
-    for m in matches:
+        a = timestamps[n]
+        b = timestamps[n + 1]
 
-        ts_string = m.group(0)
+        t0 = a["time"]
+        t1 = b["time"]
 
-        try:
-            t = float(ts_string)
-        except ValueError:
+        actual_dt = t1 - t0
+
+        # Reject bad gaps.
+        if actual_dt <= 0:
             continue
 
-        # Text between previous timestamp and this timestamp.
-        segment = text[previous_end:m.start()]
+        if abs(
+            actual_dt - expected_dt
+        ) > expected_dt * 0.05:
 
-        # Extract numeric values from the segment.
-        numbers = re.findall(
-            r"[-+]?(?:"
-            r"\d+\.\d*|"
-            r"\.\d+|"
-            r"\d+"
-            r")(?:[eE][-+]?\d+)?",
-            segment
+            continue
+
+        # ----------------------------------------------------
+        # Signal is physically between timestamp n and n+1.
+        # ----------------------------------------------------
+
+        fragment = text[
+            a["end"]:
+            b["start"]
+        ]
+
+        value = extract_signal_between(
+            fragment,
+            current_file=current_file
         )
 
-        if not numbers:
-            previous_end = m.end()
-            continue
+        times.append(t0)
+        values.append(value)
 
-        # Usually the final number is the voltage.
-        try:
-            v = float(numbers[-1])
-        except ValueError:
-            previous_end = m.end()
-            continue
+    times = np.asarray(
+        times,
+        dtype=float
+    )
 
-        times.append(t)
-        voltages.append(v)
+    values = np.asarray(
+        values,
+        dtype=float
+    )
 
-        previous_end = m.end()
+    # --------------------------------------------------------
+    # Diagnostics
+    # --------------------------------------------------------
 
-    times = np.asarray(times)
-    voltages = np.asarray(voltages)
+    valid = np.isfinite(values)
 
     print(
-        path.name,
-        "recovered:",
-        len(times),
-        "samples"
+        "reconstructed samples:",
+        len(values)
     )
 
-    if len(times) < 50:
-        raise RuntimeError(
-            f"Too few samples recovered from {path}"
+    print(
+        "valid samples:",
+        np.sum(valid)
+    )
+
+    print(
+        "invalid samples:",
+        np.sum(~valid)
+    )
+
+    if np.any(valid):
+
+        print(
+            "value range:",
+            np.nanmin(values),
+            "to",
+            np.nanmax(values)
         )
 
-    return times, voltages
+        print()
+        print("first 20 valid samples:")
+
+        valid_indices = np.where(valid)[0]
+
+        for k in valid_indices[:20]:
+
+            print(
+                f"{times[k] * 1e12:12.6f} ps   "
+                f"{values[k]: .12e}"
+            )
+
+    return times, values
 
 
 # ============================================================
-# READ BOTH PORTS
+# RECONSTRUCT ALL FOUR PORT SIGNALS
 # ============================================================
 
-print("Reading existing FDTD port files...")
-
-t1, v1 = parse_port(PORT1)
-t2, v2 = parse_port(PORT2)
-
-
-# ============================================================
-# CHECK TIME AXIS
-# ============================================================
-
-print()
-print("PORT 1")
-print("first:", t1[:5])
-print("last :", t1[-5:])
-
-print()
-print("PORT 2")
-print("first:", t2[:5])
-print("last :", t2[-5:])
-
-
-# ============================================================
-# COMMON TIME AXIS
-# ============================================================
-
-t_start = max(
-    t1[0],
-    t2[0]
+tu1, u1 = reconstruct(
+    FILES["u1"],
+    DT_U
 )
 
-t_end = min(
-    t1[-1],
-    t2[-1]
+tu2, u2 = reconstruct(
+    FILES["u2"],
+    DT_U
 )
 
-dt = np.median(
-    np.diff(t1)
+ti1, i1 = reconstruct(
+    FILES["i1"],
+    DT_I
 )
 
-print()
-print("Recovered port dt =", dt)
-print("Recovered port rate =", 1 / dt / 1e9, "GHz")
-
-
-t = np.arange(
-    t_start,
-    t_end + dt / 2,
-    dt
-)
-
-v1i = np.interp(
-    t,
-    t1,
-    v1
-)
-
-v2i = np.interp(
-    t,
-    t2,
-    v2
+ti2, i2 = reconstruct(
+    FILES["i2"],
+    DT_I
 )
 
 
 # ============================================================
-# SAVE RECOVERED TIME DOMAIN
+# SAVE RECONSTRUCTED DATA
 # ============================================================
 
 np.savetxt(
-    RUN_DIR / "recovered_port_data.csv",
-    np.column_stack(
-        (t, v1i, v2i)
-    ),
+    RUN_DIR / "reconstructed_u1.csv",
+    np.column_stack([
+        tu1,
+        u1
+    ]),
     delimiter=",",
-    header="time_s,port1_voltage_V,port2_voltage_V",
+    header="time_s,voltage_V",
+    comments=""
+)
+
+np.savetxt(
+    RUN_DIR / "reconstructed_u2.csv",
+    np.column_stack([
+        tu2,
+        u2
+    ]),
+    delimiter=",",
+    header="time_s,voltage_V",
+    comments=""
+)
+
+np.savetxt(
+    RUN_DIR / "reconstructed_i1.csv",
+    np.column_stack([
+        ti1,
+        i1
+    ]),
+    delimiter=",",
+    header="time_s,current_A",
+    comments=""
+)
+
+np.savetxt(
+    RUN_DIR / "reconstructed_i2.csv",
+    np.column_stack([
+        ti2,
+        i2
+    ]),
+    delimiter=",",
+    header="time_s,current_A",
     comments=""
 )
 
 
 # ============================================================
-# FFT
+# PLOT VOLTAGES
 # ============================================================
 
-window = np.hanning(len(t))
-
-V1 = np.fft.rfft(
-    v1i * window
+fig, ax = plt.subplots(
+    figsize=(12, 6)
 )
 
-V2 = np.fft.rfft(
-    v2i * window
+ax.plot(
+    tu1 * 1e12,
+    u1,
+    label="Port 1 voltage"
 )
 
-freq = np.fft.rfftfreq(
-    len(t),
-    dt
+ax.plot(
+    tu2 * 1e12,
+    u2,
+    label="Port 2 voltage"
 )
 
-
-# ============================================================
-# V2/V1
-# ============================================================
-
-valid = (
-    (freq >= 1e9)
-    &
-    (freq <= 70e9)
-    &
-    (
-        np.abs(V1)
-        >
-        1e-12 * np.max(np.abs(V1))
-    )
+ax.set_xlabel(
+    "Time (ps)"
 )
 
-f = freq[valid]
-
-H = V2[valid] / V1[valid]
-
-
-# ============================================================
-# PRINT AVAILABLE FREQUENCY RESOLUTION
-# ============================================================
-
-df = 1 / (len(t) * dt)
-
-print()
-print(
-    "FFT frequency resolution:",
-    df / 1e9,
-    "GHz"
+ax.set_ylabel(
+    "Voltage (V)"
 )
 
-
-# ============================================================
-# SAVE RAW FFT TRANSMISSION
-# ============================================================
-
-H_dB = 20 * np.log10(
-    np.maximum(
-        np.abs(H),
-        1e-15
-    )
+ax.set_title(
+    "Reconstructed openEMS port voltages"
 )
 
-np.savetxt(
-    RUN_DIR / "recovered_transmission_raw.csv",
-    np.column_stack(
-        (
-            f / 1e9,
-            np.abs(H),
-            H_dB
-        )
-    ),
-    delimiter=",",
-    header="Frequency_GHz,abs_V2_over_V1,V2_over_V1_dB",
-    comments=""
-)
+ax.grid(True)
 
+ax.legend()
 
-# ============================================================
-# PLOT
-# ============================================================
-
-plt.figure(
-    figsize=(12, 7)
-)
-
-plt.plot(
-    f / 1e9,
-    H_dB,
-    label="|V2/V1|"
-)
-
-plt.axvline(
-    10,
-    linestyle="--",
-    label="10 GHz target"
-)
-
-plt.axhline(
-    -60,
-    linestyle=":",
-    label="-60 dB"
-)
-
-plt.xlim(1, 70)
-plt.ylim(-100, 5)
-
-plt.xlabel("Frequency (GHz)")
-plt.ylabel("Magnitude (dB)")
-
-plt.title(
-    "Existing FDTD run — recovered voltage transmission"
-)
-
-plt.grid(
-    True,
-    alpha=0.25
-)
-
-plt.legend()
 plt.tight_layout()
-
-plt.savefig(
-    RUN_DIR / "recovered_transmission.png",
-    dpi=200
-)
 
 plt.show()
 
 
-print()
-print("=" * 60)
-print("DONE")
-print("=" * 60)
-print(
-    "Recovered data:",
-    RUN_DIR / "recovered_port_data.csv"
+# ============================================================
+# PLOT CURRENTS
+# ============================================================
+
+fig, ax = plt.subplots(
+    figsize=(12, 6)
 )
-print(
-    "Spectrum:",
-    RUN_DIR / "recovered_transmission_raw.csv"
+
+ax.plot(
+    ti1 * 1e12,
+    i1,
+    label="Port 1 current"
 )
-print(
-    "Plot:",
-    RUN_DIR / "recovered_transmission.png"
+
+ax.plot(
+    ti2 * 1e12,
+    i2,
+    label="Port 2 current"
 )
+
+ax.set_xlabel(
+    "Time (ps)"
+)
+
+ax.set_ylabel(
+    "Current (A)"
+)
+
+ax.set_title(
+    "Reconstructed openEMS port currents"
+)
+
+ax.grid(True)
+
+ax.legend()
+
+plt.tight_layout()
+
+plt.show()

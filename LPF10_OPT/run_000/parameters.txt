@@ -1,0 +1,23 @@
+COMPACT 10 GHz LPF
+===================
+
+Run = 0
+Score = 120.46744863
+h_thin = 0.30000000 mm
+h_thick = 0.80000000 mm
+
+Section lengths:
+L1 = 7.04285714 mm
+L2 = 7.04285714 mm
+L3 = 7.04285714 mm
+L4 = 7.04285714 mm
+L5 = 7.04285714 mm
+L6 = 7.04285714 mm
+L7 = 7.04285714 mm
+
+Performance:
+f3dB = 1.0000 GHz
+S21_20GHz = -67.8585 dB
+Worst PB S21 = -2.9963 dB
+PB ripple = 1.5646 dB
+Worst PB S11 = -8.6430 dB

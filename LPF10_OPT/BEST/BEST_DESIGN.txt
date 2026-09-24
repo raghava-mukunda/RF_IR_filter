@@ -1,0 +1,22 @@
+OPTIMIZED LPF CANDIDATE
+========================
+
+Run: 13
+Score: 119.55593083
+
+h_thin  = 0.28671928 mm
+h_thick = 0.76349166 mm
+
+L1 = 4.07365691 mm
+L2 = 7.53238661 mm
+L3 = 8.07101208 mm
+L4 = 9.94588880 mm
+L5 = 8.07101208 mm
+L6 = 7.53238661 mm
+L7 = 4.07365691 mm
+
+f3dB = 1.00000 GHz
+S21 @ 20 GHz = -60.08803 dB
+Worst passband S21 = -2.98510 dB
+Passband ripple = 1.55409 dB
+Worst passband S11 = -9.47774 dB
