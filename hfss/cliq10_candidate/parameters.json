@@ -1,0 +1,260 @@
+{
+  "project": "CliQ10_Inspired_Candidate",
+  "design": "CliQ10_Candidate",
+  "status": "UNVALIDATED CANDIDATE",
+  "purpose": "Geometry scaffold only; not an exact reproduction or complete filter",
+  "known_missing": [
+    "Hollow absorber channels and absorber terminations are not implemented in this recovery version",
+    "Geometry has not been validated against the CliQ10 internal construction",
+    "Do not treat as a CliQ10 reproduction or manufacturing-ready design"
+  ],
+  "envelope_mm": [
+    65.3,
+    5.0,
+    4.6
+  ],
+  "reference_impedance_ohm": 50,
+  "source_geometry": "2025 co-designed reflective/leaky-waveguide paper; not CliQ10 internal geometry",
+  "source_section_lengths_mm_before_packaging_scale": [
+    1.06,
+    2.3,
+    2.05,
+    2.54,
+    1.91,
+    3.16,
+    1.91,
+    4.28,
+    1.77,
+    4.63,
+    0.8
+  ],
+  "axial_length_scale_applied": 1.2168396770472893,
+  "section_lengths_mm_after_packaging_scale": [
+    1.2898500576701268,
+    2.7987312572087655,
+    2.494521337946943,
+    3.090772779700115,
+    2.3241637831603223,
+    3.8452133794694343,
+    2.3241637831603223,
+    5.208073817762399,
+    2.153806228373702,
+    5.633967704728949,
+    0.9734717416378316,
+    5.633967704728949,
+    2.153806228373702,
+    5.208073817762399,
+    2.3241637831603223,
+    3.8452133794694343,
+    2.3241637831603223,
+    3.090772779700115,
+    2.494521337946943,
+    2.7987312572087655,
+    1.2898500576701268
+  ],
+  "sections": [
+    {
+      "section": 1,
+      "x_start_mm": 1.0000000000000036,
+      "length_mm": 1.2898500576701268,
+      "impedance_section": "high",
+      "outer_width_parameter_mm": 1.5,
+      "outer_height_parameter_mm": 0.5,
+      "inner_strip_height_parameter_mm": 0.8
+    },
+    {
+      "section": 2,
+      "x_start_mm": 2.2898500576701304,
+      "length_mm": 2.7987312572087655,
+      "impedance_section": "low",
+      "outer_width_parameter_mm": 3.0,
+      "outer_height_parameter_mm": 1.45,
+      "inner_strip_height_parameter_mm": 0.3
+    },
+    {
+      "section": 3,
+      "x_start_mm": 5.088581314878896,
+      "length_mm": 2.494521337946943,
+      "impedance_section": "high",
+      "outer_width_parameter_mm": 1.5,
+      "outer_height_parameter_mm": 0.5,
+      "inner_strip_height_parameter_mm": 0.8
+    },
+    {
+      "section": 4,
+      "x_start_mm": 7.583102652825839,
+      "length_mm": 3.090772779700115,
+      "impedance_section": "low",
+      "outer_width_parameter_mm": 3.0,
+      "outer_height_parameter_mm": 1.45,
+      "inner_strip_height_parameter_mm": 0.3
+    },
+    {
+      "section": 5,
+      "x_start_mm": 10.673875432525953,
+      "length_mm": 2.3241637831603223,
+      "impedance_section": "high",
+      "outer_width_parameter_mm": 1.5,
+      "outer_height_parameter_mm": 0.5,
+      "inner_strip_height_parameter_mm": 0.8
+    },
+    {
+      "section": 6,
+      "x_start_mm": 12.998039215686276,
+      "length_mm": 3.8452133794694343,
+      "impedance_section": "low",
+      "outer_width_parameter_mm": 3.0,
+      "outer_height_parameter_mm": 1.45,
+      "inner_strip_height_parameter_mm": 0.3
+    },
+    {
+      "section": 7,
+      "x_start_mm": 16.84325259515571,
+      "length_mm": 2.3241637831603223,
+      "impedance_section": "high",
+      "outer_width_parameter_mm": 1.5,
+      "outer_height_parameter_mm": 0.5,
+      "inner_strip_height_parameter_mm": 0.8
+    },
+    {
+      "section": 8,
+      "x_start_mm": 19.167416378316034,
+      "length_mm": 5.208073817762399,
+      "impedance_section": "low",
+      "outer_width_parameter_mm": 3.0,
+      "outer_height_parameter_mm": 1.45,
+      "inner_strip_height_parameter_mm": 0.3
+    },
+    {
+      "section": 9,
+      "x_start_mm": 24.37549019607843,
+      "length_mm": 2.153806228373702,
+      "impedance_section": "high",
+      "outer_width_parameter_mm": 1.5,
+      "outer_height_parameter_mm": 0.5,
+      "inner_strip_height_parameter_mm": 0.8
+    },
+    {
+      "section": 10,
+      "x_start_mm": 26.529296424452134,
+      "length_mm": 5.633967704728949,
+      "impedance_section": "low",
+      "outer_width_parameter_mm": 3.0,
+      "outer_height_parameter_mm": 1.45,
+      "inner_strip_height_parameter_mm": 0.3
+    },
+    {
+      "section": 11,
+      "x_start_mm": 32.16326412918109,
+      "length_mm": 0.9734717416378316,
+      "impedance_section": "high",
+      "outer_width_parameter_mm": 1.5,
+      "outer_height_parameter_mm": 0.5,
+      "inner_strip_height_parameter_mm": 0.8
+    },
+    {
+      "section": 12,
+      "x_start_mm": 33.13673587081892,
+      "length_mm": 5.633967704728949,
+      "impedance_section": "low",
+      "outer_width_parameter_mm": 3.0,
+      "outer_height_parameter_mm": 1.45,
+      "inner_strip_height_parameter_mm": 0.3
+    },
+    {
+      "section": 13,
+      "x_start_mm": 38.77070357554787,
+      "length_mm": 2.153806228373702,
+      "impedance_section": "high",
+      "outer_width_parameter_mm": 1.5,
+      "outer_height_parameter_mm": 0.5,
+      "inner_strip_height_parameter_mm": 0.8
+    },
+    {
+      "section": 14,
+      "x_start_mm": 40.92450980392157,
+      "length_mm": 5.208073817762399,
+      "impedance_section": "low",
+      "outer_width_parameter_mm": 3.0,
+      "outer_height_parameter_mm": 1.45,
+      "inner_strip_height_parameter_mm": 0.3
+    },
+    {
+      "section": 15,
+      "x_start_mm": 46.13258362168397,
+      "length_mm": 2.3241637831603223,
+      "impedance_section": "high",
+      "outer_width_parameter_mm": 1.5,
+      "outer_height_parameter_mm": 0.5,
+      "inner_strip_height_parameter_mm": 0.8
+    },
+    {
+      "section": 16,
+      "x_start_mm": 48.45674740484429,
+      "length_mm": 3.8452133794694343,
+      "impedance_section": "low",
+      "outer_width_parameter_mm": 3.0,
+      "outer_height_parameter_mm": 1.45,
+      "inner_strip_height_parameter_mm": 0.3
+    },
+    {
+      "section": 17,
+      "x_start_mm": 52.30196078431373,
+      "length_mm": 2.3241637831603223,
+      "impedance_section": "high",
+      "outer_width_parameter_mm": 1.5,
+      "outer_height_parameter_mm": 0.5,
+      "inner_strip_height_parameter_mm": 0.8
+    },
+    {
+      "section": 18,
+      "x_start_mm": 54.62612456747405,
+      "length_mm": 3.090772779700115,
+      "impedance_section": "low",
+      "outer_width_parameter_mm": 3.0,
+      "outer_height_parameter_mm": 1.45,
+      "inner_strip_height_parameter_mm": 0.3
+    },
+    {
+      "section": 19,
+      "x_start_mm": 57.71689734717417,
+      "length_mm": 2.494521337946943,
+      "impedance_section": "high",
+      "outer_width_parameter_mm": 1.5,
+      "outer_height_parameter_mm": 0.5,
+      "inner_strip_height_parameter_mm": 0.8
+    },
+    {
+      "section": 20,
+      "x_start_mm": 60.21141868512111,
+      "length_mm": 2.7987312572087655,
+      "impedance_section": "low",
+      "outer_width_parameter_mm": 3.0,
+      "outer_height_parameter_mm": 1.45,
+      "inner_strip_height_parameter_mm": 0.3
+    },
+    {
+      "section": 21,
+      "x_start_mm": 63.010149942329875,
+      "length_mm": 1.2898500576701268,
+      "impedance_section": "high",
+      "outer_width_parameter_mm": 1.5,
+      "outer_height_parameter_mm": 0.5,
+      "inner_strip_height_parameter_mm": 0.8
+    }
+  ],
+  "waveguide": {
+    "radii_mm": [
+      1.15,
+      1.5
+    ],
+    "depth_mm": 2.5,
+    "note": "Simplified bores; full absorber/termination geometry not disclosed in CliQ10 datasheet"
+  },
+  "datasheet_targets_not_yet_verified": {
+    "passband_10mK": "DC-9.8 GHz, 3 dB criterion",
+    "insertion_loss_10mK": "<=0.5 dB DC-7.5 GHz; <=1.5 dB 7.5-9.3 GHz",
+    "return_loss_298K": ">15 dB up to 9.3 GHz",
+    "rejection_298K": ">=30 dB from 11 GHz; >=55 dB from 55 GHz"
+  }
+}

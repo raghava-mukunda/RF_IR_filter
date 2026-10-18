@@ -1,0 +1,81 @@
+{
+  "status": "BASELINE - NOT YET VALIDATED",
+  "project": "C:\\Users\\Admin\\Desktop\\IR_filter\\RF_IR_filter\\hfss\\cliq10_baseline\\CliQ10_Baseline_Iter00.aedt",
+  "design": "Baseline",
+  "envelope_mm": [
+    65.3,
+    5.0,
+    4.6
+  ],
+  "wall_thickness_mm": 0.2,
+  "strip_width_mm": 1.2,
+  "feed_length_mm": 5.0,
+  "thin_thickness_mm": 0.12,
+  "thick_thickness_mm": 0.35,
+  "section_table": [
+    {
+      "section": 1,
+      "x_start_mm": 5.0,
+      "length_mm": 4.253846153846154,
+      "thickness_mm": 0.12
+    },
+    {
+      "section": 2,
+      "x_start_mm": 9.253846153846155,
+      "length_mm": 5.104615384615385,
+      "thickness_mm": 0.35
+    },
+    {
+      "section": 3,
+      "x_start_mm": 14.35846153846154,
+      "length_mm": 6.38076923076923,
+      "thickness_mm": 0.12
+    },
+    {
+      "section": 4,
+      "x_start_mm": 20.739230769230772,
+      "length_mm": 7.656923076923077,
+      "thickness_mm": 0.35
+    },
+    {
+      "section": 5,
+      "x_start_mm": 28.39615384615385,
+      "length_mm": 8.507692307692308,
+      "thickness_mm": 0.12
+    },
+    {
+      "section": 6,
+      "x_start_mm": 36.90384615384616,
+      "length_mm": 7.656923076923077,
+      "thickness_mm": 0.35
+    },
+    {
+      "section": 7,
+      "x_start_mm": 44.56076923076924,
+      "length_mm": 6.38076923076923,
+      "thickness_mm": 0.12
+    },
+    {
+      "section": 8,
+      "x_start_mm": 50.94153846153847,
+      "length_mm": 5.104615384615385,
+      "thickness_mm": 0.35
+    },
+    {
+      "section": 9,
+      "x_start_mm": 56.04615384615386,
+      "length_mm": 4.253846153846154,
+      "thickness_mm": 0.12
+    }
+  ],
+  "sweep_GHz": [
+    0.1,
+    40.0
+  ],
+  "sweep_points": 400,
+  "missing_features": [
+    "Hollow absorber channels and terminations",
+    "CliQ10 proprietary internal geometry",
+    "Optimization against measured S-parameters"
+  ]
+}

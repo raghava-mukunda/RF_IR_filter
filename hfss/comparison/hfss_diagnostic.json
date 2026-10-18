@@ -1,0 +1,18 @@
+{
+  "timestamp": "2026-10-18T14:56:07",
+  "project": "RF_Filter_Run013",
+  "design": "LPF_Run013",
+  "openems_reference": {
+    "S21_at_20GHz_dB": -60.088,
+    "worst_passband_S21_dB": -2.9851,
+    "passband_ripple_dB": 1.5541,
+    "worst_passband_S11_dB": -9.4777
+  },
+  "objects": [],
+  "boundaries": [],
+  "setups": [],
+  "warnings": [
+    "Expected objects missing: ['AirRegion', 'BottomWall', 'Port1Sheet', 'Port2Sheet', 'SideWallNegY', 'SideWallPosY', 'TopWall']",
+    "HFSS modal wave ports and openEMS lumped ports are not automatically equivalent. Confirm Run 013's actual openEMS excitation script before interpreting differences."
+  ]
+}

@@ -1,0 +1,29 @@
+Desktop messages:
+[error] While parsing expression: "0.235957631787pFF", an error was found near character 0. 'pFF' is not a valid unit. (09:56:35 PM  Oct 18, 2026)
+[error] While parsing expression: "0.235957631787pFF", an error was found near character 0. 'pFF' is not a valid unit. (09:56:36 PM  Oct 18, 2026)
+[error] While parsing expression: "0.265827375495pFF", an error was found near character 0. 'pFF' is not a valid unit. (09:56:36 PM  Oct 18, 2026)
+[error] While parsing expression: "0.265827375495pFF", an error was found near character 0. 'pFF' is not a valid unit. (09:56:37 PM  Oct 18, 2026)
+[error] While parsing expression: "0.27090393739pFF", an error was found near character 0. 'pFF' is not a valid unit. (09:56:37 PM  Oct 18, 2026)
+[error] While parsing expression: "0.27090393739pFF", an error was found near character 0. 'pFF' is not a valid unit. (09:56:37 PM  Oct 18, 2026)
+[error] While parsing expression: "0.271929813882pFF", an error was found near character 0. 'pFF' is not a valid unit. (09:56:38 PM  Oct 18, 2026)
+[error] While parsing expression: "0.271929813882pFF", an error was found near character 0. 'pFF' is not a valid unit. (09:56:38 PM  Oct 18, 2026)
+[error] While parsing expression: "0.27090393739pFF", an error was found near character 0. 'pFF' is not a valid unit. (09:56:39 PM  Oct 18, 2026)
+[error] While parsing expression: "0.27090393739pFF", an error was found near character 0. 'pFF' is not a valid unit. (09:56:39 PM  Oct 18, 2026)
+[error] While parsing expression: "0.265827375495pFF", an error was found near character 0. 'pFF' is not a valid unit. (09:56:40 PM  Oct 18, 2026)
+[error] While parsing expression: "0.265827375495pFF", an error was found near character 0. 'pFF' is not a valid unit. (09:56:40 PM  Oct 18, 2026)
+[error] While parsing expression: "0.235957631787pFF", an error was found near character 0. 'pFF' is not a valid unit. (09:56:41 PM  Oct 18, 2026)
+[error] While parsing expression: "0.235957631787pFF", an error was found near character 0. 'pFF' is not a valid unit. (09:56:41 PM  Oct 18, 2026)
+[warning] Renormalizing the port impedance will not impact the field results if the 'Include Port Post Processing Effects' is disabled in Edit Sources. (09:56:42 PM  Oct 18, 2026)
+[warning] Renormalizing the port impedance will not impact the field results if the 'Include Port Post Processing Effects' is disabled in Edit Sources. (09:56:42 PM  Oct 18, 2026)
+Design validation check PASSED.
+Design validation messages:
+** End of design validation messages. **
+Excitations check:
+Solution type: Modal
+Ports Requested: 2
+Defined excitations number: 2
+Defined excitations names: ['Port1:1', 'Port2:1']
+Analysis setup messages:
+Detected setup and sweep: 
+Setup1
+ |__ Sweep1

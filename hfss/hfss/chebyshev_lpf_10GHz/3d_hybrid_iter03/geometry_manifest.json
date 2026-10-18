@@ -1,0 +1,296 @@
+{
+  "status": "3D hybrid EM candidate; ideal RLC boundaries; not manufacturing-ready",
+  "source_electrical_reference": "15th-order, 0.1 dB Chebyshev LC prototype",
+  "target_cutoff_at_minus3dB_GHz": 10.0,
+  "calculated_passband_edge_GHz": 9.855591988671916,
+  "ideal_circuit_target_S21_at_12GHz_dB": -62.1,
+  "envelope_mm": [
+    65.3,
+    5.0,
+    4.6
+  ],
+  "assumed_wall_thickness_mm": 0.2,
+  "interior_cavity_mm": [
+    65.3,
+    4.6,
+    4.199999999999999
+  ],
+  "center_conductor_mm": [
+    65.3,
+    2.2,
+    0.5
+  ],
+  "port_modes": 1,
+  "reference_impedance_ohm": 50.0,
+  "node_lengths_mm": [
+    5.0,
+    7.785714285714286,
+    7.785714285714286,
+    7.785714285714286,
+    7.785714285714286,
+    7.785714285714286,
+    7.785714285714286,
+    7.785714285714286,
+    5.0
+  ],
+  "iteration_03_layout_change": {
+    "end_feed_mm_each": 5.0,
+    "internal_node_mm_each": 7.785714285714286,
+    "series_gap_mm_each": 0.1,
+    "reason": "Distribute the seven shunt capacitor nodes instead of clustering them between long end feeds; LC values unchanged for controlled comparison."
+  },
+  "series_inductors": [
+    {
+      "boundary": "SeriesL_01",
+      "element": 1,
+      "L_nH": 0.9770805330205106,
+      "gap_start_mm": 5.0,
+      "gap_end_mm": 5.1
+    },
+    {
+      "boundary": "SeriesL_03",
+      "element": 3,
+      "L_nH": 1.7488972427419973,
+      "gap_start_mm": 12.885714285714286,
+      "gap_end_mm": 12.985714285714286
+    },
+    {
+      "boundary": "SeriesL_05",
+      "element": 5,
+      "L_nH": 1.8246038166113063,
+      "gap_start_mm": 20.771428571428572,
+      "gap_end_mm": 20.871428571428574
+    },
+    {
+      "boundary": "SeriesL_07",
+      "element": 7,
+      "L_nH": 1.8412488080683314,
+      "gap_start_mm": 28.65714285714286,
+      "gap_end_mm": 28.75714285714286
+    },
+    {
+      "boundary": "SeriesL_09",
+      "element": 9,
+      "L_nH": 1.841248808068331,
+      "gap_start_mm": 36.542857142857144,
+      "gap_end_mm": 36.642857142857146
+    },
+    {
+      "boundary": "SeriesL_11",
+      "element": 11,
+      "L_nH": 1.8246038166113054,
+      "gap_start_mm": 44.42857142857143,
+      "gap_end_mm": 44.52857142857143
+    },
+    {
+      "boundary": "SeriesL_13",
+      "element": 13,
+      "L_nH": 1.7488972427419973,
+      "gap_start_mm": 52.31428571428572,
+      "gap_end_mm": 52.41428571428572
+    },
+    {
+      "boundary": "SeriesL_15",
+      "element": 15,
+      "L_nH": 0.9770805330205086,
+      "gap_start_mm": 60.2,
+      "gap_end_mm": 60.300000000000004
+    }
+  ],
+  "shunt_capacitors": [
+    {
+      "boundary": "ShuntC_02",
+      "element": 2,
+      "C_pF_total": 0.4719152635745622,
+      "C_pF_each_wall": 0.2359576317872811,
+      "x_mm": 8.992857142857144
+    },
+    {
+      "boundary": "ShuntC_04",
+      "element": 4,
+      "C_pF_total": 0.5316547509899094,
+      "C_pF_each_wall": 0.2658273754949547,
+      "x_mm": 16.87857142857143
+    },
+    {
+      "boundary": "ShuntC_06",
+      "element": 6,
+      "C_pF_total": 0.5418078747794217,
+      "C_pF_each_wall": 0.27090393738971086,
+      "x_mm": 24.764285714285716
+    },
+    {
+      "boundary": "ShuntC_08",
+      "element": 8,
+      "C_pF_total": 0.5438596277631387,
+      "C_pF_each_wall": 0.27192981388156934,
+      "x_mm": 32.650000000000006
+    },
+    {
+      "boundary": "ShuntC_10",
+      "element": 10,
+      "C_pF_total": 0.5418078747794218,
+      "C_pF_each_wall": 0.2709039373897109,
+      "x_mm": 40.53571428571429
+    },
+    {
+      "boundary": "ShuntC_12",
+      "element": 12,
+      "C_pF_total": 0.5316547509899092,
+      "C_pF_each_wall": 0.2658273754949546,
+      "x_mm": 48.42142857142858
+    },
+    {
+      "boundary": "ShuntC_14",
+      "element": 14,
+      "C_pF_total": 0.4719152635745626,
+      "C_pF_each_wall": 0.2359576317872813,
+      "x_mm": 56.307142857142864
+    }
+  ],
+  "known_limitations": [
+    "R, L, C are ideal boundary values; no discrete component package parasitics are modeled.",
+    "The outer enclosure is represented by ideal PEC boundaries on the cavity surfaces, not finite-thickness copper solids.",
+    "The coax-like center conductor cross-section is a first approximation; confirm the extracted modal impedance.",
+    "Full-wave fringing/coupling around component gaps can create deviations from the ideal LC S2P target.",
+    "The model is not a faithful CAD reproduction of the paper's stepped-impedance line and hollow-waveguide absorbers.",
+    "The requested <= -60 dB stopband must be checked in the 3D solution, not inferred from the ideal circuit."
+  ],
+  "element_values": [
+    {
+      "index": 1,
+      "type": "L",
+      "g": 1.2101046799362156,
+      "value_si": 9.770805330205106e-10,
+      "value_display": 0.9770805330205106,
+      "unit": "nH",
+      "boundary_name": "SeriesL_01"
+    },
+    {
+      "index": 2,
+      "type": "C",
+      "g": 1.4611560912475032,
+      "value_si": 4.719152635745622e-13,
+      "value_display": 0.4719152635745622,
+      "unit": "pF",
+      "boundary_name": "ShuntC_02"
+    },
+    {
+      "index": 3,
+      "type": "L",
+      "g": 2.1659921231131607,
+      "value_si": 1.7488972427419974e-09,
+      "value_display": 1.7488972427419973,
+      "unit": "nH",
+      "boundary_name": "SeriesL_03"
+    },
+    {
+      "index": 4,
+      "type": "C",
+      "g": 1.6461230178600528,
+      "value_si": 5.316547509899094e-13,
+      "value_display": 0.5316547509899094,
+      "unit": "pF",
+      "boundary_name": "ShuntC_04"
+    },
+    {
+      "index": 5,
+      "type": "L",
+      "g": 2.2597539741020234,
+      "value_si": 1.8246038166113063e-09,
+      "value_display": 1.8246038166113063,
+      "unit": "nH",
+      "boundary_name": "SeriesL_05"
+    },
+    {
+      "index": 6,
+      "type": "C",
+      "g": 1.677559379036135,
+      "value_si": 5.418078747794217e-13,
+      "value_display": 0.5418078747794217,
+      "unit": "pF",
+      "boundary_name": "ShuntC_06"
+    },
+    {
+      "index": 7,
+      "type": "L",
+      "g": 2.2803686331592226,
+      "value_si": 1.8412488080683313e-09,
+      "value_display": 1.8412488080683314,
+      "unit": "nH",
+      "boundary_name": "SeriesL_07"
+    },
+    {
+      "index": 8,
+      "type": "C",
+      "g": 1.6839120690237084,
+      "value_si": 5.438596277631386e-13,
+      "value_display": 0.5438596277631387,
+      "unit": "pF",
+      "boundary_name": "ShuntC_08"
+    },
+    {
+      "index": 9,
+      "type": "L",
+      "g": 2.280368633159222,
+      "value_si": 1.841248808068331e-09,
+      "value_display": 1.841248808068331,
+      "unit": "nH",
+      "boundary_name": "SeriesL_09"
+    },
+    {
+      "index": 10,
+      "type": "C",
+      "g": 1.6775593790361352,
+      "value_si": 5.418078747794218e-13,
+      "value_display": 0.5418078747794218,
+      "unit": "pF",
+      "boundary_name": "ShuntC_10"
+    },
+    {
+      "index": 11,
+      "type": "L",
+      "g": 2.2597539741020225,
+      "value_si": 1.8246038166113055e-09,
+      "value_display": 1.8246038166113054,
+      "unit": "nH",
+      "boundary_name": "SeriesL_11"
+    },
+    {
+      "index": 12,
+      "type": "C",
+      "g": 1.646123017860052,
+      "value_si": 5.316547509899092e-13,
+      "value_display": 0.5316547509899092,
+      "unit": "pF",
+      "boundary_name": "ShuntC_12"
+    },
+    {
+      "index": 13,
+      "type": "L",
+      "g": 2.1659921231131607,
+      "value_si": 1.7488972427419974e-09,
+      "value_display": 1.7488972427419973,
+      "unit": "nH",
+      "boundary_name": "SeriesL_13"
+    },
+    {
+      "index": 14,
+      "type": "C",
+      "g": 1.4611560912475043,
+      "value_si": 4.719152635745626e-13,
+      "value_display": 0.4719152635745626,
+      "unit": "pF",
+      "boundary_name": "ShuntC_14"
+    },
+    {
+      "index": 15,
+      "type": "L",
+      "g": 1.210104679936213,
+      "value_si": 9.770805330205085e-10,
+      "value_display": 0.9770805330205086,
+      "unit": "nH",
+      "boundary_name": "SeriesL_15"
+    }
+  ]
+}

@@ -1,0 +1,247 @@
+{
+  "status": "paper-derived initial CAD candidate; not validated",
+  "source": "Andersson et al., arXiv:2508.02475v1, Table I/II",
+  "paper_measured_cutoff_GHz": 13.5,
+  "target_cutoff_GHz": 10.0,
+  "length_scale_factor": 1.35,
+  "half_lengths_scaled_mm": [
+    1.4310000000000003,
+    3.105,
+    2.7675,
+    3.4290000000000003,
+    2.5785,
+    4.266000000000001,
+    2.5785,
+    5.7780000000000005,
+    2.3895000000000004,
+    6.250500000000001,
+    1.08
+  ],
+  "full_section_lengths_mm": [
+    1.4310000000000003,
+    3.105,
+    2.7675,
+    3.4290000000000003,
+    2.5785,
+    4.266000000000001,
+    2.5785,
+    5.7780000000000005,
+    2.3895000000000004,
+    6.250500000000001,
+    2.16,
+    6.250500000000001,
+    2.3895000000000004,
+    5.7780000000000005,
+    2.5785,
+    4.266000000000001,
+    2.5785,
+    3.4290000000000003,
+    2.7675,
+    3.105,
+    1.4310000000000003
+  ],
+  "total_active_length_mm": 71.307,
+  "section_records": [
+    {
+      "section": 1,
+      "length_mm": 1.4310000000000003,
+      "nominal_type": "high_Z_inductive",
+      "outer_width_reference_mm": 3.0,
+      "inner_conductor_height_mm": 0.3,
+      "note": "Approximate cross-section; verify modal impedance in AEDT"
+    },
+    {
+      "section": 2,
+      "length_mm": 3.105,
+      "nominal_type": "low_Z_capacitive",
+      "outer_width_reference_mm": 1.5,
+      "inner_conductor_height_mm": 0.8,
+      "note": "Approximate cross-section; verify modal impedance in AEDT"
+    },
+    {
+      "section": 3,
+      "length_mm": 2.7675,
+      "nominal_type": "high_Z_inductive",
+      "outer_width_reference_mm": 3.0,
+      "inner_conductor_height_mm": 0.3,
+      "note": "Approximate cross-section; verify modal impedance in AEDT"
+    },
+    {
+      "section": 4,
+      "length_mm": 3.4290000000000003,
+      "nominal_type": "low_Z_capacitive",
+      "outer_width_reference_mm": 1.5,
+      "inner_conductor_height_mm": 0.8,
+      "note": "Approximate cross-section; verify modal impedance in AEDT"
+    },
+    {
+      "section": 5,
+      "length_mm": 2.5785,
+      "nominal_type": "high_Z_inductive",
+      "outer_width_reference_mm": 3.0,
+      "inner_conductor_height_mm": 0.3,
+      "note": "Approximate cross-section; verify modal impedance in AEDT"
+    },
+    {
+      "section": 6,
+      "length_mm": 4.266000000000001,
+      "nominal_type": "low_Z_capacitive",
+      "outer_width_reference_mm": 1.5,
+      "inner_conductor_height_mm": 0.8,
+      "note": "Approximate cross-section; verify modal impedance in AEDT"
+    },
+    {
+      "section": 7,
+      "length_mm": 2.5785,
+      "nominal_type": "high_Z_inductive",
+      "outer_width_reference_mm": 3.0,
+      "inner_conductor_height_mm": 0.3,
+      "note": "Approximate cross-section; verify modal impedance in AEDT"
+    },
+    {
+      "section": 8,
+      "length_mm": 5.7780000000000005,
+      "nominal_type": "low_Z_capacitive",
+      "outer_width_reference_mm": 1.5,
+      "inner_conductor_height_mm": 0.8,
+      "note": "Approximate cross-section; verify modal impedance in AEDT"
+    },
+    {
+      "section": 9,
+      "length_mm": 2.3895000000000004,
+      "nominal_type": "high_Z_inductive",
+      "outer_width_reference_mm": 3.0,
+      "inner_conductor_height_mm": 0.3,
+      "note": "Approximate cross-section; verify modal impedance in AEDT"
+    },
+    {
+      "section": 10,
+      "length_mm": 6.250500000000001,
+      "nominal_type": "low_Z_capacitive",
+      "outer_width_reference_mm": 1.5,
+      "inner_conductor_height_mm": 0.8,
+      "note": "Approximate cross-section; verify modal impedance in AEDT"
+    },
+    {
+      "section": 11,
+      "length_mm": 2.16,
+      "nominal_type": "high_Z_inductive",
+      "outer_width_reference_mm": 3.0,
+      "inner_conductor_height_mm": 0.3,
+      "note": "Approximate cross-section; verify modal impedance in AEDT"
+    },
+    {
+      "section": 12,
+      "length_mm": 6.250500000000001,
+      "nominal_type": "low_Z_capacitive",
+      "outer_width_reference_mm": 1.5,
+      "inner_conductor_height_mm": 0.8,
+      "note": "Approximate cross-section; verify modal impedance in AEDT"
+    },
+    {
+      "section": 13,
+      "length_mm": 2.3895000000000004,
+      "nominal_type": "high_Z_inductive",
+      "outer_width_reference_mm": 3.0,
+      "inner_conductor_height_mm": 0.3,
+      "note": "Approximate cross-section; verify modal impedance in AEDT"
+    },
+    {
+      "section": 14,
+      "length_mm": 5.7780000000000005,
+      "nominal_type": "low_Z_capacitive",
+      "outer_width_reference_mm": 1.5,
+      "inner_conductor_height_mm": 0.8,
+      "note": "Approximate cross-section; verify modal impedance in AEDT"
+    },
+    {
+      "section": 15,
+      "length_mm": 2.5785,
+      "nominal_type": "high_Z_inductive",
+      "outer_width_reference_mm": 3.0,
+      "inner_conductor_height_mm": 0.3,
+      "note": "Approximate cross-section; verify modal impedance in AEDT"
+    },
+    {
+      "section": 16,
+      "length_mm": 4.266000000000001,
+      "nominal_type": "low_Z_capacitive",
+      "outer_width_reference_mm": 1.5,
+      "inner_conductor_height_mm": 0.8,
+      "note": "Approximate cross-section; verify modal impedance in AEDT"
+    },
+    {
+      "section": 17,
+      "length_mm": 2.5785,
+      "nominal_type": "high_Z_inductive",
+      "outer_width_reference_mm": 3.0,
+      "inner_conductor_height_mm": 0.3,
+      "note": "Approximate cross-section; verify modal impedance in AEDT"
+    },
+    {
+      "section": 18,
+      "length_mm": 3.4290000000000003,
+      "nominal_type": "low_Z_capacitive",
+      "outer_width_reference_mm": 1.5,
+      "inner_conductor_height_mm": 0.8,
+      "note": "Approximate cross-section; verify modal impedance in AEDT"
+    },
+    {
+      "section": 19,
+      "length_mm": 2.7675,
+      "nominal_type": "high_Z_inductive",
+      "outer_width_reference_mm": 3.0,
+      "inner_conductor_height_mm": 0.3,
+      "note": "Approximate cross-section; verify modal impedance in AEDT"
+    },
+    {
+      "section": 20,
+      "length_mm": 3.105,
+      "nominal_type": "low_Z_capacitive",
+      "outer_width_reference_mm": 1.5,
+      "inner_conductor_height_mm": 0.8,
+      "note": "Approximate cross-section; verify modal impedance in AEDT"
+    },
+    {
+      "section": 21,
+      "length_mm": 1.4310000000000003,
+      "nominal_type": "high_Z_inductive",
+      "outer_width_reference_mm": 3.0,
+      "inner_conductor_height_mm": 0.3,
+      "note": "Approximate cross-section; verify modal impedance in AEDT"
+    }
+  ],
+  "cross_section_mm": {
+    "outer_width_provisional": 5.0,
+    "outer_height_provisional": 3.45,
+    "wall": 0.5,
+    "outer_width_low_high": [
+      1.5,
+      3.0
+    ],
+    "outer_height_low_high": [
+      0.5,
+      1.45
+    ],
+    "inner_conductor_height_low_high": [
+      0.8,
+      0.3
+    ],
+    "bore_radii": [
+      1.15,
+      1.5
+    ],
+    "bore_depth": 2.5
+  },
+  "limitations": [
+    "The article's geometry is a two-block rectangular coax, not this exact simplified enclosure.",
+    "The article optimizes loaded inductive-section S-parameters using COMSOL and then validates a full 3D model.",
+    "This script does not model MACOR and absorbing foam as validated lossy termination.",
+    "The section cross-section assignment and modal impedance must be checked against Fig. 2.",
+    "Length scaling from 13.5 to 10 GHz is only an initial estimate; no cutoff/rejection guarantee."
+  ],
+  "targets": {
+    "S21_at_10GHz_dB": -3,
+    "S21_12_to_30GHz_dB": -60
+  }
+}

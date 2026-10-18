@@ -1,0 +1,9 @@
+ITERATION 05 POST-SOLVE DIAGNOSTICS
+Touchstone: C:\Users\Admin\Desktop\IR_filter\RF_IR_filter\hfss\hfss\chebyshev_lpf_10GHz\3d_hybrid_iter05\Chebyshev15_10GHz_3D_Hybrid.s2p
+Samples: 600; frequency range: 0.1 to 30 GHz
+Passband S21 range, 0.1–9 GHz: -147.831 to -0.011 dB
+Worst stopband S21, 12–30 GHz: -0.064 dB at 29.5008 GHz
+Best stopband S21, 12–30 GHz: -80.674 dB at 13.1781 GHz
+First sampled point at/below -3 dB: -3.955 dB at 6.3396 GHz
+Targets: approximately -3 dB at 10 GHz and S21 <= -60 dB throughout 12–30 GHz.
+This diagnostic evaluates the simulated 3D data; it does not assume the ideal circuit response.

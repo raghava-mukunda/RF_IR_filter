@@ -1,0 +1,97 @@
+{
+  "status": "diagnostic baseline candidate; not validated",
+  "envelope_mm": [
+    65.3,
+    5.0,
+    4.6
+  ],
+  "wall_mm": 0.2,
+  "feed_mm": 5.0,
+  "sections": [
+    {
+      "section": 1,
+      "x_start_mm": 5.0,
+      "length_mm": 3.967001434720229,
+      "width_mm": 0.55,
+      "thickness_mm": 0.2
+    },
+    {
+      "section": 2,
+      "x_start_mm": 8.96700143472023,
+      "length_mm": 4.363701578192252,
+      "width_mm": 2.2,
+      "thickness_mm": 0.2
+    },
+    {
+      "section": 3,
+      "x_start_mm": 13.330703012912481,
+      "length_mm": 4.839741750358679,
+      "width_mm": 0.55,
+      "thickness_mm": 0.2
+    },
+    {
+      "section": 4,
+      "x_start_mm": 18.17044476327116,
+      "length_mm": 5.35545193687231,
+      "width_mm": 2.2,
+      "thickness_mm": 0.2
+    },
+    {
+      "section": 5,
+      "x_start_mm": 23.52589670014347,
+      "length_mm": 5.950502152080343,
+      "width_mm": 0.55,
+      "thickness_mm": 0.2
+    },
+    {
+      "section": 6,
+      "x_start_mm": 29.476398852223813,
+      "length_mm": 6.347202295552367,
+      "width_mm": 2.2,
+      "thickness_mm": 0.2
+    },
+    {
+      "section": 7,
+      "x_start_mm": 35.82360114777618,
+      "length_mm": 5.950502152080343,
+      "width_mm": 0.55,
+      "thickness_mm": 0.2
+    },
+    {
+      "section": 8,
+      "x_start_mm": 41.77410329985652,
+      "length_mm": 5.35545193687231,
+      "width_mm": 2.2,
+      "thickness_mm": 0.2
+    },
+    {
+      "section": 9,
+      "x_start_mm": 47.129555236728834,
+      "length_mm": 4.839741750358679,
+      "width_mm": 0.55,
+      "thickness_mm": 0.2
+    },
+    {
+      "section": 10,
+      "x_start_mm": 51.96929698708751,
+      "length_mm": 4.363701578192252,
+      "width_mm": 2.2,
+      "thickness_mm": 0.2
+    },
+    {
+      "section": 11,
+      "x_start_mm": 56.332998565279766,
+      "length_mm": 3.967001434720229,
+      "width_mm": 0.55,
+      "thickness_mm": 0.2
+    }
+  ],
+  "sweep_GHz": [
+    0.1,
+    30.0
+  ],
+  "sweep_points": 240,
+  "target_cutoff_GHz": 10,
+  "target_stopband_dB": -60,
+  "caveat": "This run isolates the port-mode ambiguity by using one mode per wave port. It is not a synthesized elliptic response and does not guarantee -60 dB. Inspect S-parameters and modal cutoff before optimization."
+}

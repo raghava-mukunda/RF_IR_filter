@@ -33,7 +33,14 @@ results/em/*
 *.h5
 *.vtk
 *.vtr
+*.s2p
+*.csv
+# Generated Ansys Electronics Desktop simulation results
+*.aedtresults/
 
+# Temporary and lock files
+*.lock
+*.tmp
 # MATLAB
 *.asv
 

@@ -1,0 +1,88 @@
+{
+  "status": "RUN13 GEOMETRY RECONSTRUCTION - VALIDATION REQUIRED",
+  "project": "C:\\Users\\Admin\\Desktop\\IR_filter\\RF_IR_filter\\hfss\\run13_hfss_reference\\Run13_HFSS_Reference.aedt",
+  "units": "mm",
+  "enclosure_mm": [
+    65.3,
+    5.0,
+    4.6
+  ],
+  "wall_mm": 0.2,
+  "centre_strip_width_mm": 1.2,
+  "launch_lengths_mm": [
+    8.0,
+    8.0
+  ],
+  "thin_height_mm": 0.28671928,
+  "thick_height_mm": 0.76349166,
+  "section_lengths_mm": [
+    4.07365691,
+    7.53238661,
+    8.07101208,
+    9.9458888,
+    8.07101208,
+    7.53238661,
+    4.07365691
+  ],
+  "port_planes_x_mm": [
+    7.0,
+    58.3
+  ],
+  "port_impedance_ohm": 50.0,
+  "frequency_sweep_GHz": [
+    0.5,
+    28.0
+  ],
+  "caveat": "HFSS lumped ports are not numerically identical to openEMS AddLumpedPort. Verify port integration, S-parameter reference impedance, mesh convergence, and compare curves before use.",
+  "sections": [
+    {
+      "section": 1,
+      "x_start_mm": 8.0,
+      "x_end_mm": 12.07365691,
+      "length_mm": 4.07365691,
+      "height_mm": 0.28671928
+    },
+    {
+      "section": 2,
+      "x_start_mm": 12.07365691,
+      "x_end_mm": 19.60604352,
+      "length_mm": 7.53238661,
+      "height_mm": 0.76349166
+    },
+    {
+      "section": 3,
+      "x_start_mm": 19.60604352,
+      "x_end_mm": 27.6770556,
+      "length_mm": 8.07101208,
+      "height_mm": 0.28671928
+    },
+    {
+      "section": 4,
+      "x_start_mm": 27.6770556,
+      "x_end_mm": 37.6229444,
+      "length_mm": 9.9458888,
+      "height_mm": 0.76349166
+    },
+    {
+      "section": 5,
+      "x_start_mm": 37.6229444,
+      "x_end_mm": 45.69395648,
+      "length_mm": 8.07101208,
+      "height_mm": 0.28671928
+    },
+    {
+      "section": 6,
+      "x_start_mm": 45.69395648,
+      "x_end_mm": 53.22634309,
+      "length_mm": 7.53238661,
+      "height_mm": 0.76349166
+    },
+    {
+      "section": 7,
+      "x_start_mm": 53.22634309,
+      "x_end_mm": 57.3,
+      "length_mm": 4.07365691,
+      "height_mm": 0.28671928
+    }
+  ]
+}

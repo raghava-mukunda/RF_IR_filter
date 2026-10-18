@@ -1,0 +1,30 @@
+{
+  "status": "BEST FOUND BY SEARCH; NOT YET VALIDATED AT 55 GHz",
+  "score": 114.59776675439582,
+  "params": {
+    "center_bias": 0.0,
+    "alternation": 0.5,
+    "strip_width_mm": 1.2,
+    "thickness_scale": 1.3
+  },
+  "metrics": {
+    "score": 114.59776675439582,
+    "penalty_passband_0_7p5": 4.4759480519705015,
+    "penalty_passband_7p5_9p3": 0.04451510061873756,
+    "penalty_return_loss_0_9p3": 2.6497040935562253,
+    "penalty_stopband_11_40": 8.053301840415791,
+    "penalty_cutoff_10GHz": 0.44633582221533363,
+    "s21_at_10GHz_dB": -5.004251082059831,
+    "worst_s21_0_7p5_dB": -2.6115076547047944,
+    "worst_s21_7p5_9p3_dB": -1.9592283247370166,
+    "worst_s11_0_9p3_dB": -3.4975333678243388,
+    "worst_s21_11_40_dB": -0.06292499016038694,
+    "frequency_min_GHz": 0.01,
+    "frequency_max_GHz": 40.0,
+    "frequency_points": 401,
+    "reference_impedance_ohm": 50.0,
+    "touchstone_format": "ma",
+    "curve_csv": "C:\\Users\\Admin\\Desktop\\IR_filter\\RF_IR_filter\\hfss\\cliq10_optimizer\\eval_017\\CliQ10_Opt_017.csv"
+  },
+  "project_or_s2p": "C:\\Users\\Admin\\Desktop\\IR_filter\\RF_IR_filter\\hfss\\cliq10_optimizer\\eval_017\\CliQ10_Opt_017.s2p"
+}

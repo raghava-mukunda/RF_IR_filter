@@ -1,0 +1,36 @@
+{
+  "project": "HERD_Enclosed_65mm",
+  "design": "HERD_Candidate",
+  "outer_envelope_mm": [
+    65.0,
+    5.0,
+    5.0
+  ],
+  "wall_thickness_mm": 0.2,
+  "core_section_lengths_mm": [
+    1.0,
+    0.75,
+    1.25,
+    1.0,
+    1.25,
+    0.75,
+    1.0
+  ],
+  "core_section_widths_mm": [
+    0.5,
+    4.0,
+    0.5,
+    4.0,
+    0.5,
+    4.0,
+    0.5
+  ],
+  "stub_width_mm": 0.5,
+  "stub_length_mm": 2.0,
+  "adaptive_frequency": "40GHz",
+  "sweep_GHz": [
+    0.01,
+    40.0
+  ],
+  "status": "Candidate geometry only. Widths and stub dimensions are not resynthesized or manufacturing validated."
+}

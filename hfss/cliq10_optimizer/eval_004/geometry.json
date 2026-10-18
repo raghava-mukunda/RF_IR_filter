@@ -1,0 +1,80 @@
+{
+  "eval_id": 4,
+  "project": "C:\\Users\\Admin\\Desktop\\IR_filter\\RF_IR_filter\\hfss\\cliq10_optimizer\\eval_004\\CliQ10_Opt_004.aedt",
+  "params": {
+    "center_bias": -0.7,
+    "alternation": 0.0,
+    "strip_width_mm": 1.2,
+    "thickness_scale": 0.7
+  },
+  "section_lengths_mm": [
+    6.193569449505348,
+    6.239082429610726,
+    6.546801935868161,
+    6.594910618379959,
+    6.151271133271612,
+    6.594910618379959,
+    6.546801935868161,
+    6.239082429610726,
+    6.193569449505348
+  ],
+  "section_table": [
+    {
+      "name": "CoreSection01",
+      "x_start_mm": 4.0,
+      "length_mm": 6.193569449505348,
+      "thickness_mm": 0.08399999999999999
+    },
+    {
+      "name": "CoreSection02",
+      "x_start_mm": 10.193569449505347,
+      "length_mm": 6.239082429610726,
+      "thickness_mm": 0.24499999999999997
+    },
+    {
+      "name": "CoreSection03",
+      "x_start_mm": 16.432651879116072,
+      "length_mm": 6.546801935868161,
+      "thickness_mm": 0.08399999999999999
+    },
+    {
+      "name": "CoreSection04",
+      "x_start_mm": 22.979453814984232,
+      "length_mm": 6.594910618379959,
+      "thickness_mm": 0.24499999999999997
+    },
+    {
+      "name": "CoreSection05",
+      "x_start_mm": 29.57436443336419,
+      "length_mm": 6.151271133271612,
+      "thickness_mm": 0.08399999999999999
+    },
+    {
+      "name": "CoreSection06",
+      "x_start_mm": 35.7256355666358,
+      "length_mm": 6.594910618379959,
+      "thickness_mm": 0.24499999999999997
+    },
+    {
+      "name": "CoreSection07",
+      "x_start_mm": 42.32054618501576,
+      "length_mm": 6.546801935868161,
+      "thickness_mm": 0.08399999999999999
+    },
+    {
+      "name": "CoreSection08",
+      "x_start_mm": 48.86734812088392,
+      "length_mm": 6.239082429610726,
+      "thickness_mm": 0.24499999999999997
+    },
+    {
+      "name": "CoreSection09",
+      "x_start_mm": 55.10643055049464,
+      "length_mm": 6.193569449505348,
+      "thickness_mm": 0.08399999999999999
+    }
+  ],
+  "section_thin_mm": 0.08399999999999999,
+  "section_thick_mm": 0.24499999999999997,
+  "strip_width_mm": 1.2
+}

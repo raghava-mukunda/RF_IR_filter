@@ -1,0 +1,83 @@
+{
+  "status": "baseline candidate; not validated",
+  "envelope_mm": [
+    65.3,
+    5.0,
+    4.6
+  ],
+  "wall_mm": 0.2,
+  "feed_mm": 5.0,
+  "sections": [
+    {
+      "section": 1,
+      "x_start_mm": 5.0,
+      "length_mm": 4.686440677966101,
+      "width_mm": 0.55,
+      "thickness_mm": 0.2
+    },
+    {
+      "section": 2,
+      "x_start_mm": 9.6864406779661,
+      "length_mm": 5.389406779661016,
+      "width_mm": 2.2,
+      "thickness_mm": 0.2
+    },
+    {
+      "section": 3,
+      "x_start_mm": 15.075847457627116,
+      "length_mm": 6.326694915254237,
+      "width_mm": 0.55,
+      "thickness_mm": 0.2
+    },
+    {
+      "section": 4,
+      "x_start_mm": 21.402542372881353,
+      "length_mm": 7.263983050847457,
+      "width_mm": 2.2,
+      "thickness_mm": 0.2
+    },
+    {
+      "section": 5,
+      "x_start_mm": 28.66652542372881,
+      "length_mm": 7.966949152542371,
+      "width_mm": 0.55,
+      "thickness_mm": 0.2
+    },
+    {
+      "section": 6,
+      "x_start_mm": 36.63347457627118,
+      "length_mm": 7.263983050847457,
+      "width_mm": 2.2,
+      "thickness_mm": 0.2
+    },
+    {
+      "section": 7,
+      "x_start_mm": 43.89745762711864,
+      "length_mm": 6.326694915254237,
+      "width_mm": 0.55,
+      "thickness_mm": 0.2
+    },
+    {
+      "section": 8,
+      "x_start_mm": 50.22415254237288,
+      "length_mm": 5.389406779661016,
+      "width_mm": 2.2,
+      "thickness_mm": 0.2
+    },
+    {
+      "section": 9,
+      "x_start_mm": 55.61355932203389,
+      "length_mm": 4.686440677966101,
+      "width_mm": 0.55,
+      "thickness_mm": 0.2
+    }
+  ],
+  "sweep_GHz": [
+    0.1,
+    30.0
+  ],
+  "sweep_points": 240,
+  "target_cutoff_GHz": 10,
+  "target_stopband_dB": -60,
+  "caveat": "The requested response is not guaranteed; optimization must use measured HFSS S-parameters. This topology is a starting candidate."
+}

@@ -1,0 +1,43 @@
+Desktop messages:
+[warning] Boundary 'Boundary': Warning - unexpected or missing unit type on Capacitance. (10:01:29 PM  Oct 18, 2026)
+[warning] Boundary 'Boundary': Warning - unexpected or missing unit type on Capacitance. (10:01:29 PM  Oct 18, 2026)
+[warning] Boundary 'Boundary': Warning - unexpected or missing unit type on Capacitance. (10:01:30 PM  Oct 18, 2026)
+[warning] Boundary 'Boundary': Warning - unexpected or missing unit type on Capacitance. (10:01:30 PM  Oct 18, 2026)
+[warning] Boundary 'Boundary': Warning - unexpected or missing unit type on Capacitance. (10:01:31 PM  Oct 18, 2026)
+[warning] Boundary 'Boundary': Warning - unexpected or missing unit type on Capacitance. (10:01:31 PM  Oct 18, 2026)
+[warning] Boundary 'Boundary': Warning - unexpected or missing unit type on Capacitance. (10:01:31 PM  Oct 18, 2026)
+[warning] Boundary 'Boundary': Warning - unexpected or missing unit type on Capacitance. (10:01:32 PM  Oct 18, 2026)
+[warning] Boundary 'Boundary': Warning - unexpected or missing unit type on Capacitance. (10:01:33 PM  Oct 18, 2026)
+[warning] Boundary 'Boundary': Warning - unexpected or missing unit type on Capacitance. (10:01:33 PM  Oct 18, 2026)
+[warning] Boundary 'Boundary': Warning - unexpected or missing unit type on Capacitance. (10:01:33 PM  Oct 18, 2026)
+[warning] Boundary 'Boundary': Warning - unexpected or missing unit type on Capacitance. (10:01:34 PM  Oct 18, 2026)
+[warning] Boundary 'Boundary': Warning - unexpected or missing unit type on Capacitance. (10:01:34 PM  Oct 18, 2026)
+[warning] Boundary 'Boundary': Warning - unexpected or missing unit type on Capacitance. (10:01:35 PM  Oct 18, 2026)
+[warning] Renormalizing the port impedance will not impact the field results if the 'Include Port Post Processing Effects' is disabled in Edit Sources. (10:01:36 PM  Oct 18, 2026)
+[warning] Renormalizing the port impedance will not impact the field results if the 'Include Port Post Processing Effects' is disabled in Edit Sources. (10:01:36 PM  Oct 18, 2026)
+Design validation check PASSED.
+Design validation messages:
+[warning] Boundary 'Boundary': Warning - unexpected or missing unit type on Capacitance.
+[warning] Boundary 'Boundary': Warning - unexpected or missing unit type on Capacitance.
+[warning] Boundary 'Boundary': Warning - unexpected or missing unit type on Capacitance.
+[warning] Boundary 'Boundary': Warning - unexpected or missing unit type on Capacitance.
+[warning] Boundary 'Boundary': Warning - unexpected or missing unit type on Capacitance.
+[warning] Boundary 'Boundary': Warning - unexpected or missing unit type on Capacitance.
+[warning] Boundary 'Boundary': Warning - unexpected or missing unit type on Capacitance.
+[warning] Boundary 'Boundary': Warning - unexpected or missing unit type on Capacitance.
+[warning] Boundary 'Boundary': Warning - unexpected or missing unit type on Capacitance.
+[warning] Boundary 'Boundary': Warning - unexpected or missing unit type on Capacitance.
+[warning] Boundary 'Boundary': Warning - unexpected or missing unit type on Capacitance.
+[warning] Boundary 'Boundary': Warning - unexpected or missing unit type on Capacitance.
+[warning] Boundary 'Boundary': Warning - unexpected or missing unit type on Capacitance.
+[warning] Boundary 'Boundary': Warning - unexpected or missing unit type on Capacitance.
+** End of design validation messages. **
+Excitations check:
+Solution type: Modal
+Ports Requested: 2
+Defined excitations number: 2
+Defined excitations names: ['Port2:1', 'Port1:1']
+Analysis setup messages:
+Detected setup and sweep: 
+Setup1
+ |__ Sweep1

@@ -1,0 +1,79 @@
+Desktop messages:
+[warning] Boundary 'Boundary': Warning - unexpected or missing unit type on Capacitance. (09:27:44 PM  Oct 18, 2026)
+[warning] Boundary 'Boundary': Warning - unexpected or missing unit type on Capacitance. (09:27:44 PM  Oct 18, 2026)
+[warning] Boundary 'Boundary': Warning - unexpected or missing unit type on Capacitance. (09:27:45 PM  Oct 18, 2026)
+[warning] Boundary 'Boundary': Warning - unexpected or missing unit type on Capacitance. (09:27:45 PM  Oct 18, 2026)
+[warning] Boundary 'Boundary': Warning - unexpected or missing unit type on Capacitance. (09:27:46 PM  Oct 18, 2026)
+[warning] Boundary 'Boundary': Warning - unexpected or missing unit type on Capacitance. (09:27:46 PM  Oct 18, 2026)
+[warning] Boundary 'Boundary': Warning - unexpected or missing unit type on Capacitance. (09:27:47 PM  Oct 18, 2026)
+[warning] Boundary 'Boundary': Warning - unexpected or missing unit type on Capacitance. (09:27:47 PM  Oct 18, 2026)
+[warning] Boundary 'Boundary': Warning - unexpected or missing unit type on Capacitance. (09:27:48 PM  Oct 18, 2026)
+[warning] Boundary 'Boundary': Warning - unexpected or missing unit type on Capacitance. (09:27:48 PM  Oct 18, 2026)
+[warning] Boundary 'Boundary': Warning - unexpected or missing unit type on Capacitance. (09:27:49 PM  Oct 18, 2026)
+[warning] Boundary 'Boundary': Warning - unexpected or missing unit type on Capacitance. (09:27:49 PM  Oct 18, 2026)
+[warning] Boundary 'Boundary': Warning - unexpected or missing unit type on Capacitance. (09:27:50 PM  Oct 18, 2026)
+[warning] Boundary 'Boundary': Warning - unexpected or missing unit type on Capacitance. (09:27:50 PM  Oct 18, 2026)
+[warning] Renormalizing the port impedance will not impact the field results if the 'Include Port Post Processing Effects' is disabled in Edit Sources. (09:27:51 PM  Oct 18, 2026)
+[warning] Renormalizing the port impedance will not impact the field results if the 'Include Port Post Processing Effects' is disabled in Edit Sources. (09:27:51 PM  Oct 18, 2026)
+Design validation check PASSED.
+Design validation messages:
+[warning] Warning - Boundary 'ShuntC_02_Top' and Boundary 'ShuntC_10_Top' overlap.  
+[warning] Warning - Boundary 'ShuntC_02_Top' and Boundary 'ShuntC_08_Top' overlap.  
+[warning] Warning - Boundary 'ShuntC_02_Top' and Boundary 'ShuntC_04_Top' overlap.  
+[warning] Warning - Boundary 'ShuntC_02_Top' and Boundary 'ShuntC_06_Top' overlap.  
+[warning] Warning - Boundary 'ShuntC_02_Bottom' and Boundary 'ShuntC_10_Bottom' overlap.  
+[warning] Warning - Boundary 'ShuntC_02_Bottom' and Boundary 'ShuntC_04_Bottom' overlap.  
+[warning] Warning - Boundary 'ShuntC_02_Bottom' and Boundary 'ShuntC_06_Bottom' overlap.  
+[warning] Warning - Boundary 'ShuntC_02_Bottom' and Boundary 'ShuntC_08_Bottom' overlap.  
+[warning] Warning - Boundary 'ShuntC_04_Top' and Boundary 'ShuntC_12_Top' overlap.  
+[warning] Warning - Boundary 'ShuntC_04_Top' and Boundary 'ShuntC_08_Top' overlap.  
+[warning] Warning - Boundary 'ShuntC_04_Top' and Boundary 'ShuntC_06_Top' overlap.  
+[warning] Warning - Boundary 'ShuntC_04_Top' and Boundary 'ShuntC_10_Top' overlap.  
+[warning] Warning - Boundary 'ShuntC_04_Bottom' and Boundary 'ShuntC_06_Bottom' overlap.  
+[warning] Warning - Boundary 'ShuntC_04_Bottom' and Boundary 'ShuntC_08_Bottom' overlap.  
+[warning] Warning - Boundary 'ShuntC_04_Bottom' and Boundary 'ShuntC_12_Bottom' overlap.  
+[warning] Warning - Boundary 'ShuntC_04_Bottom' and Boundary 'ShuntC_10_Bottom' overlap.  
+[warning] Warning - Boundary 'ShuntC_06_Top' and Boundary 'ShuntC_14_Top' overlap.  
+[warning] Warning - Boundary 'ShuntC_06_Top' and Boundary 'ShuntC_12_Top' overlap.  
+[warning] Warning - Boundary 'ShuntC_06_Top' and Boundary 'ShuntC_08_Top' overlap.  
+[warning] Warning - Boundary 'ShuntC_06_Top' and Boundary 'ShuntC_10_Top' overlap.  
+[warning] Warning - Boundary 'ShuntC_06_Bottom' and Boundary 'ShuntC_12_Bottom' overlap.  
+[warning] Warning - Boundary 'ShuntC_06_Bottom' and Boundary 'ShuntC_08_Bottom' overlap.  
+[warning] Warning - Boundary 'ShuntC_06_Bottom' and Boundary 'ShuntC_10_Bottom' overlap.  
+[warning] Warning - Boundary 'ShuntC_06_Bottom' and Boundary 'ShuntC_14_Bottom' overlap.  
+[warning] Warning - Boundary 'ShuntC_08_Top' and Boundary 'ShuntC_14_Top' overlap.  
+[warning] Warning - Boundary 'ShuntC_08_Top' and Boundary 'ShuntC_12_Top' overlap.  
+[warning] Warning - Boundary 'ShuntC_08_Top' and Boundary 'ShuntC_10_Top' overlap.  
+[warning] Warning - Boundary 'ShuntC_08_Bottom' and Boundary 'ShuntC_12_Bottom' overlap.  
+[warning] Warning - Boundary 'ShuntC_08_Bottom' and Boundary 'ShuntC_14_Bottom' overlap.  
+[warning] Warning - Boundary 'ShuntC_08_Bottom' and Boundary 'ShuntC_10_Bottom' overlap.  
+[warning] Warning - Boundary 'ShuntC_10_Top' and Boundary 'ShuntC_12_Top' overlap.  
+[warning] Warning - Boundary 'ShuntC_10_Top' and Boundary 'ShuntC_14_Top' overlap.  
+[warning] Warning - Boundary 'ShuntC_10_Bottom' and Boundary 'ShuntC_12_Bottom' overlap.  
+[warning] Warning - Boundary 'ShuntC_10_Bottom' and Boundary 'ShuntC_14_Bottom' overlap.  
+[warning] Warning - Boundary 'ShuntC_12_Top' and Boundary 'ShuntC_14_Top' overlap.  
+[warning] Warning - Boundary 'ShuntC_12_Bottom' and Boundary 'ShuntC_14_Bottom' overlap.  
+[warning] Boundary 'Boundary': Warning - unexpected or missing unit type on Capacitance.
+[warning] Boundary 'Boundary': Warning - unexpected or missing unit type on Capacitance.
+[warning] Boundary 'Boundary': Warning - unexpected or missing unit type on Capacitance.
+[warning] Boundary 'Boundary': Warning - unexpected or missing unit type on Capacitance.
+[warning] Boundary 'Boundary': Warning - unexpected or missing unit type on Capacitance.
+[warning] Boundary 'Boundary': Warning - unexpected or missing unit type on Capacitance.
+[warning] Boundary 'Boundary': Warning - unexpected or missing unit type on Capacitance.
+[warning] Boundary 'Boundary': Warning - unexpected or missing unit type on Capacitance.
+[warning] Boundary 'Boundary': Warning - unexpected or missing unit type on Capacitance.
+[warning] Boundary 'Boundary': Warning - unexpected or missing unit type on Capacitance.
+[warning] Boundary 'Boundary': Warning - unexpected or missing unit type on Capacitance.
+[warning] Boundary 'Boundary': Warning - unexpected or missing unit type on Capacitance.
+[warning] Boundary 'Boundary': Warning - unexpected or missing unit type on Capacitance.
+[warning] Boundary 'Boundary': Warning - unexpected or missing unit type on Capacitance.
+** End of design validation messages. **
+Excitations check:
+Solution type: Modal
+Ports Requested: 2
+Defined excitations number: 2
+Defined excitations names: ['Port1:1', 'Port2:1']
+Analysis setup messages:
+Detected setup and sweep: 
+Setup1
+ |__ Sweep1

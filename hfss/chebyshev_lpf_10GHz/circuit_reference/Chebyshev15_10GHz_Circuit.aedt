@@ -1,0 +1,1433 @@
+$begin 'AnsoftProject'
+	Created='Sun Oct 18 20:56:58 2026'
+	Product='ElectronicsDesktopStudent'
+	FileOwnedByWorkbench=false
+	$begin 'Desktop'
+		Version(2025, 2)
+		InfrastructureVersion(1, 0)
+		$begin 'FactoryHeader'
+			$begin 'geometry3deditor'
+				KernelVersion(2, 0)
+				ProjectContainsGeometry3D='0'
+			$end 'geometry3deditor'
+		$end 'FactoryHeader'
+	$end 'Desktop'
+	UsesAdvancedFeatures=false
+	NextUniqueID=0
+	MoveBackwards=false
+	$begin 'HFSSEnvironment'
+		Version(1, 0)
+	$end 'HFSSEnvironment'
+	$begin 'Q3DEnvironment'
+		Version(1, 0)
+	$end 'Q3DEnvironment'
+	$begin '2DExtractorEnvironment'
+		Version(1, 0)
+	$end '2DExtractorEnvironment'
+	$begin 'Maxwell3DEnvironment'
+		Version(1, 0)
+	$end 'Maxwell3DEnvironment'
+	$begin 'Maxwell2DEnvironment'
+		Version(1, 0)
+	$end 'Maxwell2DEnvironment'
+	$begin 'RMxprtEnvironment'
+		Version(1, 0)
+	$end 'RMxprtEnvironment'
+	$begin 'MaxCirEnvironment'
+		Version(1, 0)
+	$end 'MaxCirEnvironment'
+	$begin 'IcepakEnvironment'
+		Version(1, 0)
+	$end 'IcepakEnvironment'
+	$begin 'NexximEnvironment'
+		Version(1, 0)
+	$end 'NexximEnvironment'
+	$begin 'SimplorerEnvironment'
+		Version(1, 0)
+	$end 'SimplorerEnvironment'
+	$begin 'SchematicEnvironment'
+		Version(1, 0)
+	$end 'SchematicEnvironment'
+	$begin 'geometry3deditor'
+		Version(1, 0)
+	$end 'geometry3deditor'
+	ReadVersion=12
+	$begin 'DesignMgrEnvironment'
+		CompInstCounter=16
+		GPortCounter=0
+		NetCounter=0
+		Alias('Ieee;Simplorer Elements\\Ieee', 'Std;Simplorer Elements\\Std', 'Basic_VHDLAMS;Simplorer Elements\\Basic Elements VHDLAMS\\Basic Elements VHDLAMS', 'Digital_Elements;Simplorer Elements\\Digital Elements\\Digital Elements', 'Transformations;Simplorer Elements\\Tools\\Transformations\\Transformations', 'HEV_VHDLAMS;Simplorer Elements\\HEV VHDLAMS\\HEV VHDLAMS', 'automotive_vda;Simplorer Elements\\VDALibs VHDLAMS\\automotive_vda', 'example_boardnet;Simplorer Elements\\VDALibs VHDLAMS\\example_boardnet', 'example_ecar;Simplorer Elements\\VDALibs VHDLAMS\\example_ecar', 'fundamentals_vda;Simplorer Elements\\VDALibs VHDLAMS\\fundamentals_vda', 'hybrid_emc_vda;Simplorer Elements\\VDALibs VHDLAMS\\hybrid_emc_vda', 'megma;Simplorer Elements\\VDALibs VHDLAMS\\megma', 'modelica_rotational;Simplorer Elements\\VDALibs VHDLAMS\\modelica_rotational', 'modelica_thermal;Simplorer Elements\\VDALibs VHDLAMS\\modelica_thermal', 'modelica_translational;Simplorer Elements\\VDALibs VHDLAMS\\modelica_translational', 'spice2vhd;Simplorer Elements\\VDALibs VHDLAMS\\spice2vhd', 'spice2vhd_devices;Simplorer Elements\\VDALibs VHDLAMS\\spice2vhd_devices', 'aircraft_electrical_vhdlams;Simplorer Elements\\Aircraft Electrical VHDLAMS\\Aircraft Electrical VHDLAMS', 'power_system_vhdlams;Simplorer Elements\\Power System VHDLAMS\\Power System VHDLAMS')
+	$end 'DesignMgrEnvironment'
+	$begin 'ProjectDatasets'
+		NextUniqueID=0
+		MoveBackwards=false
+		DatasetType='ProjectDatasetType'
+		$begin 'DatasetDefinitions'
+		$end 'DatasetDefinitions'
+	$end 'ProjectDatasets'
+	VariableOrders[0:]
+	$begin 'Definitions'
+		$begin 'Materials'
+		$end 'Materials'
+		$begin 'SurfaceMaterials'
+		$end 'SurfaceMaterials'
+		$begin 'Scripts'
+		$end 'Scripts'
+		$begin 'Symbols'
+			$begin 'Chebyshev15_LPF'
+				ModTime=1792337219
+				CE=0
+				Library=''
+				ModSinceLib=false
+				LibLocation='Project'
+				HighestLevel=1
+				Normalize=false
+				InitialLevels(0, 1)
+				$begin 'PinDef'
+					Pin('Port1', -0.00508, 0, 0, 'N', 0, 0.00254, false, 0, true, '', true, false, 'Port1', true)
+					$begin 'PropDisplayMap'
+						PinName(2, 5, 1, Text(-0.00508, 0.000635, 0, 4, 5, false, 'Arial', 0, 'Port1', false, false, ExtentRect(0, 0, 0, 0, -0.00508, 0.00151694444444797, 0.0036206140351022, 0.00176388888889594, 0, 0, 0)))
+					$end 'PropDisplayMap'
+				$end 'PinDef'
+				$begin 'PinDef'
+					Pin('Port2', 0.00508, 0, 3.14159265358979, 'N', 0, 0.00254, false, 0, true, '', true, false, 'Port2', true)
+					$begin 'PropDisplayMap'
+						PinName(2, 5, 1, Text(0.00508, 0.000635, 0, 4, 5, false, 'Arial', 0, 'Port2', false, false, ExtentRect(0, 0, 0, 0, 0.00508, 0.00151694444444797, 0.0036206140351022, 0.00176388888889594, 0, 0, 0)))
+					$end 'PropDisplayMap'
+				$end 'PinDef'
+				$begin 'Graphics'
+					Rect(0, 0, 0, 0, 0, 0, 0.00508, 0.00508, 0, 0, 0)
+					Rect(0, 1, 0, 0, -0.00211666666666667, 0, 0.000423333333333333, 0.000423333333333334, 0, 0, 0)
+				$end 'Graphics'
+			$end 'Chebyshev15_LPF'
+			$begin 'nexx_inductor'
+				ModTime=1467387256
+				Library='Nexxim Circuit Elements\\Nexxim_symbols'
+				ModSinceLib=false
+				LibLocation='SysLibrary'
+				HighestLevel=1
+				Normalize=true
+				InitialLevels(0, 1)
+				$begin 'PinDef'
+					Pin('n1', -0.00508, 0, 0, 'N', 0, 0, false, 0, true, '', false, false, 'n1', true)
+				$end 'PinDef'
+				$begin 'PinDef'
+					Pin('n2', 0.00508, 0, 3.14159, 'N', 0, 0, false, 0, true, '', false, false, 'n2', true)
+				$end 'PinDef'
+				$begin 'Graphics'
+					Arc(0, 1, 12566272, -6.93889e-18, 3.46945e-18, 0.00125687, 6.27976, 3.14498, 12566272, 0, 0, false, 0.00125687, 0)
+					Arc(0, 1, 12566272, -0.00254, 3.46945e-18, 0.00127034, 6.2798, 3.14502, 12566272, 0, 0, false, 0.00127034, 0)
+					Arc(0, 1, 12566272, 0.00254, 3.46945e-18, 0.00127277, 6.27981, 3.14494, 12566272, 0, 0, false, 0.00127277, 0)
+					Line(0, 1, 12566272, -0.00508, 0, -0.00381, 0, End=0, Join=0, LineStyle=0, BeginObj=0, EndObj=0)
+					Line(0, 1, 12566272, 0.00381, 0, 0.00508, 0, End=0, Join=0, LineStyle=0, BeginObj=0, EndObj=0)
+					$begin '1'
+						Circle(0.000127, 0, 4210816, -0.004064, 0.000762, 0.000254, 4210816)
+					$end '1'
+				$end 'Graphics'
+				$begin 'PropDisplayMap'
+					L(2, 5, 0, Text(2.1684e-19, -0.00181958, 0, 4, 5, false, 'Arial', 0, '[L]', false, false, ExtentRect(0, 0, 0, 0, 2.1684e-19, -0.00127946905651121, 0.00176687455931992, 0.00176687455931992, 0, 0, 0)))
+					InstanceName(2, 5, 0, Text(-0.004826, 0.00119163, 0, 1, 5, false, 'Arial', 0, '***', false, false, ExtentRect(0, 0, 0, 0, -0.00389650674841464, 0.00173174094348879, 0.00185898650317072, 0.00176687455931992, 0, 0, 0)))
+				$end 'PropDisplayMap'
+			$end 'nexx_inductor'
+			$begin 'ground_earth'
+				ModTime=1016213689
+				Library='Symbols'
+				ModSinceLib=false
+				LibLocation='SysLibrary'
+				HighestLevel=1
+				Normalize=true
+				InitialLevels(0, 1)
+				$begin 'PinDef'
+					Pin('n1', 0, 0.00254, 4.71239, 'N', 0, 0, false, 0, true, '', false, false, 'n1', true)
+				$end 'PinDef'
+				$begin 'Graphics'
+					Line(0, 1, 12566272, -4.33681e-19, 0.00254, -4.33681e-19, 4.33681e-19, End=0, Join=0, LineStyle=0, BeginObj=0, EndObj=0)
+					Line(0, 1, 12566272, 0.0017145, -4.33681e-19, -0.0017145, -4.33681e-19, End=0, Join=0, LineStyle=0, BeginObj=0, EndObj=0)
+					Line(0, 1, 12566272, -0.001143, -0.000762, 0.001143, -0.000762, End=0, Join=0, LineStyle=0, BeginObj=0, EndObj=0)
+					Line(0, 1, 12566272, -0.0005715, -0.001524, 0.0005715, -0.001524, End=0, Join=0, LineStyle=0, BeginObj=0, EndObj=0)
+				$end 'Graphics'
+			$end 'ground_earth'
+			$begin 'nexx_cap'
+				ModTime=1069355910
+				Library='Nexxim Circuit Elements\\Nexxim_symbols'
+				ModSinceLib=false
+				LibLocation='SysLibrary'
+				HighestLevel=1
+				Normalize=true
+				InitialLevels(0, 1)
+				$begin 'PinDef'
+					Pin('positive', -0.00508, 0, 0, 'N', 0, 0, false, 0, true, '', false, false, 'positive', true)
+				$end 'PinDef'
+				$begin 'PinDef'
+					Pin('negative', 0.00508, 0, 3.14159, 'N', 0, 0, false, 0, true, '', false, false, 'negative', true)
+				$end 'PinDef'
+				$begin 'Graphics'
+					Line(0, 1, 12566272, -0.0006985, 0.0017145, -0.0006985, -0.0017145, End=0, Join=0, LineStyle=0, BeginObj=0, EndObj=0)
+					Line(0, 1, 12566272, 0.0006985, 0.0017145, 0.0006985, -0.0017145, End=0, Join=0, LineStyle=0, BeginObj=0, EndObj=0)
+					Line(0, 1, 12566272, 0.00508, 0, 0.0006985, 0, End=0, Join=0, LineStyle=0, BeginObj=0, EndObj=0)
+					Line(0, 1, 12566272, -0.00508, 0, -0.0006985, 0, End=0, Join=0, LineStyle=0, BeginObj=0, EndObj=0)
+				$end 'Graphics'
+				$begin 'PropDisplayMap'
+					C(2, 5, 0, Text(2.1684e-19, -0.00378531, 0, 4, 5, false, 'Arial', 0, '[C]', false, false, ExtentRect(0, 0, 0, 0, 2.1684e-19, -0.00290337, 0.00195988, 0.00176389, 0, 0, 0)))
+					InstanceName(2, 5, 0, Text(-0.004572, 0.00104069, 0, 1, 5, false, 'Arial', 0, '***', false, false, ExtentRect(0, 0, 0, 0, -0.00369006, 0.00192263, 0.00176389, 0.00176389, 0, 0, 0)))
+				$end 'PropDisplayMap'
+			$end 'nexx_cap'
+		$end 'Symbols'
+		$begin 'DefInfo'
+			Chebyshev15_LPF(1002, 0, 15, 2, '', 1792337219, '', 'Chebyshev15_LPF', '', '', '', '', '', 'Design.bmp', '', 'Project', '', '', 1792337219, '', 0, 0)
+			IND_(1002, 0, 0, 2, 'Ansoft built-in component', 1502913463, '', 'Nexxim Circuit Elements\\Nexxim_symbols:nexx_inductor', '', '', 'Inductor', 'NXIND.htm', 'nexximcomponents.chm', 'ind.bmp', 'Nexxim Circuit Elements\\Inductors', 'SysLibrary', '', '', 1129312726, '', 0, 99003)
+			CAP_(1002, 0, 0, 2, 'Ansoft built-in component', 1502913463, '', 'Nexxim Circuit Elements\\Nexxim_symbols:nexx_cap', '', '', 'Capacitor', 'NXCAP.htm', 'nexximcomponents.chm', 'cap.bmp', 'Nexxim Circuit Elements\\Capacitors', 'SysLibrary', '', '', 1132000246, '', 0, 99002)
+		$end 'DefInfo'
+		$begin 'Compdefs'
+			$begin 'Chebyshev15_LPF'
+				Library=''
+				CircuitEnv=0
+				Refbase='U'
+				NumParts=1
+				ModSinceLib=true
+				Terminal('Port1', 'Port1', 'A', false, 0, 1, '', 'Electrical', '0')
+				Terminal('Port2', 'Port2', 'A', false, 1, 1, '', 'Electrical', '0')
+				$begin 'Properties'
+					TextProp('Representation', 'SRD', '', 'Chebyshev15_LPF')
+					TextProp('Owner', 'SRD', '', 'Circuit Design')
+				$end 'Properties'
+				CompExtID=6
+			$end 'Chebyshev15_LPF'
+			$begin 'IND_'
+				Library='Nexxim Circuit Elements\\Inductors'
+				CircuitEnv=0
+				Refbase='L'
+				NumParts=1
+				ModSinceLib=false
+				Terminal('n1', 'n1', 'A', false, 1, 1, '', 'Electrical', '0')
+				Terminal('n2', 'n2', 'A', false, 2, 1, '', 'Electrical', '0')
+				CompExtID=1
+				$begin 'Parameters'
+					TextProp('LabelID', 'HD', 'Property string for netlist ID', 'L@ID')
+					VariableProp('L', 'D', 'Inductance (H)', '1e-09')
+					TextProp('ModelName', 'SHD', '', 'IND_')
+					MenuProp('CoSimulator', 'D', '', 'DefaultNetlist', 0)
+					ButtonProp('CosimDefinition', 'D', '', 'Edit', 'Edit', 40501, ButtonPropClientData())
+				$end 'Parameters'
+				$begin 'CosimDefinitions'
+					$begin 'CosimDefinition'
+						CosimulatorType=4
+						CosimDefName='DefaultNetlist'
+						IsDefinition=true
+						Connect=true
+						Data('Nexxim Circuit'='L@ID %0 %1 ?L(L=@L)')
+						GRef()
+					$end 'CosimDefinition'
+					DefaultCosim='DefaultNetlist'
+				$end 'CosimDefinitions'
+			$end 'IND_'
+			$begin 'CAP_'
+				Library='Nexxim Circuit Elements\\Capacitors'
+				CircuitEnv=0
+				Refbase='C'
+				NumParts=1
+				ModSinceLib=false
+				Terminal('positive', 'positive', 'A', false, 0, 1, '', 'Electrical', '0')
+				Terminal('negative', 'negative', 'A', false, 0, 1, '', 'Electrical', '0')
+				CompExtID=1
+				$begin 'Parameters'
+					TextProp('LabelID', 'HD', 'Property string for netlist ID', 'C@ID')
+					VariablePropNU('C', 'D', 'Capacitance', '1e-12farad', 'farad', AdditionalPropInfo='')
+					TextProp('ModelName', 'SHD', '', 'CAP_')
+					MenuProp('CoSimulator', 'D', '', 'DefaultNetlist', 0)
+					ButtonProp('CosimDefinition', 'D', '', 'Edit', 'Edit', 40501, ButtonPropClientData())
+				$end 'Parameters'
+				$begin 'CosimDefinitions'
+					$begin 'CosimDefinition'
+						CosimulatorType=4
+						CosimDefName='DefaultNetlist'
+						IsDefinition=true
+						Connect=true
+						Data('Nexxim Circuit'='C@ID %0 %1 ?C(@C)')
+						GRef()
+					$end 'CosimDefinition'
+					DefaultCosim='DefaultNetlist'
+				$end 'CosimDefinitions'
+			$end 'CAP_'
+		$end 'Compdefs'
+	$end 'Definitions'
+	DesignIDServer=2
+	MoveBackwards=false
+	$begin 'NexximCircuit'
+		RepRewriteV2=true
+		Name='Chebyshev15_LPF'
+		DesignID=0
+		$begin 'Circuit'
+			ComponentName='Chebyshev15_LPF'
+			AutoFP=''
+			$begin 'DesignDatasets'
+				NextUniqueID=0
+				MoveBackwards=false
+				DatasetType='DesignDatasetType'
+				$begin 'DatasetDefinitions'
+				$end 'DatasetDefinitions'
+			$end 'DesignDatasets'
+			VariableOrders[0:]
+			$begin 'Compinst'
+				ID='1'
+				Status='Status'
+				CompName='Nexxim Circuit Elements\\Inductors:IND_'
+				$begin 'Properties'
+					TextProp('ID', 'SRID', '', '1')
+				$end 'Properties'
+				$begin 'Parameters'
+					TextProp('InstanceName', 'HID', '', 'L1')
+					MenuProp('CoSimulator', 'OHD', '', 'DefaultNetlist', 0)
+					ButtonProp('CosimDefinition', 'OHD', '', 'Edit', 'Edit', 40501, ButtonPropClientData())
+					ValueProp('L', 'OD', 'Inductance (H)', '9.77080533020511e-10', 0)
+				$end 'Parameters'
+			$end 'Compinst'
+			$begin 'Compinst'
+				ID='2'
+				Status='Status'
+				CompName='Nexxim Circuit Elements\\Capacitors:CAP_'
+				$begin 'Properties'
+					TextProp('ID', 'SRID', '', '2')
+				$end 'Properties'
+				$begin 'Parameters'
+					TextProp('InstanceName', 'HID', '', 'C2')
+					MenuProp('CoSimulator', 'OHD', '', 'DefaultNetlist', 0)
+					ButtonProp('CosimDefinition', 'OHD', '', 'Edit', 'Edit', 40501, ButtonPropClientData())
+					ValuePropNU('C', 'OD', 'Capacitance', '4.71915263574562e-13', 0, 'farad', AdditionalPropInfo='')
+				$end 'Parameters'
+			$end 'Compinst'
+			$begin 'Compinst'
+				ID='3'
+				Status='Status'
+				CompName='Nexxim Circuit Elements\\Inductors:IND_'
+				$begin 'Properties'
+					TextProp('ID', 'SRID', '', '3')
+				$end 'Properties'
+				$begin 'Parameters'
+					TextProp('InstanceName', 'HID', '', 'L3')
+					MenuProp('CoSimulator', 'OHD', '', 'DefaultNetlist', 0)
+					ButtonProp('CosimDefinition', 'OHD', '', 'Edit', 'Edit', 40501, ButtonPropClientData())
+					ValueProp('L', 'OD', 'Inductance (H)', '1.748897242742e-09', 0)
+				$end 'Parameters'
+			$end 'Compinst'
+			$begin 'Compinst'
+				ID='4'
+				Status='Status'
+				CompName='Nexxim Circuit Elements\\Capacitors:CAP_'
+				$begin 'Properties'
+					TextProp('ID', 'SRID', '', '4')
+				$end 'Properties'
+				$begin 'Parameters'
+					TextProp('InstanceName', 'HID', '', 'C4')
+					MenuProp('CoSimulator', 'OHD', '', 'DefaultNetlist', 0)
+					ButtonProp('CosimDefinition', 'OHD', '', 'Edit', 'Edit', 40501, ButtonPropClientData())
+					ValuePropNU('C', 'OD', 'Capacitance', '5.31654750989909e-13', 0, 'farad', AdditionalPropInfo='')
+				$end 'Parameters'
+			$end 'Compinst'
+			$begin 'Compinst'
+				ID='5'
+				Status='Status'
+				CompName='Nexxim Circuit Elements\\Inductors:IND_'
+				$begin 'Properties'
+					TextProp('ID', 'SRID', '', '5')
+				$end 'Properties'
+				$begin 'Parameters'
+					TextProp('InstanceName', 'HID', '', 'L5')
+					MenuProp('CoSimulator', 'OHD', '', 'DefaultNetlist', 0)
+					ButtonProp('CosimDefinition', 'OHD', '', 'Edit', 'Edit', 40501, ButtonPropClientData())
+					ValueProp('L', 'OD', 'Inductance (H)', '1.82460381661131e-09', 0)
+				$end 'Parameters'
+			$end 'Compinst'
+			$begin 'Compinst'
+				ID='6'
+				Status='Status'
+				CompName='Nexxim Circuit Elements\\Capacitors:CAP_'
+				$begin 'Properties'
+					TextProp('ID', 'SRID', '', '6')
+				$end 'Properties'
+				$begin 'Parameters'
+					TextProp('InstanceName', 'HID', '', 'C6')
+					MenuProp('CoSimulator', 'OHD', '', 'DefaultNetlist', 0)
+					ButtonProp('CosimDefinition', 'OHD', '', 'Edit', 'Edit', 40501, ButtonPropClientData())
+					ValuePropNU('C', 'OD', 'Capacitance', '5.41807874779422e-13', 0, 'farad', AdditionalPropInfo='')
+				$end 'Parameters'
+			$end 'Compinst'
+			$begin 'Compinst'
+				ID='7'
+				Status='Status'
+				CompName='Nexxim Circuit Elements\\Inductors:IND_'
+				$begin 'Properties'
+					TextProp('ID', 'SRID', '', '7')
+				$end 'Properties'
+				$begin 'Parameters'
+					TextProp('InstanceName', 'HID', '', 'L7')
+					MenuProp('CoSimulator', 'OHD', '', 'DefaultNetlist', 0)
+					ButtonProp('CosimDefinition', 'OHD', '', 'Edit', 'Edit', 40501, ButtonPropClientData())
+					ValueProp('L', 'OD', 'Inductance (H)', '1.84124880806833e-09', 0)
+				$end 'Parameters'
+			$end 'Compinst'
+			$begin 'Compinst'
+				ID='8'
+				Status='Status'
+				CompName='Nexxim Circuit Elements\\Capacitors:CAP_'
+				$begin 'Properties'
+					TextProp('ID', 'SRID', '', '8')
+				$end 'Properties'
+				$begin 'Parameters'
+					TextProp('InstanceName', 'HID', '', 'C8')
+					MenuProp('CoSimulator', 'OHD', '', 'DefaultNetlist', 0)
+					ButtonProp('CosimDefinition', 'OHD', '', 'Edit', 'Edit', 40501, ButtonPropClientData())
+					ValuePropNU('C', 'OD', 'Capacitance', '5.43859627763139e-13', 0, 'farad', AdditionalPropInfo='')
+				$end 'Parameters'
+			$end 'Compinst'
+			$begin 'Compinst'
+				ID='9'
+				Status='Status'
+				CompName='Nexxim Circuit Elements\\Inductors:IND_'
+				$begin 'Properties'
+					TextProp('ID', 'SRID', '', '9')
+				$end 'Properties'
+				$begin 'Parameters'
+					TextProp('InstanceName', 'HID', '', 'L9')
+					MenuProp('CoSimulator', 'OHD', '', 'DefaultNetlist', 0)
+					ButtonProp('CosimDefinition', 'OHD', '', 'Edit', 'Edit', 40501, ButtonPropClientData())
+					ValueProp('L', 'OD', 'Inductance (H)', '1.84124880806833e-09', 0)
+				$end 'Parameters'
+			$end 'Compinst'
+			$begin 'Compinst'
+				ID='10'
+				Status='Status'
+				CompName='Nexxim Circuit Elements\\Capacitors:CAP_'
+				$begin 'Properties'
+					TextProp('ID', 'SRID', '', '10')
+				$end 'Properties'
+				$begin 'Parameters'
+					TextProp('InstanceName', 'HID', '', 'C10')
+					MenuProp('CoSimulator', 'OHD', '', 'DefaultNetlist', 0)
+					ButtonProp('CosimDefinition', 'OHD', '', 'Edit', 'Edit', 40501, ButtonPropClientData())
+					ValuePropNU('C', 'OD', 'Capacitance', '5.41807874779422e-13', 0, 'farad', AdditionalPropInfo='')
+				$end 'Parameters'
+			$end 'Compinst'
+			$begin 'Compinst'
+				ID='11'
+				Status='Status'
+				CompName='Nexxim Circuit Elements\\Inductors:IND_'
+				$begin 'Properties'
+					TextProp('ID', 'SRID', '', '11')
+				$end 'Properties'
+				$begin 'Parameters'
+					TextProp('InstanceName', 'HID', '', 'L11')
+					MenuProp('CoSimulator', 'OHD', '', 'DefaultNetlist', 0)
+					ButtonProp('CosimDefinition', 'OHD', '', 'Edit', 'Edit', 40501, ButtonPropClientData())
+					ValueProp('L', 'OD', 'Inductance (H)', '1.82460381661131e-09', 0)
+				$end 'Parameters'
+			$end 'Compinst'
+			$begin 'Compinst'
+				ID='12'
+				Status='Status'
+				CompName='Nexxim Circuit Elements\\Capacitors:CAP_'
+				$begin 'Properties'
+					TextProp('ID', 'SRID', '', '12')
+				$end 'Properties'
+				$begin 'Parameters'
+					TextProp('InstanceName', 'HID', '', 'C12')
+					MenuProp('CoSimulator', 'OHD', '', 'DefaultNetlist', 0)
+					ButtonProp('CosimDefinition', 'OHD', '', 'Edit', 'Edit', 40501, ButtonPropClientData())
+					ValuePropNU('C', 'OD', 'Capacitance', '5.31654750989909e-13', 0, 'farad', AdditionalPropInfo='')
+				$end 'Parameters'
+			$end 'Compinst'
+			$begin 'Compinst'
+				ID='13'
+				Status='Status'
+				CompName='Nexxim Circuit Elements\\Inductors:IND_'
+				$begin 'Properties'
+					TextProp('ID', 'SRID', '', '13')
+				$end 'Properties'
+				$begin 'Parameters'
+					TextProp('InstanceName', 'HID', '', 'L13')
+					MenuProp('CoSimulator', 'OHD', '', 'DefaultNetlist', 0)
+					ButtonProp('CosimDefinition', 'OHD', '', 'Edit', 'Edit', 40501, ButtonPropClientData())
+					ValueProp('L', 'OD', 'Inductance (H)', '1.748897242742e-09', 0)
+				$end 'Parameters'
+			$end 'Compinst'
+			$begin 'Compinst'
+				ID='14'
+				Status='Status'
+				CompName='Nexxim Circuit Elements\\Capacitors:CAP_'
+				$begin 'Properties'
+					TextProp('ID', 'SRID', '', '14')
+				$end 'Properties'
+				$begin 'Parameters'
+					TextProp('InstanceName', 'HID', '', 'C14')
+					MenuProp('CoSimulator', 'OHD', '', 'DefaultNetlist', 0)
+					ButtonProp('CosimDefinition', 'OHD', '', 'Edit', 'Edit', 40501, ButtonPropClientData())
+					ValuePropNU('C', 'OD', 'Capacitance', '4.71915263574563e-13', 0, 'farad', AdditionalPropInfo='')
+				$end 'Parameters'
+			$end 'Compinst'
+			$begin 'Compinst'
+				ID='15'
+				Status='Status'
+				CompName='Nexxim Circuit Elements\\Inductors:IND_'
+				$begin 'Properties'
+					TextProp('ID', 'SRID', '', '15')
+				$end 'Properties'
+				$begin 'Parameters'
+					TextProp('InstanceName', 'HID', '', 'L15')
+					MenuProp('CoSimulator', 'OHD', '', 'DefaultNetlist', 0)
+					ButtonProp('CosimDefinition', 'OHD', '', 'Edit', 'Edit', 40501, ButtonPropClientData())
+					ValueProp('L', 'OD', 'Inductance (H)', '9.77080533020509e-10', 0)
+				$end 'Parameters'
+			$end 'Compinst'
+			$begin 'GlobalPort'
+				PortName='0'
+			$end 'GlobalPort'
+			$begin 'IPort'
+				PortName='Port1'
+				Public=true
+				Connectible=true
+				UnconnectedAction=1
+				PortValue=''
+				Domain(0, -1, 2, '')
+				$begin 'Properties'
+					TextProp('pnum', 'ORHD', '', '1')
+					ValueProp('rz', 'OD', '', '50ohm', 0)
+					ValueProp('iz', 'OD', '', '0ohm', 0)
+					CheckboxProp('EnableNoise', 'OD', '', false)
+					ValueProp('noisetemp', 'OD', '', '16.85cel', 0)
+					ButtonProp('EditPort', 'D', '', 'Edit', '', 0, ButtonPropClientData())
+				$end 'Properties'
+			$end 'IPort'
+			$begin 'IPort'
+				PortName='Port2'
+				Public=true
+				Connectible=true
+				UnconnectedAction=1
+				PortValue=''
+				Domain(0, -1, 2, '')
+				$begin 'Properties'
+					TextProp('pnum', 'ORHD', '', '2')
+					ValueProp('rz', 'OD', '', '50ohm', 0)
+					ValueProp('iz', 'OD', '', '0ohm', 0)
+					CheckboxProp('EnableNoise', 'OD', '', false)
+					ValueProp('noisetemp', 'OD', '', '16.85cel', 0)
+					ButtonProp('EditPort', 'D', '', 'Edit', '', 0, ButtonPropClientData())
+				$end 'Properties'
+			$end 'IPort'
+			$begin 'Net'
+				NetName='0'
+				$begin 'Properties'
+					CheckboxProp('AlignMicrowavePorts', 'D', '', false)
+				$end 'Properties'
+				NetGPorts='0'
+				NetPin('4', 1)
+				NetPin('2', 1)
+				NetPin('6', 1)
+				NetPin('8', 1)
+				NetPin('14', 1)
+				NetPin('10', 1)
+				NetPin('12', 1)
+			$end 'Net'
+			$begin 'Net'
+				NetName='net_1'
+				$begin 'Properties'
+					CheckboxProp('AlignMicrowavePorts', 'D', '', true)
+				$end 'Properties'
+				NetPin('1', 1)
+				NetPin('2', 0)
+				NetPin('3', 0)
+			$end 'Net'
+			$begin 'Net'
+				NetName='net_2'
+				$begin 'Properties'
+					CheckboxProp('AlignMicrowavePorts', 'D', '', true)
+				$end 'Properties'
+				NetPin('4', 0)
+				NetPin('3', 1)
+				NetPin('5', 0)
+			$end 'Net'
+			$begin 'Net'
+				NetName='net_3'
+				$begin 'Properties'
+					CheckboxProp('AlignMicrowavePorts', 'D', '', true)
+				$end 'Properties'
+				NetPin('5', 1)
+				NetPin('6', 0)
+				NetPin('7', 0)
+			$end 'Net'
+			$begin 'Net'
+				NetName='net_4'
+				$begin 'Properties'
+					CheckboxProp('AlignMicrowavePorts', 'D', '', true)
+				$end 'Properties'
+				NetPin('8', 0)
+				NetPin('7', 1)
+				NetPin('9', 0)
+			$end 'Net'
+			$begin 'Net'
+				NetName='net_5'
+				$begin 'Properties'
+					CheckboxProp('AlignMicrowavePorts', 'D', '', true)
+				$end 'Properties'
+				NetPin('11', 0)
+				NetPin('10', 0)
+				NetPin('9', 1)
+			$end 'Net'
+			$begin 'Net'
+				NetName='net_6'
+				$begin 'Properties'
+					CheckboxProp('AlignMicrowavePorts', 'D', '', true)
+				$end 'Properties'
+				NetPin('11', 1)
+				NetPin('13', 0)
+				NetPin('12', 0)
+			$end 'Net'
+			$begin 'Net'
+				NetName='net_7'
+				$begin 'Properties'
+					CheckboxProp('AlignMicrowavePorts', 'D', '', true)
+				$end 'Properties'
+				NetPin('14', 0)
+				NetPin('15', 0)
+				NetPin('13', 1)
+			$end 'Net'
+			$begin 'Net'
+				NetName='Port1'
+				$begin 'Properties'
+					CheckboxProp('AlignMicrowavePorts', 'D', '', true)
+				$end 'Properties'
+				NetInterfacePorts='Port1'
+				NetPin('1', 0)
+			$end 'Net'
+			$begin 'Net'
+				NetName='Port2'
+				$begin 'Properties'
+					CheckboxProp('AlignMicrowavePorts', 'D', '', true)
+				$end 'Properties'
+				NetInterfacePorts='Port2'
+				NetPin('15', 1)
+			$end 'Net'
+		$end 'Circuit'
+		$begin 'Schematic'
+			PPortCounter=0
+			BusEntryCounter=0
+			ShowVariableBlock=true
+			$begin 'Page'
+				PageSize('A')
+				PageData(Origin(x='0mm', y='0mm'), PageSize(x='0', y='0'), Margins(x='0', y='0'), 0, 0, 0)
+				PageNumber=1
+				$begin 'SchGPort'
+					SchPortInst('Symbols:ground_earth', '4', '0', 29, 0.03048, -0.02032, 0, false, 'Symbols:ground_earth', 0)
+					$begin 'PropDisplayMap'
+						PortName(2, 5, 0, Text(0.03175, -0.02032, 0, 1, 5, false, 'Arial', 0, '0', false, false, ExtentRect(0, 0, 0, 0, 0.0322117337519414, -0.0198582662480586, 0.000923467503882888, 0.00184693500776578, 0, 0, 0)))
+					$end 'PropDisplayMap'
+				$end 'SchGPort'
+				$begin 'SchGPort'
+					SchPortInst('Symbols:ground_earth', '6', '0', 56, 0.06096, -0.02032, 0, false, 'Symbols:ground_earth', 0)
+					$begin 'PropDisplayMap'
+						PortName(2, 5, 0, Text(0.06223, -0.02032, 0, 1, 5, false, 'Arial', 0, '0', false, false, ExtentRect(0, 0, 0, 0, 0.0626917337519414, -0.0198582662480586, 0.000923467503882888, 0.00184693500776578, 0, 0, 0)))
+					$end 'PropDisplayMap'
+				$end 'SchGPort'
+				$begin 'SchGPort'
+					SchPortInst('Symbols:ground_earth', '8', '0', 83, 0.09144, -0.02032, 0, false, 'Symbols:ground_earth', 0)
+					$begin 'PropDisplayMap'
+						PortName(2, 5, 0, Text(0.09271, -0.02032, 0, 1, 5, false, 'Arial', 0, '0', false, false, ExtentRect(0, 0, 0, 0, 0.0931717337519414, -0.0198582662480586, 0.000923467503882888, 0.00184693500776578, 0, 0, 0)))
+					$end 'PropDisplayMap'
+				$end 'SchGPort'
+				$begin 'SchGPort'
+					SchPortInst('Symbols:ground_earth', '10', '0', 110, 0.12192, -0.02032, 0, false, 'Symbols:ground_earth', 0)
+					$begin 'PropDisplayMap'
+						PortName(2, 5, 0, Text(0.12319, -0.02032, 0, 1, 5, false, 'Arial', 0, '0', false, false, ExtentRect(0, 0, 0, 0, 0.123651733751941, -0.0198582662480586, 0.000923467503882888, 0.00184693500776578, 0, 0, 0)))
+					$end 'PropDisplayMap'
+				$end 'SchGPort'
+				$begin 'SchGPort'
+					SchPortInst('Symbols:ground_earth', '12', '0', 137, 0.1524, -0.02032, 0, false, 'Symbols:ground_earth', 0)
+					$begin 'PropDisplayMap'
+						PortName(2, 5, 0, Text(0.15367, -0.02032, 0, 1, 5, false, 'Arial', 0, '0', false, false, ExtentRect(0, 0, 0, 0, 0.154131733751941, -0.0198582662480586, 0.000923467503882888, 0.00184693500776578, 0, 0, 0)))
+					$end 'PropDisplayMap'
+				$end 'SchGPort'
+				$begin 'SchGPort'
+					SchPortInst('Symbols:ground_earth', '14', '0', 164, 0.18288, -0.02032, 0, false, 'Symbols:ground_earth', 0)
+					$begin 'PropDisplayMap'
+						PortName(2, 5, 0, Text(0.18415, -0.02032, 0, 1, 5, false, 'Arial', 0, '0', false, false, ExtentRect(0, 0, 0, 0, 0.184611733751941, -0.0198582662480586, 0.000923467503882888, 0.00184693500776578, 0, 0, 0)))
+					$end 'PropDisplayMap'
+				$end 'SchGPort'
+				$begin 'SchGPort'
+					SchPortInst('Symbols:ground_earth', '16', '0', 191, 0.21336, -0.02032, 0, false, 'Symbols:ground_earth', 0)
+					$begin 'PropDisplayMap'
+						PortName(2, 5, 0, Text(0.21463, -0.02032, 0, 1, 5, false, 'Arial', 0, '0', false, false, ExtentRect(0, 0, 0, 0, 0.215091733751941, -0.0198582662480586, 0.000923467503882888, 0.00184693500776578, 0, 0, 0)))
+					$end 'PropDisplayMap'
+				$end 'SchGPort'
+				$begin 'SchIPort'
+					SchPortInst('defaultinterfaceport', '0', 'Port1', 1, 0, 0, 0, false, 'defaultinterfaceport', 4294967295)
+					$begin 'PropDisplayMap'
+						PortName(2, 5, 0, Text(0, 0, 0, 1, 5, false, 'Arial', 0, 'Port1', false, false, ExtentRect(0, 0, 0, 0, 0.0020778018837365, 0.000461733751941444, 0.00415560376747299, 0.00184693500776578, 0, 0, 0)))
+					$end 'PropDisplayMap'
+				$end 'SchIPort'
+				$begin 'SchIPort'
+					SchPortInst('defaultinterfaceport', '2', 'Port2', 6, 0.25908, 0, 0, false, 'defaultinterfaceport', 4294967295)
+					$begin 'PropDisplayMap'
+						PortName(2, 5, 0, Text(0.25908, 0, 0, 1, 5, false, 'Arial', 0, 'Port2', false, false, ExtentRect(0, 0, 0, 0, 0.261157801883736, 0.000461733751941444, 0.00415560376747299, 0.00184693500776578, 0, 0, 0)))
+					$end 'PropDisplayMap'
+				$end 'SchIPort'
+				$begin 'SchCompDef'
+					SchCompInst('Nexxim Circuit Elements\\Inductors:IND_', 'A', '1', 11, '1', 'normal', 0.01524, 0, 0, false, 4294967295, true)
+					Levels(0, 1)
+					$begin 'PropDisplayMap'
+						L(2, 5, 0, Text(0.01524, -0.00181958, 0, 4, 5, false, 'Arial', 0, '9.77080533020511e-10', false, false, ExtentRect(0, 0, 0, 0, 0.01524, -0.00135784624805856, 0.0175458825737749, 0.00184693500776578, 0, 0, 0)))
+						InstanceName(2, 5, 0, Text(0.010414, 0.00119163, 0, 1, 5, false, 'Arial', 0, 'L1', false, false, ExtentRect(0, 0, 0, 0, 0.0113374675038829, 0.00165336375194144, 0.00184693500776578, 0.00184693500776578, 0, 0, 0)))
+					$end 'PropDisplayMap'
+				$end 'SchCompDef'
+				$begin 'SchCompDef'
+					SchCompInst('Nexxim Circuit Elements\\Capacitors:CAP_', 'A', '2', 19, '2', 'normal', 0.03048, -0.01016, 1.5707963267949, false, 4294967295, true)
+					Levels(0, 1)
+					$begin 'PropDisplayMap'
+						C(2, 5, 0, Text(0.03048, -0.01394531, 0, 4, 5, false, 'Arial', 0, '4.71915263574562e-13', false, false, ExtentRect(0, 0, 0, 0, 0.03048, -0.0134835762480586, 0.0175458825737749, 0.00184693500776578, 0, 0, 0)))
+						InstanceName(2, 5, 0, Text(0.025908, -0.00911931, 0, 1, 5, false, 'Arial', 0, 'C2', false, false, ExtentRect(0, 0, 0, 0, 0.0270623343798536, -0.00865757624805856, 0.00230866875970722, 0.00184693500776578, 0, 0, 0)))
+					$end 'PropDisplayMap'
+				$end 'SchCompDef'
+				$begin 'SchCompDef'
+					SchCompInst('Nexxim Circuit Elements\\Inductors:IND_', 'A', '3', 38, '3', 'normal', 0.04572, 0, 0, false, 4294967295, true)
+					Levels(0, 1)
+					$begin 'PropDisplayMap'
+						L(2, 5, 0, Text(0.04572, -0.00181958, 0, 4, 5, false, 'Arial', 0, '1.748897242742e-09', false, false, ExtentRect(0, 0, 0, 0, 0.04572, -0.00135784624805856, 0.0156989475660091, 0.00184693500776578, 0, 0, 0)))
+						InstanceName(2, 5, 0, Text(0.040894, 0.00119163, 0, 1, 5, false, 'Arial', 0, 'L3', false, false, ExtentRect(0, 0, 0, 0, 0.0418174675038829, 0.00165336375194144, 0.00184693500776578, 0.00184693500776578, 0, 0, 0)))
+					$end 'PropDisplayMap'
+				$end 'SchCompDef'
+				$begin 'SchCompDef'
+					SchCompInst('Nexxim Circuit Elements\\Capacitors:CAP_', 'A', '4', 46, '4', 'normal', 0.06096, -0.01016, 1.5707963267949, false, 4294967295, true)
+					Levels(0, 1)
+					$begin 'PropDisplayMap'
+						C(2, 5, 0, Text(0.06096, -0.01394531, 0, 4, 5, false, 'Arial', 0, '5.31654750989909e-13', false, false, ExtentRect(0, 0, 0, 0, 0.06096, -0.0134835762480586, 0.0175458825737749, 0.00184693500776578, 0, 0, 0)))
+						InstanceName(2, 5, 0, Text(0.056388, -0.00911931, 0, 1, 5, false, 'Arial', 0, 'C4', false, false, ExtentRect(0, 0, 0, 0, 0.0575423343798536, -0.00865757624805856, 0.00230866875970722, 0.00184693500776578, 0, 0, 0)))
+					$end 'PropDisplayMap'
+				$end 'SchCompDef'
+				$begin 'SchCompDef'
+					SchCompInst('Nexxim Circuit Elements\\Inductors:IND_', 'A', '5', 65, '5', 'normal', 0.0762, 0, 0, false, 4294967295, true)
+					Levels(0, 1)
+					$begin 'PropDisplayMap'
+						L(2, 5, 0, Text(0.0762, -0.00181958, 0, 4, 5, false, 'Arial', 0, '1.82460381661131e-09', false, false, ExtentRect(0, 0, 0, 0, 0.0762, -0.00135784624805856, 0.0175458825737749, 0.00184693500776578, 0, 0, 0)))
+						InstanceName(2, 5, 0, Text(0.071374, 0.00119163, 0, 1, 5, false, 'Arial', 0, 'L5', false, false, ExtentRect(0, 0, 0, 0, 0.0722974675038829, 0.00165336375194144, 0.00184693500776578, 0.00184693500776578, 0, 0, 0)))
+					$end 'PropDisplayMap'
+				$end 'SchCompDef'
+				$begin 'SchCompDef'
+					SchCompInst('Nexxim Circuit Elements\\Capacitors:CAP_', 'A', '6', 73, '6', 'normal', 0.09144, -0.01016, 1.5707963267949, false, 4294967295, true)
+					Levels(0, 1)
+					$begin 'PropDisplayMap'
+						C(2, 5, 0, Text(0.09144, -0.01394531, 0, 4, 5, false, 'Arial', 0, '5.41807874779422e-13', false, false, ExtentRect(0, 0, 0, 0, 0.09144, -0.0134835762480586, 0.0175458825737749, 0.00184693500776578, 0, 0, 0)))
+						InstanceName(2, 5, 0, Text(0.086868, -0.00911931, 0, 1, 5, false, 'Arial', 0, 'C6', false, false, ExtentRect(0, 0, 0, 0, 0.0880223343798536, -0.00865757624805856, 0.00230866875970722, 0.00184693500776578, 0, 0, 0)))
+					$end 'PropDisplayMap'
+				$end 'SchCompDef'
+				$begin 'SchCompDef'
+					SchCompInst('Nexxim Circuit Elements\\Inductors:IND_', 'A', '7', 92, '7', 'normal', 0.10668, 0, 0, false, 4294967295, true)
+					Levels(0, 1)
+					$begin 'PropDisplayMap'
+						L(2, 5, 0, Text(0.10668, -0.00181958, 0, 4, 5, false, 'Arial', 0, '1.84124880806833e-09', false, false, ExtentRect(0, 0, 0, 0, 0.10668, -0.00135784624805856, 0.0175458825737749, 0.00184693500776578, 0, 0, 0)))
+						InstanceName(2, 5, 0, Text(0.101854, 0.00119163, 0, 1, 5, false, 'Arial', 0, 'L7', false, false, ExtentRect(0, 0, 0, 0, 0.102777467503883, 0.00165336375194144, 0.00184693500776578, 0.00184693500776578, 0, 0, 0)))
+					$end 'PropDisplayMap'
+				$end 'SchCompDef'
+				$begin 'SchCompDef'
+					SchCompInst('Nexxim Circuit Elements\\Capacitors:CAP_', 'A', '8', 100, '8', 'normal', 0.12192, -0.01016, 1.5707963267949, false, 4294967295, true)
+					Levels(0, 1)
+					$begin 'PropDisplayMap'
+						C(2, 5, 0, Text(0.12192, -0.01394531, 0, 4, 5, false, 'Arial', 0, '5.43859627763139e-13', false, false, ExtentRect(0, 0, 0, 0, 0.12192, -0.0134835762480586, 0.0175458825737749, 0.00184693500776578, 0, 0, 0)))
+						InstanceName(2, 5, 0, Text(0.117348, -0.00911931, 0, 1, 5, false, 'Arial', 0, 'C8', false, false, ExtentRect(0, 0, 0, 0, 0.118502334379854, -0.00865757624805856, 0.00230866875970722, 0.00184693500776578, 0, 0, 0)))
+					$end 'PropDisplayMap'
+				$end 'SchCompDef'
+				$begin 'SchCompDef'
+					SchCompInst('Nexxim Circuit Elements\\Inductors:IND_', 'A', '9', 119, '9', 'normal', 0.13716, 0, 0, false, 4294967295, true)
+					Levels(0, 1)
+					$begin 'PropDisplayMap'
+						L(2, 5, 0, Text(0.13716, -0.00181958, 0, 4, 5, false, 'Arial', 0, '1.84124880806833e-09', false, false, ExtentRect(0, 0, 0, 0, 0.13716, -0.00135784624805856, 0.0175458825737749, 0.00184693500776578, 0, 0, 0)))
+						InstanceName(2, 5, 0, Text(0.132334, 0.00119163, 0, 1, 5, false, 'Arial', 0, 'L9', false, false, ExtentRect(0, 0, 0, 0, 0.133257467503883, 0.00165336375194144, 0.00184693500776578, 0.00184693500776578, 0, 0, 0)))
+					$end 'PropDisplayMap'
+				$end 'SchCompDef'
+				$begin 'SchCompDef'
+					SchCompInst('Nexxim Circuit Elements\\Capacitors:CAP_', 'A', '10', 127, '10', 'normal', 0.1524, -0.01016, 1.5707963267949, false, 4294967295, true)
+					Levels(0, 1)
+					$begin 'PropDisplayMap'
+						C(2, 5, 0, Text(0.1524, -0.01394531, 0, 4, 5, false, 'Arial', 0, '5.41807874779422e-13', false, false, ExtentRect(0, 0, 0, 0, 0.1524, -0.0134835762480586, 0.0175458825737749, 0.00184693500776578, 0, 0, 0)))
+						InstanceName(2, 5, 0, Text(0.147828, -0.00911931, 0, 1, 5, false, 'Arial', 0, 'C10', false, false, ExtentRect(0, 0, 0, 0, 0.149444068131795, -0.00865757624805856, 0.00323213626359011, 0.00184693500776578, 0, 0, 0)))
+					$end 'PropDisplayMap'
+				$end 'SchCompDef'
+				$begin 'SchCompDef'
+					SchCompInst('Nexxim Circuit Elements\\Inductors:IND_', 'A', '11', 146, '11', 'normal', 0.16764, 0, 0, false, 4294967295, true)
+					Levels(0, 1)
+					$begin 'PropDisplayMap'
+						L(2, 5, 0, Text(0.16764, -0.00181958, 0, 4, 5, false, 'Arial', 0, '1.82460381661131e-09', false, false, ExtentRect(0, 0, 0, 0, 0.16764, -0.00135784624805856, 0.0175458825737749, 0.00184693500776578, 0, 0, 0)))
+						InstanceName(2, 5, 0, Text(0.162814, 0.00119163, 0, 1, 5, false, 'Arial', 0, 'L11', false, false, ExtentRect(0, 0, 0, 0, 0.164199201255824, 0.00165336375194144, 0.00277040251164866, 0.00184693500776578, 0, 0, 0)))
+					$end 'PropDisplayMap'
+				$end 'SchCompDef'
+				$begin 'SchCompDef'
+					SchCompInst('Nexxim Circuit Elements\\Capacitors:CAP_', 'A', '12', 154, '12', 'normal', 0.18288, -0.01016, 1.5707963267949, false, 4294967295, true)
+					Levels(0, 1)
+					$begin 'PropDisplayMap'
+						C(2, 5, 0, Text(0.18288, -0.01394531, 0, 4, 5, false, 'Arial', 0, '5.31654750989909e-13', false, false, ExtentRect(0, 0, 0, 0, 0.18288, -0.0134835762480586, 0.0175458825737749, 0.00184693500776578, 0, 0, 0)))
+						InstanceName(2, 5, 0, Text(0.178308, -0.00911931, 0, 1, 5, false, 'Arial', 0, 'C12', false, false, ExtentRect(0, 0, 0, 0, 0.179924068131795, -0.00865757624805856, 0.00323213626359011, 0.00184693500776578, 0, 0, 0)))
+					$end 'PropDisplayMap'
+				$end 'SchCompDef'
+				$begin 'SchCompDef'
+					SchCompInst('Nexxim Circuit Elements\\Inductors:IND_', 'A', '13', 173, '13', 'normal', 0.19812, 0, 0, false, 4294967295, true)
+					Levels(0, 1)
+					$begin 'PropDisplayMap'
+						L(2, 5, 0, Text(0.19812, -0.00181958, 0, 4, 5, false, 'Arial', 0, '1.748897242742e-09', false, false, ExtentRect(0, 0, 0, 0, 0.19812, -0.00135784624805856, 0.0156989475660091, 0.00184693500776578, 0, 0, 0)))
+						InstanceName(2, 5, 0, Text(0.193294, 0.00119163, 0, 1, 5, false, 'Arial', 0, 'L13', false, false, ExtentRect(0, 0, 0, 0, 0.194679201255824, 0.00165336375194144, 0.00277040251164866, 0.00184693500776578, 0, 0, 0)))
+					$end 'PropDisplayMap'
+				$end 'SchCompDef'
+				$begin 'SchCompDef'
+					SchCompInst('Nexxim Circuit Elements\\Capacitors:CAP_', 'A', '14', 181, '14', 'normal', 0.21336, -0.01016, 1.5707963267949, false, 4294967295, true)
+					Levels(0, 1)
+					$begin 'PropDisplayMap'
+						C(2, 5, 0, Text(0.21336, -0.01394531, 0, 4, 5, false, 'Arial', 0, '4.71915263574563e-13', false, false, ExtentRect(0, 0, 0, 0, 0.21336, -0.0134835762480586, 0.0175458825737749, 0.00184693500776578, 0, 0, 0)))
+						InstanceName(2, 5, 0, Text(0.208788, -0.00911931, 0, 1, 5, false, 'Arial', 0, 'C14', false, false, ExtentRect(0, 0, 0, 0, 0.210404068131795, -0.00865757624805856, 0.00323213626359011, 0.00184693500776578, 0, 0, 0)))
+					$end 'PropDisplayMap'
+				$end 'SchCompDef'
+				$begin 'SchCompDef'
+					SchCompInst('Nexxim Circuit Elements\\Inductors:IND_', 'A', '15', 200, '15', 'normal', 0.2286, 0, 0, false, 4294967295, true)
+					Levels(0, 1)
+					$begin 'PropDisplayMap'
+						L(2, 5, 0, Text(0.2286, -0.00181958, 0, 4, 5, false, 'Arial', 0, '9.77080533020509e-10', false, false, ExtentRect(0, 0, 0, 0, 0.2286, -0.00135784624805856, 0.0175458825737749, 0.00184693500776578, 0, 0, 0)))
+						InstanceName(2, 5, 0, Text(0.223774, 0.00119163, 0, 1, 5, false, 'Arial', 0, 'L15', false, false, ExtentRect(0, 0, 0, 0, 0.225159201255824, 0.00165336375194144, 0.00277040251164866, 0.00184693500776578, 0, 0, 0)))
+					$end 'PropDisplayMap'
+				$end 'SchCompDef'
+				$begin 'PageNet'
+					NetName='Port1'
+					ID=15
+					Interface('Port1', 1)
+					WireSeg(0, 0, 0.01016, 0, 0)
+					Color=16711680
+					PC('1', 'n1')
+				$end 'PageNet'
+				$begin 'PageNet'
+					NetName='Port2'
+					ID=208
+					Interface('Port2', 6)
+					WireSeg(0.23368, 0, 0.25908, 0, 64)
+					Color=16711680
+					PC('15', 'n2')
+				$end 'PageNet'
+				$begin 'PageNet'
+					NetName='net_1'
+					ID=42
+					WireSeg(0.02032, 0, 0.02032, -0.01524, 1)
+					WireSeg(0.02032, -0.01524, 0.03048, -0.01524, 2)
+					WireSeg(0.03048, -0.01524, 0.04064, -0.01524, 7)
+					WireSeg(0.04064, -0.01524, 0.04064, 0, 8)
+					Color=16711680
+					PC('1', 'n2')
+					PC('2', 'positive')
+					PC('3', 'n1')
+				$end 'PageNet'
+				$begin 'PageNet'
+					NetName='0'
+					ID=34
+					Global('0', 29)
+					WireSeg(0.03048, -0.00508, 0.03302, -0.00508, 4)
+					WireSeg(0.03302, -0.00508, 0.03302, -0.01778, 5)
+					WireSeg(0.03302, -0.01778, 0.03048, -0.01778, 6)
+					Color=16711680
+					PC('2', 'negative')
+				$end 'PageNet'
+				$begin 'PageNet'
+					NetName='net_2'
+					ID=69
+					WireSeg(0.0508, 0, 0.0508, -0.01524, 10)
+					WireSeg(0.0508, -0.01524, 0.06096, -0.01524, 11)
+					WireSeg(0.06096, -0.01524, 0.07112, -0.01524, 16)
+					WireSeg(0.07112, -0.01524, 0.07112, 0, 17)
+					Color=16711680
+					PC('3', 'n2')
+					PC('4', 'positive')
+					PC('5', 'n1')
+				$end 'PageNet'
+				$begin 'PageNet'
+					NetName='0'
+					ID=61
+					Global('0', 56)
+					WireSeg(0.06096, -0.00508, 0.0635, -0.00508, 13)
+					WireSeg(0.0635, -0.00508, 0.0635, -0.01778, 14)
+					WireSeg(0.0635, -0.01778, 0.06096, -0.01778, 15)
+					Color=16711680
+					PC('4', 'negative')
+				$end 'PageNet'
+				$begin 'PageNet'
+					NetName='net_3'
+					ID=96
+					WireSeg(0.08128, 0, 0.08128, -0.01524, 19)
+					WireSeg(0.08128, -0.01524, 0.09144, -0.01524, 20)
+					WireSeg(0.09144, -0.01524, 0.1016, -0.01524, 25)
+					WireSeg(0.1016, -0.01524, 0.1016, 0, 26)
+					Color=16711680
+					PC('5', 'n2')
+					PC('6', 'positive')
+					PC('7', 'n1')
+				$end 'PageNet'
+				$begin 'PageNet'
+					NetName='0'
+					ID=88
+					Global('0', 83)
+					WireSeg(0.09144, -0.00508, 0.09398, -0.00508, 22)
+					WireSeg(0.09398, -0.00508, 0.09398, -0.01778, 23)
+					WireSeg(0.09398, -0.01778, 0.09144, -0.01778, 24)
+					Color=16711680
+					PC('6', 'negative')
+				$end 'PageNet'
+				$begin 'PageNet'
+					NetName='net_4'
+					ID=123
+					WireSeg(0.11176, 0, 0.11176, -0.01524, 28)
+					WireSeg(0.11176, -0.01524, 0.12192, -0.01524, 29)
+					WireSeg(0.12192, -0.01524, 0.13208, -0.01524, 34)
+					WireSeg(0.13208, -0.01524, 0.13208, 0, 35)
+					Color=16711680
+					PC('7', 'n2')
+					PC('8', 'positive')
+					PC('9', 'n1')
+				$end 'PageNet'
+				$begin 'PageNet'
+					NetName='0'
+					ID=115
+					Global('0', 110)
+					WireSeg(0.12192, -0.00508, 0.12446, -0.00508, 31)
+					WireSeg(0.12446, -0.00508, 0.12446, -0.01778, 32)
+					WireSeg(0.12446, -0.01778, 0.12192, -0.01778, 33)
+					Color=16711680
+					PC('8', 'negative')
+				$end 'PageNet'
+				$begin 'PageNet'
+					NetName='net_5'
+					ID=150
+					WireSeg(0.14224, 0, 0.14224, -0.01524, 37)
+					WireSeg(0.14224, -0.01524, 0.1524, -0.01524, 38)
+					WireSeg(0.1524, -0.01524, 0.16256, -0.01524, 43)
+					WireSeg(0.16256, -0.01524, 0.16256, 0, 44)
+					Color=16711680
+					PC('9', 'n2')
+					PC('10', 'positive')
+					PC('11', 'n1')
+				$end 'PageNet'
+				$begin 'PageNet'
+					NetName='0'
+					ID=142
+					Global('0', 137)
+					WireSeg(0.1524, -0.00508, 0.15494, -0.00508, 40)
+					WireSeg(0.15494, -0.00508, 0.15494, -0.01778, 41)
+					WireSeg(0.15494, -0.01778, 0.1524, -0.01778, 42)
+					Color=16711680
+					PC('10', 'negative')
+				$end 'PageNet'
+				$begin 'PageNet'
+					NetName='net_6'
+					ID=177
+					WireSeg(0.17272, 0, 0.17272, -0.01524, 46)
+					WireSeg(0.17272, -0.01524, 0.18288, -0.01524, 47)
+					WireSeg(0.18288, -0.01524, 0.19304, -0.01524, 52)
+					WireSeg(0.19304, -0.01524, 0.19304, 0, 53)
+					Color=16711680
+					PC('11', 'n2')
+					PC('12', 'positive')
+					PC('13', 'n1')
+				$end 'PageNet'
+				$begin 'PageNet'
+					NetName='0'
+					ID=169
+					Global('0', 164)
+					WireSeg(0.18288, -0.00508, 0.18542, -0.00508, 49)
+					WireSeg(0.18542, -0.00508, 0.18542, -0.01778, 50)
+					WireSeg(0.18542, -0.01778, 0.18288, -0.01778, 51)
+					Color=16711680
+					PC('12', 'negative')
+				$end 'PageNet'
+				$begin 'PageNet'
+					NetName='net_7'
+					ID=204
+					WireSeg(0.2032, 0, 0.2032, -0.01524, 55)
+					WireSeg(0.2032, -0.01524, 0.21336, -0.01524, 56)
+					WireSeg(0.21336, -0.01524, 0.22352, -0.01524, 61)
+					WireSeg(0.22352, -0.01524, 0.22352, 0, 62)
+					Color=16711680
+					PC('13', 'n2')
+					PC('14', 'positive')
+					PC('15', 'n1')
+				$end 'PageNet'
+				$begin 'PageNet'
+					NetName='0'
+					ID=196
+					Global('0', 191)
+					WireSeg(0.21336, -0.00508, 0.2159, -0.00508, 58)
+					WireSeg(0.2159, -0.00508, 0.2159, -0.01778, 59)
+					WireSeg(0.2159, -0.01778, 0.21336, -0.01778, 60)
+					Color=16711680
+					PC('14', 'negative')
+				$end 'PageNet'
+				$begin 'Properties'
+					TextProp('Title', 'D', '', '')
+					TextProp('Author', 'D', '', '')
+					TextProp('Number', 'D', '', '1')
+					TextProp('Project', 'D', '', 'Chebyshev15_10GHz_Circuit')
+					TextProp('ProjectPath', 'D', '', 'C:/Users/Admin/Desktop/IR_filter/RF_IR_filter/hfss/chebyshev_lpf_10GHz/circuit_reference/')
+					TextProp('Design', 'D', '', 'Chebyshev15_LPF')
+					TextProp('Date', 'D', '', '8:57:07 PM  Oct 18, 2026')
+				$end 'Properties'
+			$end 'Page'
+			GridSetup('1000mil', '100mil', '100mil', 16772075, 16774645, true, true, 16777215, Origin(x='0mm', y='0mm'), PageSize(x='0mm', y='0mm'), Margins(x='0mm', y='0mm'), 0, 0, 0)
+			NextUniqueID=0
+			MoveBackwards=false
+		$end 'Schematic'
+		$begin 'SimSetups'
+			$begin 'SimSetup'
+				DataBlockID=16
+				SimSetupID=71
+				OptionName='Default Options'
+				AdditionalOptions=''
+				AlterBlockName=''
+				FilterText=''
+				AnalysisEnabled=1
+				HasTDRComp=0
+				$begin 'OutputQuantities'
+				$end 'OutputQuantities'
+				$begin 'NoiseOutputQuantities'
+				$end 'NoiseOutputQuantities'
+				Name='FilterSweep'
+				LinearFrequencyData(false, 0.1, false, '', false)
+				$begin 'SweepDefinition'
+					Variable='Freq'
+					Data='LINC 0.1GHz 30GHz 2990'
+					OffsetF1=false
+					Synchronize=0
+				$end 'SweepDefinition'
+			$end 'SimSetup'
+		$end 'SimSetups'
+		$begin 'ControlBlocks'
+		$end 'ControlBlocks'
+		$begin 'NexximSources'
+			$begin 'Data'
+			$end 'Data'
+		$end 'NexximSources'
+		$begin 'NexximPorts'
+			$begin 'Data'
+				$begin 'Port1'
+					DataId='Port0'
+					IIPortName='Port1'
+					SymbolType=0
+					DoPostProcess=false
+				$end 'Port1'
+				$begin 'Port2'
+					DataId='Port1'
+					IIPortName='Port2'
+					SymbolType=0
+					DoPostProcess=false
+				$end 'Port2'
+			$end 'Data'
+			$begin 'DiffPairs'
+			$end 'DiffPairs'
+		$end 'NexximPorts'
+		$begin 'NexximMultiComponentContainers'
+			$begin 'Data'
+			$end 'Data'
+		$end 'NexximMultiComponentContainers'
+		$begin 'ComponentConfigurationData'
+			$begin 'EnabledPorts'
+			$end 'EnabledPorts'
+			$begin 'EnabledMultipleComponents'
+			$end 'EnabledMultipleComponents'
+			$begin 'EnabledAnalyses'
+				$begin 'Port1'
+					Port1('FilterSweep')
+				$end 'Port1'
+				$begin 'Port2'
+					Port2('FilterSweep')
+				$end 'Port2'
+			$end 'EnabledAnalyses'
+		$end 'ComponentConfigurationData'
+		$begin 'Data'
+		$end 'Data'
+		$begin 'OutputVariable'
+			NextUniqueID=0
+			MoveBackwards=false
+		$end 'OutputVariable'
+		$begin 'Optimetrics'
+			$begin 'OptimetricsSetups'
+				NextUniqueID=0
+				MoveBackwards=false
+			$end 'OptimetricsSetups'
+		$end 'Optimetrics'
+		$begin 'SolutionManager'
+			$begin 'SimDataExtractors'
+				$begin 'SimSetup'
+					TypeName='LinearFrequency'
+					ID=71
+					Name='FilterSweep'
+					$begin 'CannedOutputVar'
+					$end 'CannedOutputVar'
+					$begin 'Solution'
+						ID=70
+						Name='FilterSweep'
+						ImportedType=3
+						AlterName=''
+						$begin 'SimDataExtractor'
+							$begin 'QuantityIDs'
+								NextUniqueID=0
+								MoveBackwards=false
+								IDMap()
+							$end 'QuantityIDs'
+						$end 'SimDataExtractor'
+					$end 'Solution'
+				$end 'SimSetup'
+				$begin 'Version ID Map'
+					V=69
+					$begin 'Setup'
+						N='FilterSweep'
+						V=74
+						Soln(N='FilterSweep', V=74)
+					$end 'Setup'
+				$end 'Version ID Map'
+			$end 'SimDataExtractors'
+		$end 'SolutionManager'
+		SParamCircuitDef=true
+		RunERCBeforeSimulation=false
+		IntegrationMethod='FFT'
+		DynLinkOutputVars=false
+		LocalParamScope=true
+		UpdateReportDuringFast=true
+		$begin 'UserDefinedSolutionMgr'
+			NextUniqueID=1000000
+			MoveBackwards=false
+		$end 'UserDefinedSolutionMgr'
+		$begin 'DatasetSolutionMgr'
+			NextUniqueID=2000000
+			MoveBackwards=false
+		$end 'DatasetSolutionMgr'
+		Notes=$begin_cdata$ $end_cdata$
+		$begin 'AnimationSetups'
+		$end 'AnimationSetups'
+		CacheHeaderFile='HDR7C679256179233722411.tmp'
+	$end 'NexximCircuit'
+	$begin 'DataInstances'
+		DesignEditor='TopLevel'
+		Refdes('0', 'U1')
+		$begin 'CompInstances'
+			$begin 'Compinst'
+				ID='0'
+				Status='Status'
+				CompName='Chebyshev15_LPF'
+				GatesInUse()
+				$begin 'Properties'
+					TextProp('ID', 'SRID', '', '0')
+				$end 'Properties'
+			$end 'Compinst'
+		$end 'CompInstances'
+		$begin 'Instance'
+			DesignEditor='Chebyshev15_LPF'
+			ID='0'
+			Refdes('1', 'L1')
+			Refdes('4', 'C2')
+			Refdes('2', 'C1')
+			Refdes('3', 'L2')
+			Refdes('5', 'L3')
+			Refdes('6', 'C3')
+			Refdes('8', 'C4')
+			Refdes('14', 'C7')
+			Refdes('15', 'L8')
+			Refdes('7', 'L4')
+			Refdes('11', 'L6')
+			Refdes('10', 'C5')
+			Refdes('9', 'L5')
+			Refdes('13', 'L7')
+			Refdes('12', 'C6')
+			$begin 'Properties'
+			$end 'Properties'
+			$begin 'UserDefinedDocument'
+				$begin 'Data'
+				$end 'Data'
+			$end 'UserDefinedDocument'
+			$begin 'NexximCircuit'
+				DesignInstanceID=1
+				$begin 'WindowPosition'
+					$begin 'EditorWindow'
+						Circuit(Schematic(View(WindowPos(3, -1, -1, -10, -33, 0, 0, 1500, 335), Extent(-0.507, -0.507, 1.015, 1.015, 3779.52755904, 3779.52755904, -0.284745053836108, 0.183818667797125, 0.63626911017531, 0.209627123381416, 0.573021426789579), Pages(1, 1, -0.0243590163934426, -0.0127, 0.214859016393443, 0.1016))))
+					$end 'EditorWindow'
+				$end 'WindowPosition'
+				$begin 'ReportSetup'
+					$begin 'ReportManager'
+						$begin 'Reports'
+						$end 'Reports'
+						NextUniqueID=0
+						MoveBackwards=false
+						$begin 'NextVersID'
+							NextUniqueID=0
+							MoveBackwards=false
+						$end 'NextVersID'
+					$end 'ReportManager'
+					$begin 'Reports'
+					$end 'Reports'
+					$begin 'ReportsWindowInfoList'
+					$end 'ReportsWindowInfoList'
+				$end 'ReportSetup'
+				$begin 'DCDisplayOption'
+					UseDefault=true
+					Current(true, 16711807, 3)
+					Voltage(true, 128, 3)
+					Font('Arial', 'Regular', 8)
+					Other(true, true, false, '')
+					Sweeps()
+				$end 'DCDisplayOption'
+			$end 'NexximCircuit'
+		$end 'Instance'
+		$begin 'SODInfo'
+			$begin 'Nexxim Circuit Elements\\Inductors:IND_'
+				$begin 'CosimDefinition'
+					CosimDefName='DefaultNetlist'
+					$begin 'SODInstanceMap'
+					$end 'SODInstanceMap'
+					SODComponentList()
+				$end 'CosimDefinition'
+			$end 'Nexxim Circuit Elements\\Inductors:IND_'
+			$begin 'Nexxim Circuit Elements\\Capacitors:CAP_'
+				$begin 'CosimDefinition'
+					CosimDefName='DefaultNetlist'
+					$begin 'SODInstanceMap'
+					$end 'SODInstanceMap'
+					SODComponentList()
+				$end 'CosimDefinition'
+			$end 'Nexxim Circuit Elements\\Capacitors:CAP_'
+		$end 'SODInfo'
+	$end 'DataInstances'
+	$begin 'WBSystemIDToDesignInstanceIDMap'
+	$end 'WBSystemIDToDesignInstanceIDMap'
+	$begin 'WBSysIDSysDetails'
+	$end 'WBSysIDSysDetails'
+	$begin 'WBConnIDConnDetails'
+	$end 'WBConnIDConnDetails'
+	$begin 'WBMaterialGuidDetails'
+		WBMaterialGuidMap()
+	$end 'WBMaterialGuidDetails'
+	$begin 'MinervaProjectSettingsBlk'
+		MinervaRemoteFilePath=''
+		FolderContainerString=''
+	$end 'MinervaProjectSettingsBlk'
+$end 'AnsoftProject'
+$begin 'AllReferencedFilesForProject'
+$end 'AllReferencedFilesForProject'
+$begin 'ProjectPreview'
+	IsEncrypted=false
+	Thumbnail64='/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQE\
+BAQICAQECAQEBAgICAgICAgICAQICAgICAgICAgL/2wBDAQEBAQEBAQEBAQECAQEBAgICAgICAgICAg\
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgL/wAARCABgAGADASIAAhEBAxEB/\
+8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQR\
+BRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUp\
+TVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5us\
+LDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAA\
+AECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHB\
+CSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ\
+3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4u\
+Pk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD+/iiiigAooooAKKKKACiiigAooooAKKKKACiii\
+gAooooAKKKKACiiigAooooAKKKKACivx58AftSft4fDH9rb9rD4Z/Gz9mT9of8AaY+CviX9rfwX8Ov2\
+QviD+z78Afgn8Mfh/wDDT4Yap+yt8P8A4w+JZ/iL4++MH7Y2nan4y8D6Zqk3ifTL/wAWt4cTSZ/Hmga\
+1ouj69c6r4m8NfCjwL9B+Bf8AgpZ+zZrl38OdF+Kt/qf7MPjH43/tS/Hb9kT9n7wH8fvEPwlsPF3x4+\
+KH7OniXxJ4G+JWpfDux+F/xP8AFMEPguP4h+D/ABD4csr3XLnRri8186NpKWQu/F3guPxF639h5rLD0\
+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'
+	$begin 'DesignInfo'
+		DesignName='Chebyshev15_LPF'
+		Notes=''
+		Factory='Circuit Design'
+		IsSolved=true
+		'Nominal Setups'[1: 'FilterSweep']
+		'Nominal Setup Types'[1: '']
+		'Optimetrics Setups'[0:]
+		'Optimetrics Experiment Types'[0:]
+		Image64='/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQE\
+BAQICAQECAQEBAgICAgICAgICAQICAgICAgICAgL/2wBDAQEBAQEBAQEBAQECAQEBAgICAgICAgICAg\
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgL/wAARCADIAMgDASIAAhEBAxEB/\
+8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQR\
+BRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUp\
+TVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5us\
+LDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAA\
+AECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHB\
+CSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ\
+3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4u\
+Pk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD+/iiiigAooooAKKKKACiiigAooooAKKKKACiii\
+gAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACii\
+igAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACi\
+iigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKAC\
+iiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKK/E/\
+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\
+a9CPNXw3EFCtlUME1TwNHH4qti4KClUxFGtWrVKKpVliaapKDqRlWhVoTVVLljUpclq37L/slxRR/Hz\
+/AIKfvHHGjz/tzfD+WdkRVaaUf8E0/wDgnjAJJWUZkkEMMKAnJ2xKucKAOF/ZLvrTTP2M/wBofUr/AM\
+deIPhfY6f+1J/wVqvr34meE9N0HWfFXw7tLT/goN+2HPceOvDOkeKvCWv6XqviDSIY31CyttS0HW7Ce\
+50+OK80jUrd5LOb6T/Z0/Z0h/Z8h+Ll1dfFz4q/G/xh8b/irD8X/iD8Qfi/D8JrLxLqHiWy+E3wq+Cm\
+mWNjpnwU+FXg3QdL0O18B/BvwZDFFDoq3ElxHc3NzczyT/J83aj+xJ8Yfh54c+Kx/Zz/AG4P2pvBs3i\
+Txr8fvjP4K+Dsv/DEelfDC1+J/wAb/iR49+N+ueGJPiJ41/4J8+PvFPhfwHefFPx7rIN9cp4s1DSNP1\
+AmCy1Q2kNnL+Z5jmPBud4PiLhujxTgsnw8p8Gzp4uth80hg8W8h4exmVZlKisLleLxlOeIxmK9vQnis\
+DRdWl7SrWVOtajP2K1LMI0nVwsVDFunio03OMasaVStUjOjKpTVeh7WEOVe0pwxFOUkuSNSN+eP5VfA\
+n4l/GD4j/wDBDL/gqF4O+O3xz8SftIeJ/gj+yp8Uvgxc+PvG0Wm3+tPqMP8AwSW/Z2+IPxU8K3XiYeC\
+dD1L4i6Xp/wAdPiP8Wrex1/xNBqPibV9PNtca5rmuXRbUrj+lPxZ4T8K+PfCvibwL468M+H/Gngnxp4\
+f1nwn4x8HeLNG07xH4V8WeFfEenXOj+IfDPibw9rFtNaa94fv9IvLy1vbK6hltrq2upIJ43idlP8xP/\
+BKP/gn1+2j8bP8Agn/8T/CP7c/xa/be/ZHP7Sei+DvBPi/4HXGp/sQ+KvEvxI+DjfsJ/sx/s43vjHxr\
+rfir9lfxD4x+HHibVtI8B69op0TWNR0bxr4esfC9jB4mGoeMI9X8YeIv6lq6fG7FcEuOR4DhLOMpzfE\
+U69TFYt5PhauHwtGVfIOFsNOHM8syvDTlLMsBmtVrBUXQjKpKpy0p1pU1x8K0c9o5Tl9PiOtHF5zSwt\
+Cniq9Om6NGvioe09vWoUJYjE1KFGpOXNSpVa9WdODjTlVqOPOyiiivwE+lPP8AwB8J/hZ8KP8AhNf+F\
+W/DT4f/AA1/4WV8QPEfxY+Iv/CAeDfDng7/AIT74p+Mfsf/AAl3xL8a/wDCO6bbf8JV8QNV/s7T/wC0\
+tZvvP1G++wQ/armXyk2legUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFAB\
+RRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFA\
+BRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFF\
+ABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFF\
+FABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFF\
+FFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAf/Z'
+	$end 'DesignInfo'
+$end 'ProjectPreview'

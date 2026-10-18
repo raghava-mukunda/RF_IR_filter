@@ -1,0 +1,80 @@
+{
+  "eval_id": 25,
+  "project": "C:\\Users\\Admin\\Desktop\\IR_filter\\RF_IR_filter\\hfss\\cliq10_optimizer\\eval_025\\CliQ10_Opt_025.aedt",
+  "params": {
+    "center_bias": 0.7,
+    "alternation": 0.5,
+    "strip_width_mm": 1.2,
+    "thickness_scale": 1.0
+  },
+  "section_lengths_mm": [
+    1.6561283349939309,
+    6.435336338460848,
+    3.5252369647435042,
+    13.698265443289117,
+    6.6700658370252,
+    13.698265443289117,
+    3.5252369647435042,
+    6.435336338460848,
+    1.6561283349939309
+  ],
+  "section_table": [
+    {
+      "name": "CoreSection01",
+      "x_start_mm": 4.0,
+      "length_mm": 1.6561283349939309,
+      "thickness_mm": 0.12
+    },
+    {
+      "name": "CoreSection02",
+      "x_start_mm": 5.656128334993931,
+      "length_mm": 6.435336338460848,
+      "thickness_mm": 0.35
+    },
+    {
+      "name": "CoreSection03",
+      "x_start_mm": 12.09146467345478,
+      "length_mm": 3.5252369647435042,
+      "thickness_mm": 0.12
+    },
+    {
+      "name": "CoreSection04",
+      "x_start_mm": 15.616701638198284,
+      "length_mm": 13.698265443289117,
+      "thickness_mm": 0.35
+    },
+    {
+      "name": "CoreSection05",
+      "x_start_mm": 29.314967081487403,
+      "length_mm": 6.6700658370252,
+      "thickness_mm": 0.12
+    },
+    {
+      "name": "CoreSection06",
+      "x_start_mm": 35.9850329185126,
+      "length_mm": 13.698265443289117,
+      "thickness_mm": 0.35
+    },
+    {
+      "name": "CoreSection07",
+      "x_start_mm": 49.68329836180172,
+      "length_mm": 3.5252369647435042,
+      "thickness_mm": 0.12
+    },
+    {
+      "name": "CoreSection08",
+      "x_start_mm": 53.208535326545224,
+      "length_mm": 6.435336338460848,
+      "thickness_mm": 0.35
+    },
+    {
+      "name": "CoreSection09",
+      "x_start_mm": 59.643871665006074,
+      "length_mm": 1.6561283349939309,
+      "thickness_mm": 0.12
+    }
+  ],
+  "section_thin_mm": 0.12,
+  "section_thick_mm": 0.35,
+  "strip_width_mm": 1.2
+}

@@ -1,0 +1,87 @@
+{
+  "status": "ITERATION 01 BASELINE - NOT YET CLIQ10 VALIDATED",
+  "project": "C:\\Users\\Admin\\Desktop\\IR_filter\\RF_IR_filter\\hfss\\cliq10_iter01\\CliQ10_Iter01.aedt",
+  "envelope_mm": [
+    65.3,
+    5.0,
+    4.6
+  ],
+  "inner_aperture_mm": [
+    4.6,
+    4.199999999999999
+  ],
+  "wall_thickness_mm": [
+    0.2,
+    0.2
+  ],
+  "strip_width_mm": 1.2,
+  "feed_length_mm": 4.0,
+  "feed_thickness_mm": 0.2,
+  "thin_thickness_mm": 0.12,
+  "thick_thickness_mm": 0.35,
+  "sections": [
+    {
+      "name": "CoreSection01",
+      "x_start_mm": 4.0,
+      "length_mm": 4.407692307692307,
+      "thickness_mm": 0.12
+    },
+    {
+      "name": "CoreSection02",
+      "x_start_mm": 8.407692307692308,
+      "length_mm": 5.289230769230769,
+      "thickness_mm": 0.35
+    },
+    {
+      "name": "CoreSection03",
+      "x_start_mm": 13.696923076923078,
+      "length_mm": 6.61153846153846,
+      "thickness_mm": 0.12
+    },
+    {
+      "name": "CoreSection04",
+      "x_start_mm": 20.308461538461536,
+      "length_mm": 7.9338461538461535,
+      "thickness_mm": 0.35
+    },
+    {
+      "name": "CoreSection05",
+      "x_start_mm": 28.24230769230769,
+      "length_mm": 8.815384615384614,
+      "thickness_mm": 0.12
+    },
+    {
+      "name": "CoreSection06",
+      "x_start_mm": 37.05769230769231,
+      "length_mm": 7.9338461538461535,
+      "thickness_mm": 0.35
+    },
+    {
+      "name": "CoreSection07",
+      "x_start_mm": 44.99153846153846,
+      "length_mm": 6.61153846153846,
+      "thickness_mm": 0.12
+    },
+    {
+      "name": "CoreSection08",
+      "x_start_mm": 51.60307692307692,
+      "length_mm": 5.289230769230769,
+      "thickness_mm": 0.35
+    },
+    {
+      "name": "CoreSection09",
+      "x_start_mm": 56.89230769230769,
+      "length_mm": 4.407692307692307,
+      "thickness_mm": 0.12
+    }
+  ],
+  "sweep_GHz": [
+    0.01,
+    40.0
+  ],
+  "known_missing": [
+    "Hollow absorber channels and terminations",
+    "Exact CliQ10 internal geometry",
+    "S-parameter optimization against datasheet"
+  ]
+}
