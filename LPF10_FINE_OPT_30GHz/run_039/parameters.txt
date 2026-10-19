@@ -1,0 +1,34 @@
+RUN-13 FINE OPTIMIZATION
+========================
+
+Run = 39
+Score = 3074.32264352
+
+FIXED GEOMETRY
+--------------
+Overall length = 65.30000000 mm
+Overall width = 5.00000000 mm
+Overall height = 4.60000000 mm
+Wall = 0.20000000 mm
+Center width = 1.20000000 mm
+h_thin = 0.28671928 mm
+h_thick = 0.76349166 mm
+
+SECTION LENGTHS
+L1 = 3.60000000 mm
+L2 = 7.60000000 mm
+L3 = 8.40000000 mm
+L4 = 10.20000000 mm
+L5 = 8.20000000 mm
+L6 = 7.60000000 mm
+L7 = 3.70000000 mm
+
+PERFORMANCE
+Worst PB S21 = -41.0262 dB
+Average PB IL = 29.1274 dB
+S21 @ 10 GHz = -21.3252 dB
+S21 @ 20 GHz = -18.1695 dB
+Peak 24–30 GHz = -17.3352 dB
+Peak frequency = 25.8208 GHz
+Global peak 20–30 GHz = -17.2883 dB
+Global peak frequency = 20.2650 GHz

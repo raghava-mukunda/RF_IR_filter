@@ -109,7 +109,7 @@ from openEMS import openEMS
 # ============================================================================
 
 PROJECT_ROOT = Path(__file__).resolve().parent
-RUN_ID = os.environ.get("WB_RUN_ID", "bare_coax_validation_from_working_v1")
+RUN_ID = os.environ.get("WB_RUN_ID", "wideband_lp_filter_v3_baseline")
 
 SIM_PATH = (
     PROJECT_ROOT / "simulations" / "openems" / "results" / RUN_ID
@@ -171,8 +171,8 @@ XY_MARGIN = 2.0
 Z_MARGIN = 2.0
 
 F_START = 1.0e9
-F_STOP = 20.0e9
-N_FREQ = 401
+F_STOP = 100.0e9
+N_FREQ = 501
 
 F0 = 50.0e9
 FC_GAUSS = 50.0e9
@@ -448,23 +448,21 @@ def add_aperture(section_index, ring_index, x_center, theta_deg):
     }
 
 
-# ============================================================
-# BARE COAX VALIDATION
-# ============================================================
-# Deliberately remove ALL leakage apertures.
-# The rest of the simulation setup is retained from the known-good
-# reference code, especially FDTD, mesh, boundary conditions, and ports.
-
 aperture_records = []
 
-print()
-print("=" * 100)
-print("BARE COAX VALIDATION MODE")
-print("=" * 100)
-print("All aperture primitives are DISABLED.")
-print("Using the original working FDTD / mesh / boundary / lumped-port setup.")
-print("=" * 100)
+for si, xc in enumerate(SECTION_CENTERS):
+    ring_x = [
+        xc - RING_SPACING / 2.0,
+        xc + RING_SPACING / 2.0,
+    ]
 
+    for ri_ring, xr in enumerate(ring_x):
+        for theta in AZIMUTHS_DEG:
+            aperture_records.append(
+                add_aperture(si, ri_ring, xr, theta)
+            )
+
+assert len(aperture_records) == N_SECTIONS * APERTURES_PER_SECTION
 
 
 # ============================================================================

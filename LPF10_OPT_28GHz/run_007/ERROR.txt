@@ -1,0 +1,36 @@
+Traceback (most recent call last):
+  File "C:\Users\Raghava.m\Desktop\cryogenic_filter_design\optimize_run13.py", line 840, in simulate
+    data = np.loadtxt(
+        str(file),
+        comments="%"
+    )
+  File "C:\Users\Raghava.m\Desktop\cryogenic_filter_design\.venv-openems\Lib\site-packages\numpy\lib\_npyio_impl.py", line 1381, in loadtxt
+    arr = _read(fname, dtype=dtype, comment=comment, delimiter=delimiter,
+                converters=converters, skiplines=skiprows, usecols=usecols,
+                unpack=unpack, ndmin=ndmin, encoding=encoding,
+                max_rows=max_rows, quote=quotechar)
+  File "C:\Users\Raghava.m\Desktop\cryogenic_filter_design\.venv-openems\Lib\site-packages\numpy\lib\_npyio_impl.py", line 1035, in _read
+    arr = _load_from_filelike(
+        data, delimiter=delimiter, comment=comment, quote=quote,
+    ...<3 lines>...
+        encoding=encoding, filelike=filelike,
+        byte_converters=byte_converters)
+ValueError: could not convert string '-nan(ind)' to float64 at row 29, column 2.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Raghava.m\Desktop\cryogenic_filter_design\optimize_run13.py", line 1546, in main
+    ) = simulate(
+        ~~~~~~~~^
+        lengths,
+        ^^^^^^^^
+        run_dir
+        ^^^^^^^
+    )
+    ^
+  File "C:\Users\Raghava.m\Desktop\cryogenic_filter_design\optimize_run13.py", line 856, in simulate
+    raise RuntimeError(
+    ...<3 lines>...
+    )
+RuntimeError: Invalid numerical data in FDTD output file: port_it_1: could not convert string '-nan(ind)' to float64 at row 29, column 2.

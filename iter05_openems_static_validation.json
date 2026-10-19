@@ -1,0 +1,22 @@
+{
+  "python_syntax": "passed",
+  "design_xml_parse": "passed",
+  "series_inductors": 8,
+  "total_shunt_capacitors": 7,
+  "f3dB_ideal_GHz": 9.998308218461835,
+  "ideal_S21_passband_min_dB": -0.10001017325275702,
+  "ideal_S21_passband_max_dB": -1.5151468786143722e-06,
+  "ideal_worst_S21_12_to_30_GHz_dB": -62.30607460006717,
+  "mesh_nodes": [
+    542,
+    64,
+    63
+  ],
+  "mesh_cells_before_PML": 2113146,
+  "minimum_cell_mm": [
+    0.09999999999999432,
+    0.10000000000000009,
+    0.09999999999999964
+  ],
+  "openEMS_runtime_available": false
+}

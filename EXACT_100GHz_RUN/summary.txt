@@ -1,0 +1,19 @@
+EXACT COMPACT 10 GHz LPF
+=========================
+
+Geometry source:
+C:\Users\Raghava.m\Desktop\cryogenic_filter_design\LPF10_OPT\BEST\geometry.xml
+
+NO OPTIMIZATION
+NO GEOMETRY MODIFICATION
+NO MESH MODIFICATION
+
+Frequency range: 0.1 - 100.0 GHz
+Frequency points: 2001
+Max timesteps: 100000
+End criterion: 0.0001
+
+S21 @ 20 GHz: -54.690223 dB
+27-29 GHz peak: -4.477682 dB @ 28.571500 GHz
+20-40 GHz worst: -4.477682 dB @ 28.571500 GHz
+40-100 GHz worst: -9.097004 dB @ 44.755300 GHz

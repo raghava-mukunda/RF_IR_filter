@@ -1,0 +1,5 @@
+{
+  "case": "width_2p20mm",
+  "center_strip_width_mm": 2.2,
+  "error": "ValueError: could not convert string '-nan(ind)' to float64 at row 6, column 2."
+}

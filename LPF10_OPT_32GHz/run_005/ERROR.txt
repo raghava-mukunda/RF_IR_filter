@@ -1,0 +1,42 @@
+Traceback (most recent call last):
+  File "C:\Users\Raghava.m\Desktop\cryogenic_filter_design\optimize_run13.py", line 1520, in main
+    ) = simulate(
+        ~~~~~~~~^
+        lengths,
+        ^^^^^^^^
+        run_dir
+        ^^^^^^^
+    )
+    ^
+  File "C:\Users\Raghava.m\Desktop\cryogenic_filter_design\optimize_run13.py", line 798, in simulate
+    port1.CalcPort(
+    ~~~~~~~~~~~~~~^
+        str(sim_dir),
+        ^^^^^^^^^^^^^
+        FREQS
+        ^^^^^
+    )
+    ^
+  File "C:\Users\Raghava.m\Desktop\cryogenic_filter_design\.venv-openems\Lib\site-packages\openEMS\ports.py", line 209, in CalcPort
+    super(LumpedPort, self).CalcPort(sim_path, freq, ref_impedance, ref_plane_shift, signal_type)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Raghava.m\Desktop\cryogenic_filter_design\.venv-openems\Lib\site-packages\openEMS\ports.py", line 116, in CalcPort
+    self.ReadUIData(sim_path, freq, signal_type)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Raghava.m\Desktop\cryogenic_filter_design\.venv-openems\Lib\site-packages\openEMS\ports.py", line 100, in ReadUIData
+    self.u_data = UI_data(self.U_filenames, sim_path, freq, signal_type )
+                  ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Raghava.m\Desktop\cryogenic_filter_design\.venv-openems\Lib\site-packages\openEMS\ports.py", line 43, in __init__
+    tmp = np.loadtxt(os.path.join(path, fn),comments='%')
+  File "C:\Users\Raghava.m\Desktop\cryogenic_filter_design\.venv-openems\Lib\site-packages\numpy\lib\_npyio_impl.py", line 1381, in loadtxt
+    arr = _read(fname, dtype=dtype, comment=comment, delimiter=delimiter,
+                converters=converters, skiplines=skiprows, usecols=usecols,
+                unpack=unpack, ndmin=ndmin, encoding=encoding,
+                max_rows=max_rows, quote=quotechar)
+  File "C:\Users\Raghava.m\Desktop\cryogenic_filter_design\.venv-openems\Lib\site-packages\numpy\lib\_npyio_impl.py", line 1035, in _read
+    arr = _load_from_filelike(
+        data, delimiter=delimiter, comment=comment, quote=quote,
+    ...<3 lines>...
+        encoding=encoding, filelike=filelike,
+        byte_converters=byte_converters)
+ValueError: could not convert string '-nan(ind)' to float64 at row 34, column 2.
